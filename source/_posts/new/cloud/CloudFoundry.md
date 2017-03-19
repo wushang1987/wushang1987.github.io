@@ -1,0 +1,24 @@
+---
+title: Cloud Foundry
+date: 2017-01-02 22:20:53
+tags:
+- cloud
+---
+
+Cloud Foundry是VMware推出的业界第一个开源PaaS云平台，它支持多种框架、语言、运行时环境、云平台及应用服务，使开发人员能够在几秒钟内进行应用程序的部署和扩展，无需担心任何基础架构的问题。同时，它本身是一个基于Ruby on Rails的由多个相对独立的子系统通过消息机制组成的分布式系统，使平台在各层级都可水平扩展，既能在大型数据中心里运行，也能运行在一台桌面电脑中，二者使用相同的代码库。[1]
+作为新一代云应用平台，Cloud Foundry专为私有云计算环境、企业级数据中心和公有云服务提供商所打造。Cloud Foundry云平台可以简化现代应用程序的开发、交付和运行过程，在面对多种公有云和私有云选择、符合业界标准的高效开发框架以及应用基础设施服务时，可以显著提高开发者在云环境中部署和运行应用程序的能力
+
+
+
+Cloud Foundry是由相对独立的多个模块构成的分布式系统，每个模块单独存在和运行，各模块之间通过消息机制进行通信。Cloud Foundry各模块本身是基于Ruby语言开发的，每个部分可以认为拿来即可运行，不存在编译等过程。Cloud Foundry云平台整体逻辑组成如右下图所示：
+Cloud Foundry云平台逻辑视图
+Cloud Foundry云平台逻辑视图
+从图中可以看到，Cloud Foundry云平台是完全模块化的分布式系统，各个模块之间是相互独立的，通过消息总线进行相互连接和通信，这种结构不仅使系统各模块之间的耦合度降低，而且使系统功能容易扩充。此外，开发人员可以通过VMC命令行工具或STS插件方便的部署应用程序到Cloud Foundry云平台上，最终用户可以通过浏览器访问运行在Cloud Foundry云平台上的应用。所有的访问请求都通过Router进行转发，分别由云控制器Cloud Controller和应用运行代理DEA模块进行请求响应，应用生命周期管理Health Manager模块负责监控和管理整个应用在云平台上的正常运行，云平台的各种应用服务由Services模块提供，可以灵活扩展。Cloud Foundry云平台整体架构如右下图所示：[2] 
+Cloud Foundry云平台整体架构
+Cloud Foundry云平台整体架构
+从图中可以看到，Cloud Foundry云平台主要有Router、Cloud Controller、Health Manager、DEA、NFS、NATS、Cloud Controller Database以及Service等模块组成。这些模块协同合作，通过特定的消息传输机制和API接口进行通信，就可以使整个云平台正常运行。由于在集群环境下每个模块都有多个部署节点，从而保证了云平台的可靠性和弹性动态扩展的需求，使得应用程序可以稳定可靠的运行在Cloud Foundry云平台上。[2] 
+
+
+相关连接
+
+http://baike.baidu.com/link?url=GtPRRFoqg-UQcR0gD0owycwkzUC0UGEs2T5fCg_y8urZ_YwIl-juvVukdFAq8wIathvBfglSZ1sY0mrHDbyvVa
