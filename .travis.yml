@@ -22,6 +22,7 @@ script:
 #- hexo generate
 after_success:
   - cd public
+  - fls
   - git config user.name "wushang1987" 
   - git config user.email 'wushang1987@gmail.com'
   - git add --all .
