@@ -6,6 +6,8 @@ master 分支为 展示内容
 
 blog 为hexo 部分
 
+项目使用Travis 做了自动部署功能，只需要提交到github就可以发表文章了
+
 ---
 title: Hello World
 ---
