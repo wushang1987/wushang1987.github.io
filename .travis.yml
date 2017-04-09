@@ -1,15 +1,18 @@
 language: node_js
-node_js:
-  - "7"
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
-  on:
-    branch: master
-    
+branches:
+  only:
+  - master #源码分支名称
+before_install:
+- npm install -g hexo
+- npm install -g hexo-cli
+before_script:
+- git config --global user.name 'wushang1987'
+- git config --global user.email 'wushang1987@gmail.com'
+- sed -i'' "s~git@github.com:<wushang1987>/<wushang1987.github.io>.git~https://${8c985ce8af3b3f587e8cd4e602f931a6c9a87b45}:x-oauth-basic@github.com/<wushang1987>/<wushang1987.github.io>.git~" _config.yml
+install:
+- npm install
 script:
-    - hexo generate
-    - hexo deploy
-
-
+- hexo clean
+- hexo generate
+after_success:
+- hexo deploy
