@@ -8,3 +8,6 @@ tags:
 现在还没有什么服务，只是简单的展示了一个service API. 
 
 但已经能够串联起来github + travis-CI + Azure 
+
+另外博客也用Travis 做了自动部署功能，用起来能简单一些，
+只需要提交到github上面就可以了

@@ -1,5 +1,7 @@
 # 主页
 
+[![Build Status](https://travis-ci.org/wushang1987/wushang1987.github.io.svg?branch=master)](https://travis-ci.org/wushang1987/wushang1987.github.io)
+
 master 分支为 展示内容
 
 blog 为hexo 部分
