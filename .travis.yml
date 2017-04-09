@@ -6,6 +6,7 @@ cache:
   directories:
     - node_modules
 before_install:
+  - git clone --branch master https://github.com/wushang1987/wushang1987.github.io public
 #- git clone --branch master https://github.com/leVirve/leVirve.github.io public
 #- npm install -g hexo
 #- npm install -g hexo-cli
@@ -22,10 +23,9 @@ script:
 #- hexo generate
 after_success:
   - cd public
-  - fls
   - git config user.name "wushang1987" 
   - git config user.email 'wushang1987@gmail.com'
   - git add --all .
   - git commit -m "Travis CI Auto Builder"
-  - git push https://$DEPLOY_TOKEN@github.com:wushang1987/wushang1987.github.io.git master
+  - git push https://$DEPLOY_TOKEN@github.com/wushang1987/wushang1987.github.io.git master
 #- hexo deploy
