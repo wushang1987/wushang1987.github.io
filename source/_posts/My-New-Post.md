@@ -12,3 +12,6 @@ tags:
 https://levirve.github.io/2016/hexo-deploy-through-travisci/
 
 得写个邮件感谢一下了，哈哈
+
+
+在手机上用git客户端进行编辑，并且是语音输入这样可以写文章了每天可以多写一下。测试一下。
