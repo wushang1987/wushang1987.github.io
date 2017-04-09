@@ -6,17 +6,25 @@ cache:
   directories:
     - node_modules
 before_install:
-- npm install -g hexo
-- npm install -g hexo-cli
+#- git clone --branch master https://github.com/leVirve/leVirve.github.io public
+#- npm install -g hexo
+#- npm install -g hexo-cli
 before_script:
-- git config --global user.name 'wushang1987'
-- git config --global user.email 'wushang1987@gmail.com'
-- sed -i'' "s~git@github.com:wushang1987/wushang1987.github.io.git~https://b63a70cad08d706dca79eb047de4079c656f7343@github.com/wushang1987/wushang1987.github.io.git~" _config.yml
+#- git config --global user.name 'wushang1987'
+#- git config --global user.email 'wushang1987@gmail.com'
+#- sed -i'' "s~git@github.com:wushang1987/wushang1987.github.io.git~https://${GH_TOKEN}:x-oauth-basic@github.com/wushang1987/wushang1987.github.io.git~" _config.yml
 #- sed -i'' "s~git@github.com:wushang1987/wushang1987.github.io.git~https://${8c985ce8af3b3f587e8cd4e602f931a6c9a87b45}:x-oauth-basic@github.com/wushang1987/wushang1987.github.io.git~" _config.yml
 install:
-- npm install
+#- npm install
 script:
-- hexo clean
-- hexo generate
+- npm run build
+#- hexo clean
+#- hexo generate
 after_success:
-- hexo deploy
+  - cd public
+  - git config user.name "wushang1987" 
+  - git config user.email 'wushang1987@gmail.com'
+  - git add --all .
+  - git commit -m "Travis CI Auto Builder"
+  - git push https://$DEPLOY_TOKEN@github.com:wushang1987/wushang1987.github.io.git master
+#- hexo deploy
