@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 一个工程师
+title: 王维栋的博客
 subtitle: web 相关
 description:
-author: wang weidong
+author: 王维栋
 language:
 timezone:
 
@@ -34,7 +34,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: icarus
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -72,3 +72,37 @@ deploy:
   repo: git@github.com:wushang1987/wushang1987.github.io.git
   branch: master
 
+jsonContent:
+  meta: true
+  keywords: false # language name option
+  dateFormat: undefined # format string
+  pages:
+    title: true
+    slug: true
+    date: true
+    updated: true
+    comments: true
+    path: true
+    link: true
+    permalink: true
+    excerpt: true
+    keywords: true # but only if root keywords option language was set
+    text: true
+    raw: false
+    content: false
+  posts:
+    title: true
+    slug: true
+    date: true
+    updated: true
+    comments: true
+    path: true
+    link: true
+    permalink: true
+    excerpt: true
+    keywords: true # but only if root keywords option language was set
+    text: true
+    raw: false
+    content: false
+    categories: true
+    tags: true
