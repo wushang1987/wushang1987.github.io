@@ -1,4 +1,7 @@
 language: node_js
+node_js:
+  - 6
+  
 branches:
   only:
   - blog #源码分支名称
