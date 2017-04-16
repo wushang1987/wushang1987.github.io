@@ -1,4 +1,9 @@
-
+---
+title: java map
+date: 2017-04-16 11:34:33
+tags:
+    - java
+---
 
 Map提供了一种映射关系，
 

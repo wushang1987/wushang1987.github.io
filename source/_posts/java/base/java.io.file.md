@@ -1,9 +1,15 @@
-
+---
+title:  java IO 
+date: 2017-04-16 11:29:53
+tags:
+  - java
+---
 
 
 
 ## 示例代码
 
+``` java
 package cn.edu.tongji.cims.wade.system;   
   
 import java.io.*;   
@@ -239,3 +245,5 @@ public class FileOperate {
   
   }   
 } 
+
+```

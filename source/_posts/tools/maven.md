@@ -1,3 +1,10 @@
+---
+title: maven 
+date: 2017-04-16 11:48:08
+tags:
+    - java
+    - Tools
+---
 # 记录maven 相关知识
 
 

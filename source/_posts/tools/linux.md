@@ -3,6 +3,7 @@ title: linux
 date: 2017-01-15 00:07:00
 tags:
     - linux
+    - Tools
 ---
 
 top命令能显示系统内存。

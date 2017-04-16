@@ -1,5 +1,10 @@
-
-# Collection 接口
+---
+title:  java collection
+date: 2017-04-16 11:34:13
+tags:
+    - java
+---
+## Collection 接口
 
 * 是List Set Queue接口的父接口
 * 定义了可用于操作List Set Queue 的方法 - 增删改查

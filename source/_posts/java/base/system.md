@@ -1,4 +1,9 @@
-
+---
+title: java system 对象
+date: 2017-04-16 11:28:37
+tags:
+    - java
+---
 
 关于Java中使用的System对象，我们经常使用的是Systme.out.print ,而且也仅仅知道这是一个可以在控制台打印出语句，而没有去深究它的内在实现原理。下面我就详细地介绍System对象。 
 
