@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>java IO | 王维栋的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="示例代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java IO">
+<meta property="og:url" content="https://wushang1987.github.io/2017/04/16/java/base/java.io.file/index.html">
+<meta property="og:site_name" content="王维栋的博客">
+<meta property="og:description" content="示例代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011">
+<meta property="og:updated_time" content="2017-04-16T03:30:51.866Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java IO">
+<meta name="twitter:description" content="示例代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">王维栋的博客</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+                    <a class="main-nav-link" href="https://github.com/wushang1987">GitHub</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                    <td><a class="main-nav-link" href="https://github.com/wushang1987">GitHub</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">Wang Weidong</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>xi`an, China</span>
+            <a id="follow" target="_blank" href="https://github.com/wushang1987">FOLLOW</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                53
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                19
+                <span>tags</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/wushang1987" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-java/base/java.io.file" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            java IO
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/04/16/java/base/java.io.file/">
+            <time datetime="2017-04-16T03:29:53.000Z" itemprop="datePublished">2017-04-16</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/java/">java</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> cn.edu.tongji.cims.wade.system;   </div><div class="line">  </div><div class="line"><span class="keyword">import</span> java.io.*;   </div><div class="line">  </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileOperate</span> </span>&#123;   </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">FileOperate</span><span class="params">()</span> </span>&#123;   </div><div class="line">  &#125;   </div><div class="line">  </div><div class="line">  <span class="comment">/**  </span></div><div class="line">   * 新建目录  </div><div class="line">   * <span class="doctag">@param</span> folderPath String 如 c:/fqf  </div><div class="line">   * <span class="doctag">@return</span> boolean  </div><div class="line">   */  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">newFolder</span><span class="params">(String folderPath)</span> </span>&#123;   </div><div class="line">    <span class="keyword">try</span> &#123;   </div><div class="line">      String filePath = folderPath;   </div><div class="line">      filePath = filePath.toString();   </div><div class="line">      java.io.File myFilePath = <span class="keyword">new</span> java.io.File(filePath);   </div><div class="line">      <span class="keyword">if</span> (!myFilePath.exists()) &#123;   </div><div class="line">        myFilePath.mkdir();   </div><div class="line">      &#125;   </div><div class="line">    &#125;   </div><div class="line">    <span class="keyword">catch</span> (Exception e) &#123;   </div><div class="line">      System.out.println(<span class="string">"新建目录操作出错"</span>);   </div><div class="line">      e.printStackTrace();   </div><div class="line">    &#125;   </div><div class="line">  &#125;   </div><div class="line">  </div><div class="line">  <span class="comment">/**  </span></div><div class="line">   * 新建文件  </div><div class="line">   * <span class="doctag">@param</span> filePathAndName String 文件路径及名称 如c:/fqf.txt  </div><div class="line">   * <span class="doctag">@param</span> fileContent String 文件内容  </div><div class="line">   * <span class="doctag">@return</span> boolean  </div><div class="line">   */  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">newFile</span><span class="params">(String filePathAndName, String fileContent)</span> </span>&#123;   </div><div class="line">  </div><div class="line">    <span class="keyword">try</span> &#123;   </div><div class="line">      String filePath = filePathAndName;   </div><div class="line">      filePath = filePath.toString();   </div><div class="line">      File myFilePath = <span class="keyword">new</span> File(filePath);   </div><div class="line">      <span class="keyword">if</span> (!myFilePath.exists()) &#123;   </div><div class="line">        myFilePath.createNewFile();   </div><div class="line">      &#125;   </div><div class="line">      FileWriter resultFile = <span class="keyword">new</span> FileWriter(myFilePath);   </div><div class="line">      PrintWriter myFile = <span class="keyword">new</span> PrintWriter(resultFile);   </div><div class="line">      String strContent = fileContent;   </div><div class="line">      myFile.println(strContent);   </div><div class="line">      resultFile.close();   </div><div class="line">  </div><div class="line">    &#125;   </div><div class="line">    <span class="keyword">catch</span> (Exception e) &#123;   </div><div class="line">      System.out.println(<span class="string">"新建目录操作出错"</span>);   </div><div class="line">      e.printStackTrace();   </div><div class="line">  </div><div class="line">    &#125;   </div><div class="line">  </div><div class="line">  &#125;   </div><div class="line">  </div><div class="line">  <span class="comment">/**  </span></div><div class="line">   * 删除文件  </div><div class="line">   * <span class="doctag">@param</span> filePathAndName String 文件路径及名称 如c:/fqf.txt  </div><div class="line">   * <span class="doctag">@param</span> fileContent String  </div><div class="line">   * <span class="doctag">@return</span> boolean  </div><div class="line">   */  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delFile</span><span class="params">(String filePathAndName)</span> </span>&#123;   </div><div class="line">    <span class="keyword">try</span> &#123;   </div><div class="line">      String filePath = filePathAndName;   </div><div class="line">      filePath = filePath.toString();   </div><div class="line">      java.io.File myDelFile = <span class="keyword">new</span> java.io.File(filePath);   </div><div class="line">      myDelFile.delete();   </div><div class="line">  </div><div class="line">    &#125;   </div><div class="line">    <span class="keyword">catch</span> (Exception e) &#123;   </div><div class="line">      System.out.println(<span class="string">"删除文件操作出错"</span>);   </div><div class="line">      e.printStackTrace();   </div><div class="line">  </div><div class="line">    &#125;   </div><div class="line">  </div><div class="line">  &#125;   </div><div class="line">  </div><div class="line">  <span class="comment">/**  </span></div><div class="line">   * 删除文件夹  </div><div class="line">   * <span class="doctag">@param</span> filePathAndName String 文件夹路径及名称 如c:/fqf  </div><div class="line">   * <span class="doctag">@param</span> fileContent String  </div><div class="line">   * <span class="doctag">@return</span> boolean  </div><div class="line">   */  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delFolder</span><span class="params">(String folderPath)</span> </span>&#123;   </div><div class="line">    <span class="keyword">try</span> &#123;   </div><div class="line">      delAllFile(folderPath); <span class="comment">//删除完里面所有内容   </span></div><div class="line">      String filePath = folderPath;   </div><div class="line">      filePath = filePath.toString();   </div><div class="line">      java.io.File myFilePath = <span class="keyword">new</span> java.io.File(filePath);   </div><div class="line">      myFilePath.delete(); <span class="comment">//删除空文件夹   </span></div><div class="line">  </div><div class="line">    &#125;   </div><div class="line">    <span class="keyword">catch</span> (Exception e) &#123;   </div><div class="line">      System.out.println(<span class="string">"删除文件夹操作出错"</span>);   </div><div class="line">      e.printStackTrace();   </div><div class="line">  </div><div class="line">    &#125;   </div><div class="line">  </div><div class="line">  &#125;   </div><div class="line">  </div><div class="line">  <span class="comment">/**  </span></div><div class="line">   * 删除文件夹里面的所有文件  </div><div class="line">   * <span class="doctag">@param</span> path String 文件夹路径 如 c:/fqf  </div><div class="line">   */  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delAllFile</span><span class="params">(String path)</span> </span>&#123;   </div><div class="line">    File file = <span class="keyword">new</span> File(path);   </div><div class="line">    <span class="keyword">if</span> (!file.exists()) &#123;   </div><div class="line">      <span class="keyword">return</span>;   </div><div class="line">    &#125;   </div><div class="line">    <span class="keyword">if</span> (!file.isDirectory()) &#123;   </div><div class="line">      <span class="keyword">return</span>;   </div><div class="line">    &#125;   </div><div class="line">    String[] tempList = file.list();   </div><div class="line">    File temp = <span class="keyword">null</span>;   </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tempList.length; i++) &#123;   </div><div class="line">      <span class="keyword">if</span> (path.endsWith(File.separator)) &#123;   </div><div class="line">        temp = <span class="keyword">new</span> File(path + tempList[i]);   </div><div class="line">      &#125;   </div><div class="line">      <span class="keyword">else</span> &#123;   </div><div class="line">        temp = <span class="keyword">new</span> File(path + File.separator + tempList[i]);   </div><div class="line">      &#125;   </div><div class="line">      <span class="keyword">if</span> (temp.isFile()) &#123;   </div><div class="line">        temp.delete();   </div><div class="line">      &#125;   </div><div class="line">      <span class="keyword">if</span> (temp.isDirectory()) &#123;   </div><div class="line">        delAllFile(path+<span class="string">"/"</span>+ tempList[i]);<span class="comment">//先删除文件夹里面的文件   </span></div><div class="line">        delFolder(path+<span class="string">"/"</span>+ tempList[i]);<span class="comment">//再删除空文件夹   </span></div><div class="line">      &#125;   </div><div class="line">    &#125;   </div><div class="line">  &#125;   </div><div class="line">  </div><div class="line">  <span class="comment">/**  </span></div><div class="line">   * 复制单个文件  </div><div class="line">   * <span class="doctag">@param</span> oldPath String 原文件路径 如：c:/fqf.txt  </div><div class="line">   * <span class="doctag">@param</span> newPath String 复制后路径 如：f:/fqf.txt  </div><div class="line">   * <span class="doctag">@return</span> boolean  </div><div class="line">   */  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">copyFile</span><span class="params">(String oldPath, String newPath)</span> </span>&#123;   </div><div class="line">    <span class="keyword">try</span> &#123;   </div><div class="line">      <span class="keyword">int</span> bytesum = <span class="number">0</span>;   </div><div class="line">      <span class="keyword">int</span> byteread = <span class="number">0</span>;   </div><div class="line">      File oldfile = <span class="keyword">new</span> File(oldPath);   </div><div class="line">      <span class="keyword">if</span> (oldfile.exists()) &#123; <span class="comment">//文件存在时   </span></div><div class="line">        InputStream inStream = <span class="keyword">new</span> FileInputStream(oldPath); <span class="comment">//读入原文件   </span></div><div class="line">        FileOutputStream fs = <span class="keyword">new</span> FileOutputStream(newPath);   </div><div class="line">        <span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1444</span>];   </div><div class="line">        <span class="keyword">int</span> length;   </div><div class="line">        <span class="keyword">while</span> ( (byteread = inStream.read(buffer)) != -<span class="number">1</span>) &#123;   </div><div class="line">          bytesum += byteread; <span class="comment">//字节数 文件大小   </span></div><div class="line">          System.out.println(bytesum);   </div><div class="line">          fs.write(buffer, <span class="number">0</span>, byteread);   </div><div class="line">        &#125;   </div><div class="line">        inStream.close();   </div><div class="line">      &#125;   </div><div class="line">    &#125;   </div><div class="line">    <span class="keyword">catch</span> (Exception e) &#123;   </div><div class="line">      System.out.println(<span class="string">"复制单个文件操作出错"</span>);   </div><div class="line">      e.printStackTrace();   </div><div class="line">  </div><div class="line">    &#125;   </div><div class="line">  </div><div class="line">  &#125;   </div><div class="line">  </div><div class="line">  <span class="comment">/**  </span></div><div class="line">   * 复制整个文件夹内容  </div><div class="line">   * <span class="doctag">@param</span> oldPath String 原文件路径 如：c:/fqf  </div><div class="line">   * <span class="doctag">@param</span> newPath String 复制后路径 如：f:/fqf/ff  </div><div class="line">   * <span class="doctag">@return</span> boolean  </div><div class="line">   */  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">copyFolder</span><span class="params">(String oldPath, String newPath)</span> </span>&#123;   </div><div class="line">  </div><div class="line">    <span class="keyword">try</span> &#123;   </div><div class="line">      (<span class="keyword">new</span> File(newPath)).mkdirs(); <span class="comment">//如果文件夹不存在 则建立新文件夹   </span></div><div class="line">      File a=<span class="keyword">new</span> File(oldPath);   </div><div class="line">      String[] file=a.list();   </div><div class="line">      File temp=<span class="keyword">null</span>;   </div><div class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; file.length; i++) &#123;   </div><div class="line">        <span class="keyword">if</span>(oldPath.endsWith(File.separator))&#123;   </div><div class="line">          temp=<span class="keyword">new</span> File(oldPath+file[i]);   </div><div class="line">        &#125;   </div><div class="line">        <span class="keyword">else</span>&#123;   </div><div class="line">          temp=<span class="keyword">new</span> File(oldPath+File.separator+file[i]);   </div><div class="line">        &#125;   </div><div class="line">  </div><div class="line">        <span class="keyword">if</span>(temp.isFile())&#123;   </div><div class="line">          FileInputStream input = <span class="keyword">new</span> FileInputStream(temp);   </div><div class="line">          FileOutputStream output = <span class="keyword">new</span> FileOutputStream(newPath + <span class="string">"/"</span> +   </div><div class="line">              (temp.getName()).toString());   </div><div class="line">          <span class="keyword">byte</span>[] b = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span> * <span class="number">5</span>];   </div><div class="line">          <span class="keyword">int</span> len;   </div><div class="line">          <span class="keyword">while</span> ( (len = input.read(b)) != -<span class="number">1</span>) &#123;   </div><div class="line">            output.write(b, <span class="number">0</span>, len);   </div><div class="line">          &#125;   </div><div class="line">          output.flush();   </div><div class="line">          output.close();   </div><div class="line">          input.close();   </div><div class="line">        &#125;   </div><div class="line">        <span class="keyword">if</span>(temp.isDirectory())&#123;<span class="comment">//如果是子文件夹   </span></div><div class="line">          copyFolder(oldPath+<span class="string">"/"</span>+file[i],newPath+<span class="string">"/"</span>+file[i]);   </div><div class="line">        &#125;   </div><div class="line">      &#125;   </div><div class="line">    &#125;   </div><div class="line">    <span class="keyword">catch</span> (Exception e) &#123;   </div><div class="line">      System.out.println(<span class="string">"复制整个文件夹内容操作出错"</span>);   </div><div class="line">      e.printStackTrace();   </div><div class="line">  </div><div class="line">    &#125;   </div><div class="line">  </div><div class="line">  &#125;   </div><div class="line">  </div><div class="line">  <span class="comment">/**  </span></div><div class="line">   * 移动文件到指定目录  </div><div class="line">   * <span class="doctag">@param</span> oldPath String 如：c:/fqf.txt  </div><div class="line">   * <span class="doctag">@param</span> newPath String 如：d:/fqf.txt  </div><div class="line">   */  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">moveFile</span><span class="params">(String oldPath, String newPath)</span> </span>&#123;   </div><div class="line">    copyFile(oldPath, newPath);   </div><div class="line">    delFile(oldPath);   </div><div class="line">  </div><div class="line">  &#125;   </div><div class="line">  </div><div class="line">  <span class="comment">/**  </span></div><div class="line">   * 移动文件到指定目录  </div><div class="line">   * <span class="doctag">@param</span> oldPath String 如：c:/fqf.txt  </div><div class="line">   * <span class="doctag">@param</span> newPath String 如：d:/fqf.txt  </div><div class="line">   */  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">moveFolder</span><span class="params">(String oldPath, String newPath)</span> </span>&#123;   </div><div class="line">    copyFolder(oldPath, newPath);   </div><div class="line">    delFolder(oldPath);   </div><div class="line">  </div><div class="line">  &#125;   </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/java.io.file/" data-id="cj1k2zags002e0kd83bhmab5d" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://wushang1987.github.io/2017/04/16/java/base/java.io.file/#comments" class="article-comment-link">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/04/16/java/base/Scanner/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    java scanner
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2017/04/16/java/base/Annotation/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">java annotation</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="uyan_frame"></div>
+
+    
+    </section>
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/16/面试/面试问题概述/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/04/16/面试/面试问题概述/" class="title">面试问题</a></p>
+                            <p class="item-date"><time datetime="2017-04-16T04:24:53.000Z" itemprop="datePublished">2017-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/16/spring/base/base/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/04/16/spring/base/base/" class="title">spirng 基础知识</a></p>
+                            <p class="item-date"><time datetime="2017-04-16T03:56:24.000Z" itemprop="datePublished">2017-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/16/spring/mvc/相关文章/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/04/16/spring/mvc/相关文章/" class="title">spring mvc 简介</a></p>
+                            <p class="item-date"><time datetime="2017-04-16T03:56:07.000Z" itemprop="datePublished">2017-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/16/spring/springboot/模块解析/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/04/16/spring/springboot/模块解析/" class="title">spring boot 模块解析</a></p>
+                            <p class="item-date"><time datetime="2017-04-16T03:55:32.000Z" itemprop="datePublished">2017-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/16/spring/springboot/知识点/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/04/16/spring/springboot/知识点/" class="title">spring boot 知识点</a></p>
+                            <p class="item-date"><time datetime="2017-04-16T03:54:34.000Z" itemprop="datePublished">2017-04-16</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/xxx/">xxx</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">-基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">-面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DB/">DB</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/">Tools</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cloud/">cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/srping/">srping</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/website/">website</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a><span class="tag-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/基础/" style="font-size: 10px;">-基础</a> <a href="/tags/面试/" style="font-size: 10px;">-面试</a> <a href="/tags/DB/" style="font-size: 15px;">DB</a> <a href="/tags/Tools/" style="font-size: 18.33px;">Tools</a> <a href="/tags/cloud/" style="font-size: 10px;">cloud</a> <a href="/tags/css/" style="font-size: 11.67px;">css</a> <a href="/tags/eclipse/" style="font-size: 11.67px;">eclipse</a> <a href="/tags/git/" style="font-size: 11.67px;">git</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/js/" style="font-size: 13.33px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/spring/" style="font-size: 16.67px;">spring</a> <a href="/tags/srping/" style="font-size: 10px;">srping</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/website/" style="font-size: 10px;">website</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/日志/" style="font-size: 11.67px;">日志</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 王维栋<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2131095"></script>
+
+
+
+    
+        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

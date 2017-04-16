@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>MongoDB | 王维栋的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="MongoDB以BSON格式的文档（Documents）形式存储。Databases中包含集合（Collections），集合（Collections）中存储文档（Documents）。 BSON是一个二进制形式的JSON文档，它比JSON包含更多的数据类型。对于BSON规格，可参见bsonspec.org，也可参考BSON类型。 Databases 在MongoDB中，databases保存文档">
+<meta name="keywords" content="DB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MongoDB">
+<meta property="og:url" content="https://wushang1987.github.io/2017/02/28/MongoDB/概述/index.html">
+<meta property="og:site_name" content="王维栋的博客">
+<meta property="og:description" content="MongoDB以BSON格式的文档（Documents）形式存储。Databases中包含集合（Collections），集合（Collections）中存储文档（Documents）。 BSON是一个二进制形式的JSON文档，它比JSON包含更多的数据类型。对于BSON规格，可参见bsonspec.org，也可参考BSON类型。 Databases 在MongoDB中，databases保存文档">
+<meta property="og:updated_time" content="2017-04-14T15:13:46.507Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MongoDB">
+<meta name="twitter:description" content="MongoDB以BSON格式的文档（Documents）形式存储。Databases中包含集合（Collections），集合（Collections）中存储文档（Documents）。 BSON是一个二进制形式的JSON文档，它比JSON包含更多的数据类型。对于BSON规格，可参见bsonspec.org，也可参考BSON类型。 Databases 在MongoDB中，databases保存文档">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+    
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">王维栋的博客</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+                    <a class="main-nav-link" href="https://github.com/wushang1987">GitHub</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                    <td><a class="main-nav-link" href="https://github.com/wushang1987">GitHub</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">Wang Weidong</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>xi`an, China</span>
+            <a id="follow" target="_blank" href="https://github.com/wushang1987">FOLLOW</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                53
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                19
+                <span>tags</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/wushang1987" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-MongoDB/概述" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            MongoDB
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/02/28/MongoDB/概述/">
+            <time datetime="2017-02-28T15:34:40.000Z" itemprop="datePublished">2017-02-28</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/DB/">DB</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>MongoDB以BSON格式的文档（Documents）形式存储。Databases中包含集合（Collections），集合（Collections）中存储文档（Documents）。</p>
+<p>BSON是一个二进制形式的JSON文档，它比JSON包含更多的数据类型。对于BSON规格，可参见bsonspec.org，也可参考BSON类型。</p>
+<p>Databases</p>
+<p>在MongoDB中，databases保存文档（Documents）的集合（Collections）。</p>
+<p>在Mongo Shell中，通过使用use <db>命令来选中database，就像下面的例子：</db></p>
+<p>use myDB<br>创建Database</p>
+<p>如果database不存在，MongoDB会在第一次为database存储数据的时候创建。因此，你可以直接切换到一个不存在的数据库，然后执行下面的语句：</p>
+<p>use myNewDB</p>
+<p>db.myNewCollection1.insert( { x: 1 } )<br>insert()操作会创建名为myNewDB的database和名为myNewCollection1的collection（如果他们不存在的话）。</p>
+<p>Collections</p>
+<p>MongoDB在collections中存储文档（documents）。Collections类似于关系型数据库中的表（tables）。</p>
+<p>创建Collection</p>
+<p>如果collection不存在，MongoDB会在第一次为collection存储数据的时候创建。</p>
+<p>db.myNewCollection2.insert( { x: 1 } )<br>db.myNewCollection3.createIndex( { y: 1 } )<br>无论是insert()还是createIndex()操作，都会创建它们各自指定的收集，如果他们不存在的话。</p>
+<p>显式创建</p>
+<p>MongoDB提供db.createCollection()方法来显式创建一个collection，同时还能设置各种选项，例如：设置最大尺寸和文档校验规则。如果你没有指定这些选项，那么你就不需要显式创建collection，因为MongoDB会在你创建第一个数据的时候自动创建collection。</p>
+<p>若要修改这些collection选择，可查看collMod。</p>
+<p>Documents校验</p>
+<p>3.2.x版本新增内容。</p>
+<p>默认情况下，collection不要求文档有相同的结构；例如，在一个collection的文档不必具有相同的fields，对于单个field在一个collection中的不同文档中可以是不同的数据类型。</p>
+<p>从MongoDB 3.2开始，你可以在对collection进行update和insert操作的时候执行文档（documents）校验规则。具体可参见文档验证的详细信息。</p>
+<p>Documents</p>
+<p>Document结构</p>
+<p>MongoDB的文件是由field和value对的结构组成，例如下面这样的结构：</p>
+<p>{<br>   field1: value1,<br>   field2: value2,<br>   field3: value3,<br>   …<br>   fieldN: valueN<br>}<br>value值可以是任何BSON数据类型，包括：其他document，数字，和document数组。</p>
+<p>例如下面的document，包含各种不同类型的值：</p>
+<p>var mydoc = {<br>    _id: ObjectId(“5099803df3f4948bd2f98391”),<br>    name: {<br>        first: “Alan”, last: “Turing”<br>    },<br>    birth: new Date(‘Jun 23, 1912’),<br>    death: new Date(‘Jun 07, 1954’),<br>    contribs: [ “Turing machine”, “Turing test”, “Turingery” ],<br>    views : NumberLong(1250000)<br>}<br>上面例子中的各fields有下列数据类型：</p>
+<p>_id：ObjectId类型<br>name：一个嵌入的document，包含first和last字段<br>birth和death：Date类型<br>contribs：字符串数组<br>views：NumberLong类型<br>Field名</p>
+<p>Field名是一个字符串。</p>
+<p>Documents中的filed名有下列限制：</p>
+<p>_id被保留用于主键；其值必须是集合中唯一的、不可变的、并且可以是数组以外的任何数据类型<br>不能以美元符号$开头<br>不能包含点字符.<br>不能包含空字符<br>Field Value限制</p>
+<p>对于索引的collections，索引字段中的值有最大长度限制。详情请参见Maximum Index Key Length。</p>
+<p>圆点符号</p>
+<p>MongoDB中使用圆点符号.访问数组中的元素，也可以访问嵌入式Documents的fields。</p>
+<p>Arrays数组</p>
+<p>通过圆点符号.来链接Arrays数组名字和从0开始的数字位置，来定位和访问一个元素数组：</p>
+<p>“<array>.<index>“<br>举例：对于下面的document：</index></array></p>
+<p>{<br>   …<br>   contribs: [ “Turing machine”, “Turing test”, “Turingery” ],<br>   …<br>}<br>要访问contribs数组中的第三个元素，可以这样访问：</p>
+<p>“contribs.2”<br>嵌入式Documents</p>
+<p>通过圆点符号.来链接嵌入式document的名字和field名，来定位和访问嵌入式document：</p>
+<p>“<embedded document="">.<field>“<br>举例：对于下面的document：</field></embedded></p>
+<p>{<br>   …<br>   name: { first: “Alan”, last: “Turing” },<br>   …<br>}<br>要访问name中的last字段，可以这样使用：</p>
+<p>“name.last”<br>Documents限制</p>
+<p>Documents有下面这些属性和限制：</p>
+<p>Document大小限制</p>
+<p>每个BSON文档的最大尺寸为16兆字节。</p>
+<p>最大文档大小有助于确保一个单个文档不会使用过量的内存，或通信过程中过大的带宽占用。</p>
+<p>若要存储超过最大尺寸的文档，MongoDB提供了GridFS API。可以看mongofiles和更多有关GridFS的文档</p>
+<p>Document Field顺序</p>
+<p>MongoDB中field的顺序默认是按照写操作的顺序来保存的，除了下面几种情况：</p>
+<p>_id总是document的第一个field<br>可能会导致文档中的字段的重新排序的更新，包括字段名重命名。<br>在2.6版本起，MongoDB开始积极地尝试保留document中field的顺序。</p>
+<p>_id字段</p>
+<p>_id字段有以下行为和限制：</p>
+<p>默认情况下，MongoDB会在创建collection时创建一个_id字段的唯一索引<br>id字段总是documents中的第一个字段。如果服务器接收到一个docuement，它的第一个字段不是id，那么服务器会将_id字段移在开头<br>_id字段可以是除了array数组之外的任何BSON数据格式<br>以下是存储_id值的常用选项：</p>
+<p>使用ObjectId<br>最好使用自然的唯一标识符，可以节省空间并避免额外的索引<br>生成一个自动递增的数字。请参阅创建一个自动递增序列字段<br>在您的应用程序代码中生成UUID。为了更高效的在collection和_id索引中存储UUID值，可以用BSON的BinData类型存储UUID。</p>
+<ul>
+<li>大部分MongoDB驱动客户端会包含_id字段，并且在发送insert操作的时候生成一个ObjectId。但是如果客户端发送一个不带_id字段的document，mongod会添加_id字段并产生一个ObjectId *</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://wushang1987.github.io/2017/02/28/MongoDB/概述/" data-id="cj1k2z9xk000f0kd8lo8vwc0p" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://wushang1987.github.io/2017/02/28/MongoDB/概述/#comments" class="article-comment-link">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/02/28/log/痛苦的春天/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    痛苦的春天
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2017/04/09/log/test-post/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">跑通全流程</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="uyan_frame"></div>
+
+    
+    </section>
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/16/面试/面试问题概述/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/04/16/面试/面试问题概述/" class="title">面试问题</a></p>
+                            <p class="item-date"><time datetime="2017-04-16T04:24:53.000Z" itemprop="datePublished">2017-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/16/spring/base/base/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/04/16/spring/base/base/" class="title">spirng 基础知识</a></p>
+                            <p class="item-date"><time datetime="2017-04-16T03:56:24.000Z" itemprop="datePublished">2017-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/16/spring/mvc/相关文章/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/04/16/spring/mvc/相关文章/" class="title">spring mvc 简介</a></p>
+                            <p class="item-date"><time datetime="2017-04-16T03:56:07.000Z" itemprop="datePublished">2017-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/16/spring/springboot/模块解析/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/04/16/spring/springboot/模块解析/" class="title">spring boot 模块解析</a></p>
+                            <p class="item-date"><time datetime="2017-04-16T03:55:32.000Z" itemprop="datePublished">2017-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/16/spring/springboot/知识点/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/04/16/spring/springboot/知识点/" class="title">spring boot 知识点</a></p>
+                            <p class="item-date"><time datetime="2017-04-16T03:54:34.000Z" itemprop="datePublished">2017-04-16</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/xxx/">xxx</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">-基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">-面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DB/">DB</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/">Tools</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cloud/">cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/srping/">srping</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/website/">website</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a><span class="tag-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/基础/" style="font-size: 10px;">-基础</a> <a href="/tags/面试/" style="font-size: 10px;">-面试</a> <a href="/tags/DB/" style="font-size: 15px;">DB</a> <a href="/tags/Tools/" style="font-size: 18.33px;">Tools</a> <a href="/tags/cloud/" style="font-size: 10px;">cloud</a> <a href="/tags/css/" style="font-size: 11.67px;">css</a> <a href="/tags/eclipse/" style="font-size: 11.67px;">eclipse</a> <a href="/tags/git/" style="font-size: 11.67px;">git</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/js/" style="font-size: 13.33px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/spring/" style="font-size: 16.67px;">spring</a> <a href="/tags/srping/" style="font-size: 10px;">srping</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/website/" style="font-size: 10px;">website</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/日志/" style="font-size: 11.67px;">日志</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 王维栋<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2131095"></script>
+
+
+
+    
+        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
