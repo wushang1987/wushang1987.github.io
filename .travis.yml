@@ -34,5 +34,5 @@ after_success:
   - git commit -m "Travis CI Auto Builder"
   - git push https://$DEPLOY_TOKEN@github.com/wushang1987/wushang1987.github.io.git master
 
-  notifications: # 设置通知项
+notifications: # 设置通知项
   email: true
