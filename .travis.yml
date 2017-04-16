@@ -1,10 +1,14 @@
-language: node_js
+language: node_js # 指定语言环境
 node_js:
-  - 6
-  
-branches:
-  only:
-  - blog #源码分支名称
+  - "6" # 指定 NodeJS 版本
+dist: trusty # 指定系统版本。trusty 是指 Ubuntu 14.04 发行版的名称
+sudo: required # 是否需要 sudo 权限
+
+branches: # 指定要构建的分支
+  only: # only 表示只构建以下分支
+  - blog 
+
+
 cache:
   directories:
     - node_modules
@@ -29,3 +33,6 @@ after_success:
   - git add --all .
   - git commit -m "Travis CI Auto Builder"
   - git push https://$DEPLOY_TOKEN@github.com/wushang1987/wushang1987.github.io.git master
+
+  notifications: # 设置通知项
+  email: true
