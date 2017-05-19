@@ -8,3 +8,7 @@ tags:
 前端的桌面应用
 
 ATOM VSCODE 都是基于这个东西做的。
+
+还记得有个东西叫做node-webkit，NW
+
+ atom-shell
