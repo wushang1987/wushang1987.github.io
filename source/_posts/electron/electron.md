@@ -3,6 +3,7 @@ title: electron
 date: 2017-04-16 13:42:15
 tags:
     - electron
+banner: /img/electron.png
 ---
 
 前端的桌面应用

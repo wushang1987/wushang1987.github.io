@@ -3,7 +3,7 @@ title: SSL 概述
 date: 2017-04-15 00:07:00
 tags:
     -基础
-banner:  ../../img/timg.jpg
+banner:  /img/timg.jpg
 ---
 
 
