@@ -7,6 +7,7 @@ layout: "page"
 
 学了很多，看了很多，无长技。
 
+博客内容有些像上网记录，我随便贴贴，你们随便看看。
 
 更多个人主页：
 
@@ -18,3 +19,5 @@ layout: "page"
 6. [instructables](https://www.instructables.com/member/wushang1987/)
 7. [liveedu tv](https://www.liveedu.tv/wushang1987/profile/)
 8. [egghead](https://egghead.io/users/188769)
+9. [jianshu](http://www.jianshu.com/u/e5a57e9ee81a)
+10. [CSDN](http://blog.csdn.net/wushang1987)

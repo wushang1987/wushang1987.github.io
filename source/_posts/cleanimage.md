@@ -1,7 +1,7 @@
 ---
 layout: clear
 title: 删除冗余图片
-date: 2017-06-04 10:48:09
+date: 2017-06-04 18:56:25
 tags:
 banner: /img/kill.jpg
 ---
@@ -22,3 +22,8 @@ js方法等等。
 1. [gulp-unused-images](https://www.npmjs.com/package/gulp-unused-images)
 2. [gulp-delete-unused-images](https://www.npmjs.com/package/gulp-delete-unused-images)
 3. 有位兄台用Python  写了个方法[文章](http://blog-lision.com/2017/03/09/CleanUnUseedImg/?utm_source=tuicool&utm_medium=referral)
+
+2017-06-04 18:56:59
+
+我们想了在webpack上面实现这个功能,当然也有人关注到这个方面
+1. [unused-files-webpack-plugin](https://github.com/tomchentw/unused-files-webpack-plugin)
