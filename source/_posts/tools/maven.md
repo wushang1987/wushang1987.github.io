@@ -4,6 +4,10 @@ date: 2017-04-16 11:48:08
 tags:
     - java
     - Tools
+categories:
+    - Tools
+banner:
+    - /img/tools.jpg
 ---
 # 记录maven 相关知识
 

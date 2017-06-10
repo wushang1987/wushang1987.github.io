@@ -4,6 +4,10 @@ date: 2017-04-16 11:50:05
 tags:
     - git
     - Tools
+categories:
+    - Tools
+banner:
+    - /img/tools.jpg
 ---
 
 

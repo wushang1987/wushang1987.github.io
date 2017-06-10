@@ -4,6 +4,10 @@ date: 2017-04-16 11:49:42
 tags:
     - git
     - Tools
+categories:
+    - Tools
+banner:
+    - /img/tools.jpg
 ---
 
 1.5 起步 - 初次运行 Git 前的配置

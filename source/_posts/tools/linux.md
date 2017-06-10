@@ -4,6 +4,10 @@ date: 2017-01-15 00:07:00
 tags:
     - linux
     - Tools
+categories:
+    - Tools
+banner:
+    - /img/tools.jpg
 ---
 
 top命令能显示系统内存。

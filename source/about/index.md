@@ -21,3 +21,7 @@ layout: "page"
 8. [egghead](https://egghead.io/users/188769)
 9. [jianshu](http://www.jianshu.com/u/e5a57e9ee81a)
 10. [CSDN](http://blog.csdn.net/wushang1987)
+11. [freecodecamp](https://www.freecodecamp.com/wushang1987)
+12. [cnblogs](http://www.cnblogs.com/brucehao/)
+13. [huaban](http://huaban.com/wwd-1987/)
+https://dribbble.com/wushang1987

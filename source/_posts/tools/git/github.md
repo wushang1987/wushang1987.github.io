@@ -4,6 +4,8 @@ date: 2017-06-04 10:20:16
 tags:
     -
 banner: /img/github-s.png
+categories:
+    - Tools
 ---
 
 近期痴迷github 的 Services 系列，写一写相关介绍，和大家分享。

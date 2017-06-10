@@ -4,6 +4,10 @@ date: 2017-04-16 11:49:13
 tags:
     - vscode
     - Tools
+categories:
+    - Tools
+banner:
+    - /img/tools.jpg
 ---
 # vscode
 
