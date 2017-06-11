@@ -45,15 +45,17 @@
             </a>
             <nav id="main-nav">
                 
-                    <a class="main-nav-link" href="/.">首页</a>
+                    <a class="main-nav-link" href="/.">HOME</a>
                 
                     <a class="main-nav-link" href="/archives">Archives</a>
                 
-                    <a class="main-nav-link" href="/categories">分类</a>
+                    <a class="main-nav-link" href="/categories">categories</a>
                 
-                    <a class="main-nav-link" href="/tags">标签</a>
+                    <a class="main-nav-link" href="/tags">Tags</a>
                 
-                    <a class="main-nav-link" href="/about">关于胖子</a>
+                    <a class="main-nav-link" href="/about">ABOUT</a>
+                
+                    <a class="main-nav-link" href="/categories/idea">IDEA</a>
                 
                     <a class="main-nav-link" href="https://github.com/wushang1987">GitHub</a>
                 
@@ -72,7 +74,7 @@
             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
@@ -91,10 +93,10 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Entradas',
+            POSTS: 'Posts',
             PAGES: 'Pages',
-            CATEGORIES: 'Categorias',
-            TAGS: 'Etiquetas',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
             UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
@@ -112,22 +114,24 @@
         <table class="menu outer">
             <tr>
                 
-                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                    <td><a class="main-nav-link" href="/.">HOME</a></td>
                 
                     <td><a class="main-nav-link" href="/archives">Archives</a></td>
                 
-                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                    <td><a class="main-nav-link" href="/categories">categories</a></td>
                 
-                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
                 
-                    <td><a class="main-nav-link" href="/about">关于胖子</a></td>
+                    <td><a class="main-nav-link" href="/about">ABOUT</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories/idea">IDEA</a></td>
                 
                     <td><a class="main-nav-link" href="https://github.com/wushang1987">GitHub</a></td>
                 
                 <td>
                     
     <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
     </div>
 
                 </td>
@@ -147,16 +151,16 @@
             <h2 id="name">wushang1987</h2>
             <h3 id="title">Web Developer &amp; Designer</h3>
             <span id="location"><i class="fa fa-map-marker"></i>xi`an, China</span>
-            <a id="follow" target="_blank" href="https://github.com/wushang1987">SEGUIR</a>
+            <a id="follow" target="_blank" href="https://github.com/wushang1987">FOLLOW</a>
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                69
-                <span>Entradas</span>
+                70
+                <span>posts</span>
             </div>
             <div class="article-info-block">
-                28
-                <span>Etiquetas</span>
+                29
+                <span>tags</span>
             </div>
         </div>
         
@@ -210,25 +214,15 @@
 
             
             <section id="main">
-    <article id="post-diary/痛苦的春天" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-MongoDB/概述" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
-        
-            
-	
-		<a href="/2017/02/28/diary/痛苦的春天/" itemprop="url">
-            <img src="/img/diary.jpg" class="article-banner" />
-        </a>
-	
-
-
-
         
         
             <header class="article-header">
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2017/02/28/diary/痛苦的春天/">痛苦的春天</a>
+            <a class="article-title" href="/2017/02/28/MongoDB/概述/">MongoDB</a>
         </h1>
     
 
@@ -237,22 +231,17 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/02/28/diary/痛苦的春天/">
+        <a href="/2017/02/28/MongoDB/概述/">
             <time datetime="2017-02-28T15:34:40.000Z" itemprop="datePublished">2017-02-28</time>
         </a>
     </div>
 
 
                         
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/diary/">diary</a>
-    </div>
-
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/日志/">日志</a>
+        <a class="tag-link" href="/tags/DB/">DB</a>
     </div>
 
                     </div>
@@ -263,7 +252,64 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>痛苦的春天<br>失去了一切</p>
+            <p>MongoDB以BSON格式的文档（Documents）形式存储。Databases中包含集合（Collections），集合（Collections）中存储文档（Documents）。</p>
+<p>BSON是一个二进制形式的JSON文档，它比JSON包含更多的数据类型。对于BSON规格，可参见bsonspec.org，也可参考BSON类型。</p>
+<p>Databases</p>
+<p>在MongoDB中，databases保存文档（Documents）的集合（Collections）。</p>
+<p>在Mongo Shell中，通过使用use <db>命令来选中database，就像下面的例子：</db></p>
+<p>use myDB<br>创建Database</p>
+<p>如果database不存在，MongoDB会在第一次为database存储数据的时候创建。因此，你可以直接切换到一个不存在的数据库，然后执行下面的语句：</p>
+<p>use myNewDB</p>
+<p>db.myNewCollection1.insert( { x: 1 } )<br>insert()操作会创建名为myNewDB的database和名为myNewCollection1的collection（如果他们不存在的话）。</p>
+<p>Collections</p>
+<p>MongoDB在collections中存储文档（documents）。Collections类似于关系型数据库中的表（tables）。</p>
+<p>创建Collection</p>
+<p>如果collection不存在，MongoDB会在第一次为collection存储数据的时候创建。</p>
+<p>db.myNewCollection2.insert( { x: 1 } )<br>db.myNewCollection3.createIndex( { y: 1 } )<br>无论是insert()还是createIndex()操作，都会创建它们各自指定的收集，如果他们不存在的话。</p>
+<p>显式创建</p>
+<p>MongoDB提供db.createCollection()方法来显式创建一个collection，同时还能设置各种选项，例如：设置最大尺寸和文档校验规则。如果你没有指定这些选项，那么你就不需要显式创建collection，因为MongoDB会在你创建第一个数据的时候自动创建collection。</p>
+<p>若要修改这些collection选择，可查看collMod。</p>
+<p>Documents校验</p>
+<p>3.2.x版本新增内容。</p>
+<p>默认情况下，collection不要求文档有相同的结构；例如，在一个collection的文档不必具有相同的fields，对于单个field在一个collection中的不同文档中可以是不同的数据类型。</p>
+<p>从MongoDB 3.2开始，你可以在对collection进行update和insert操作的时候执行文档（documents）校验规则。具体可参见文档验证的详细信息。</p>
+<p>Documents</p>
+<p>Document结构</p>
+<p>MongoDB的文件是由field和value对的结构组成，例如下面这样的结构：</p>
+<p>{<br>   field1: value1,<br>   field2: value2,<br>   field3: value3,<br>   …<br>   fieldN: valueN<br>}<br>value值可以是任何BSON数据类型，包括：其他document，数字，和document数组。</p>
+<p>例如下面的document，包含各种不同类型的值：</p>
+<p>var mydoc = {<br>    _id: ObjectId(“5099803df3f4948bd2f98391”),<br>    name: {<br>        first: “Alan”, last: “Turing”<br>    },<br>    birth: new Date(‘Jun 23, 1912’),<br>    death: new Date(‘Jun 07, 1954’),<br>    contribs: [ “Turing machine”, “Turing test”, “Turingery” ],<br>    views : NumberLong(1250000)<br>}<br>上面例子中的各fields有下列数据类型：</p>
+<p>_id：ObjectId类型<br>name：一个嵌入的document，包含first和last字段<br>birth和death：Date类型<br>contribs：字符串数组<br>views：NumberLong类型<br>Field名</p>
+<p>Field名是一个字符串。</p>
+<p>Documents中的filed名有下列限制：</p>
+<p>_id被保留用于主键；其值必须是集合中唯一的、不可变的、并且可以是数组以外的任何数据类型<br>不能以美元符号$开头<br>不能包含点字符.<br>不能包含空字符<br>Field Value限制</p>
+<p>对于索引的collections，索引字段中的值有最大长度限制。详情请参见Maximum Index Key Length。</p>
+<p>圆点符号</p>
+<p>MongoDB中使用圆点符号.访问数组中的元素，也可以访问嵌入式Documents的fields。</p>
+<p>Arrays数组</p>
+<p>通过圆点符号.来链接Arrays数组名字和从0开始的数字位置，来定位和访问一个元素数组：</p>
+<p>“<array>.<index>“<br>举例：对于下面的document：</index></array></p>
+<p>{<br>   …<br>   contribs: [ “Turing machine”, “Turing test”, “Turingery” ],<br>   …<br>}<br>要访问contribs数组中的第三个元素，可以这样访问：</p>
+<p>“contribs.2”<br>嵌入式Documents</p>
+<p>通过圆点符号.来链接嵌入式document的名字和field名，来定位和访问嵌入式document：</p>
+<p>“<embedded document="">.<field>“<br>举例：对于下面的document：</field></embedded></p>
+<p>{<br>   …<br>   name: { first: “Alan”, last: “Turing” },<br>   …<br>}<br>要访问name中的last字段，可以这样使用：</p>
+<p>“name.last”<br>Documents限制</p>
+<p>Documents有下面这些属性和限制：</p>
+<p>Document大小限制</p>
+<p>每个BSON文档的最大尺寸为16兆字节。</p>
+<p>最大文档大小有助于确保一个单个文档不会使用过量的内存，或通信过程中过大的带宽占用。</p>
+<p>若要存储超过最大尺寸的文档，MongoDB提供了GridFS API。可以看mongofiles和更多有关GridFS的文档</p>
+<p>Document Field顺序</p>
+<p>MongoDB中field的顺序默认是按照写操作的顺序来保存的，除了下面几种情况：</p>
+<p>_id总是document的第一个field<br>可能会导致文档中的字段的重新排序的更新，包括字段名重命名。<br>在2.6版本起，MongoDB开始积极地尝试保留document中field的顺序。</p>
+<p>_id字段</p>
+<p>_id字段有以下行为和限制：</p>
+<p>默认情况下，MongoDB会在创建collection时创建一个_id字段的唯一索引<br>id字段总是documents中的第一个字段。如果服务器接收到一个docuement，它的第一个字段不是id，那么服务器会将_id字段移在开头<br>_id字段可以是除了array数组之外的任何BSON数据格式<br>以下是存储_id值的常用选项：</p>
+<p>使用ObjectId<br>最好使用自然的唯一标识符，可以节省空间并避免额外的索引<br>生成一个自动递增的数字。请参阅创建一个自动递增序列字段<br>在您的应用程序代码中生成UUID。为了更高效的在collection和_id索引中存储UUID值，可以用BSON的BinData类型存储UUID。</p>
+<ul>
+<li>大部分MongoDB驱动客户端会包含_id字段，并且在发送insert操作的时候生成一个ObjectId。但是如果客户端发送一个不带_id字段的document，mongod会添加_id字段并产生一个ObjectId *</li>
+</ul>
 
         
         </div>
@@ -274,7 +320,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/02/28/diary/痛苦的春天/" data-id="cj3rf5l41001ib4d89p3epeyg" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/02/28/MongoDB/概述/" data-id="cj3supj16001btwd8p4yp47ck" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -342,7 +388,149 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/02/28/diary/痛苦的春天/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/02/28/diary/痛苦的春天/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/02/28/MongoDB/概述/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/02/28/MongoDB/概述/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-diary/痛苦的春天" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            
+	
+		<a href="/2017/02/28/diary/痛苦的春天/" itemprop="url">
+            <img src="/img/diary.jpg" class="article-banner" />
+        </a>
+	
+
+
+
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/02/28/diary/痛苦的春天/">痛苦的春天</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/02/28/diary/痛苦的春天/">
+            <time datetime="2017-02-28T15:34:40.000Z" itemprop="datePublished">2017-02-28</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/diary/">diary</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/日志/">日志</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>痛苦的春天<br>失去了一切</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://wushang1987.github.io/2017/02/28/diary/痛苦的春天/" data-id="cj3supj1d001htwd8qkiocsv0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://wushang1987.github.io/2017/02/28/diary/痛苦的春天/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/02/28/diary/痛苦的春天/">Comments</a>
     
 
         </footer>
@@ -421,7 +609,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/01/15/website/" data-id="cj3rf5k5o0008b4d85oi2vkrq" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/01/15/website/" data-id="cj3supik20009twd8wnrp87fa" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -489,7 +677,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/01/15/website/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/01/15/website/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/01/15/website/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/01/15/website/">Comments</a>
     
 
         </footer>
@@ -550,7 +738,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/01/15/计算机基础知识/YAML/" data-id="cj3rf5mrz003db4d85wvdjxhg" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/01/15/计算机基础知识/YAML/" data-id="cj3supj4p003htwd8wlb7hsmg" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -618,7 +806,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/01/15/计算机基础知识/YAML/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/01/15/计算机基础知识/YAML/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/01/15/计算机基础知识/YAML/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/01/15/计算机基础知识/YAML/">Comments</a>
     
 
         </footer>
@@ -693,7 +881,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/01/15/tools/linux/" data-id="cj3rf5mp1002jb4d824z9lsgf" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/01/15/tools/linux/" data-id="cj3supj4j003dtwd8w9lcxwcd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -761,7 +949,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/01/15/tools/linux/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/01/15/tools/linux/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/01/15/tools/linux/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/01/15/tools/linux/">Comments</a>
     
 
         </footer>
@@ -820,7 +1008,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/01/09/javascript/es6-技术/" data-id="cj3rf5l46001kb4d8ngqomsqf" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/01/09/javascript/es6-技术/" data-id="cj3supj1h001ktwd810r67tyr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -888,7 +1076,137 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/01/09/javascript/es6-技术/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/01/09/javascript/es6-技术/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/01/09/javascript/es6-技术/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/01/09/javascript/es6-技术/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-cloud/CloudFoundry" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/01/02/cloud/CloudFoundry/">Cloud Foundry</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/01/02/cloud/CloudFoundry/">
+            <time datetime="2017-01-02T14:20:53.000Z" itemprop="datePublished">2017-01-02</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/cloud/">cloud</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>Cloud Foundry是VMware推出的业界第一个开源PaaS云平台，它支持多种框架、语言、运行时环境、云平台及应用服务，使开发人员能够在几秒钟内进行应用程序的部署和扩展，无需担心任何基础架构的问题。同时，它本身是一个基于Ruby on Rails的由多个相对独立的子系统通过消息机制组成的分布式系统，使平台在各层级都可水平扩展，既能在大型数据中心里运行，也能运行在一台桌面电脑中，二者使用相同的代码库。[1]<br>作为新一代云应用平台，Cloud Foundry专为私有云计算环境、企业级数据中心和公有云服务提供商所打造。Cloud Foundry云平台可以简化现代应用程序的开发、交付和运行过程，在面对多种公有云和私有云选择、符合业界标准的高效开发框架以及应用基础设施服务时，可以显著提高开发者在云环境中部署和运行应用程序的能力</p>
+<p>Cloud Foundry是由相对独立的多个模块构成的分布式系统，每个模块单独存在和运行，各模块之间通过消息机制进行通信。Cloud Foundry各模块本身是基于Ruby语言开发的，每个部分可以认为拿来即可运行，不存在编译等过程。Cloud Foundry云平台整体逻辑组成如右下图所示：<br>Cloud Foundry云平台逻辑视图<br>Cloud Foundry云平台逻辑视图<br>从图中可以看到，Cloud Foundry云平台是完全模块化的分布式系统，各个模块之间是相互独立的，通过消息总线进行相互连接和通信，这种结构不仅使系统各模块之间的耦合度降低，而且使系统功能容易扩充。此外，开发人员可以通过VMC命令行工具或STS插件方便的部署应用程序到Cloud Foundry云平台上，最终用户可以通过浏览器访问运行在Cloud Foundry云平台上的应用。所有的访问请求都通过Router进行转发，分别由云控制器Cloud Controller和应用运行代理DEA模块进行请求响应，应用生命周期管理Health Manager模块负责监控和管理整个应用在云平台上的正常运行，云平台的各种应用服务由Services模块提供，可以灵活扩展。Cloud Foundry云平台整体架构如右下图所示：[2]<br>Cloud Foundry云平台整体架构<br>Cloud Foundry云平台整体架构<br>从图中可以看到，Cloud Foundry云平台主要有Router、Cloud Controller、Health Manager、DEA、NFS、NATS、Cloud Controller Database以及Service等模块组成。这些模块协同合作，通过特定的消息传输机制和API接口进行通信，就可以使整个云平台正常运行。由于在集群环境下每个模块都有多个部署节点，从而保证了云平台的可靠性和弹性动态扩展的需求，使得应用程序可以稳定可靠的运行在Cloud Foundry云平台上。[2] </p>
+<p>相关连接</p>
+<p><a href="http://baike.baidu.com/link?url=GtPRRFoqg-UQcR0gD0owycwkzUC0UGEs2T5fCg_y8urZ_YwIl-juvVukdFAq8wIathvBfglSZ1sY0mrHDbyvVa" target="_blank" rel="external">http://baike.baidu.com/link?url=GtPRRFoqg-UQcR0gD0owycwkzUC0UGEs2T5fCg_y8urZ_YwIl-juvVukdFAq8wIathvBfglSZ1sY0mrHDbyvVa</a></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://wushang1987.github.io/2017/01/02/cloud/CloudFoundry/" data-id="cj3supj0b000vtwd8p3sehffz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://wushang1987.github.io/2017/01/02/cloud/CloudFoundry/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/01/02/cloud/CloudFoundry/">Comments</a>
     
 
         </footer>
@@ -949,7 +1267,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/01/02/css/oocss/" data-id="cj3rf5l0z000tb4d8dnjfq0sk" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/01/02/css/oocss/" data-id="cj3supj0e000wtwd8f1d93988" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1017,7 +1335,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/01/02/css/oocss/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/01/02/css/oocss/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/01/02/css/oocss/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/01/02/css/oocss/">Comments</a>
     
 
         </footer>
@@ -1093,7 +1411,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/01/02/diary/2017/" data-id="cj3rf5l0v000sb4d894wjju8u" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/01/02/diary/2017/" data-id="cj3supj110018twd8wwpqgzxv" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1161,137 +1479,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/01/02/diary/2017/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/01/02/diary/2017/">Comentarios</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-cloud/CloudFoundry" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/01/02/cloud/CloudFoundry/">Cloud Foundry</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/01/02/cloud/CloudFoundry/">
-            <time datetime="2017-01-02T14:20:53.000Z" itemprop="datePublished">2017-01-02</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/cloud/">cloud</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>Cloud Foundry是VMware推出的业界第一个开源PaaS云平台，它支持多种框架、语言、运行时环境、云平台及应用服务，使开发人员能够在几秒钟内进行应用程序的部署和扩展，无需担心任何基础架构的问题。同时，它本身是一个基于Ruby on Rails的由多个相对独立的子系统通过消息机制组成的分布式系统，使平台在各层级都可水平扩展，既能在大型数据中心里运行，也能运行在一台桌面电脑中，二者使用相同的代码库。[1]<br>作为新一代云应用平台，Cloud Foundry专为私有云计算环境、企业级数据中心和公有云服务提供商所打造。Cloud Foundry云平台可以简化现代应用程序的开发、交付和运行过程，在面对多种公有云和私有云选择、符合业界标准的高效开发框架以及应用基础设施服务时，可以显著提高开发者在云环境中部署和运行应用程序的能力</p>
-<p>Cloud Foundry是由相对独立的多个模块构成的分布式系统，每个模块单独存在和运行，各模块之间通过消息机制进行通信。Cloud Foundry各模块本身是基于Ruby语言开发的，每个部分可以认为拿来即可运行，不存在编译等过程。Cloud Foundry云平台整体逻辑组成如右下图所示：<br>Cloud Foundry云平台逻辑视图<br>Cloud Foundry云平台逻辑视图<br>从图中可以看到，Cloud Foundry云平台是完全模块化的分布式系统，各个模块之间是相互独立的，通过消息总线进行相互连接和通信，这种结构不仅使系统各模块之间的耦合度降低，而且使系统功能容易扩充。此外，开发人员可以通过VMC命令行工具或STS插件方便的部署应用程序到Cloud Foundry云平台上，最终用户可以通过浏览器访问运行在Cloud Foundry云平台上的应用。所有的访问请求都通过Router进行转发，分别由云控制器Cloud Controller和应用运行代理DEA模块进行请求响应，应用生命周期管理Health Manager模块负责监控和管理整个应用在云平台上的正常运行，云平台的各种应用服务由Services模块提供，可以灵活扩展。Cloud Foundry云平台整体架构如右下图所示：[2]<br>Cloud Foundry云平台整体架构<br>Cloud Foundry云平台整体架构<br>从图中可以看到，Cloud Foundry云平台主要有Router、Cloud Controller、Health Manager、DEA、NFS、NATS、Cloud Controller Database以及Service等模块组成。这些模块协同合作，通过特定的消息传输机制和API接口进行通信，就可以使整个云平台正常运行。由于在集群环境下每个模块都有多个部署节点，从而保证了云平台的可靠性和弹性动态扩展的需求，使得应用程序可以稳定可靠的运行在Cloud Foundry云平台上。[2] </p>
-<p>相关连接</p>
-<p><a href="http://baike.baidu.com/link?url=GtPRRFoqg-UQcR0gD0owycwkzUC0UGEs2T5fCg_y8urZ_YwIl-juvVukdFAq8wIathvBfglSZ1sY0mrHDbyvVa" target="_blank" rel="external">http://baike.baidu.com/link?url=GtPRRFoqg-UQcR0gD0owycwkzUC0UGEs2T5fCg_y8urZ_YwIl-juvVukdFAq8wIathvBfglSZ1sY0mrHDbyvVa</a></p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://wushang1987.github.io/2017/01/02/cloud/CloudFoundry/" data-id="cj3rf5l08000pb4d8681rpv1p" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://wushang1987.github.io/2017/01/02/cloud/CloudFoundry/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/01/02/cloud/CloudFoundry/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/01/02/diary/2017/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/01/02/diary/2017/">Comments</a>
     
 
         </footer>
@@ -1361,7 +1549,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2016/11/22/diary/新的开始/" data-id="cj3rf5l1m000yb4d87fzik6im" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2016/11/22/diary/新的开始/" data-id="cj3supj0v0015twd8bt6xj432" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1429,7 +1617,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2016/11/22/diary/新的开始/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2016/11/22/diary/新的开始/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2016/11/22/diary/新的开始/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2016/11/22/diary/新的开始/">Comments</a>
     
 
         </footer>
@@ -1440,7 +1628,7 @@
 
 
     <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/page/6/">&laquo; Anterior</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span>
+        <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span>
     </nav>
 </section>
             
@@ -1448,9 +1636,47 @@
    
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Recientes</h3>
+        <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/06/11/diary/2017-6-11/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/img/diary.jpg)" alt="how to writer math in html" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/diary/">diary</a></p>
+                            <p class="item-title"><a href="/2017/06/11/diary/2017-6-11/" class="title">how to writer math in html</a></p>
+                            <p class="item-date"><time datetime="2017-06-11T14:55:46.000Z" itemprop="datePublished">2017-06-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/06/11/tools/chrome/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/img/tools.jpg)" alt="chrome 使用技巧" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tools/">Tools</a></p>
+                            <p class="item-title"><a href="/2017/06/11/tools/chrome/" class="title">chrome 使用技巧</a></p>
+                            <p class="item-date"><time datetime="2017-06-11T13:18:04.000Z" itemprop="datePublished">2017-06-11</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1458,15 +1684,15 @@
                             <a href="/2017/06/10/math/线性代数/" class="thumbnail">
     
     
-        <span style="background-image:url(/img/learning.png)" alt="线性代数" class="thumbnail-image"></span>
+        <span style="background-image:url(/img/learning.png)" alt="Linear Algebra" class="thumbnail-image"></span>
     
 </a>
 
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/math/">math</a></p>
-                            <p class="item-title"><a href="/2017/06/10/math/线性代数/" class="title">线性代数</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Mathematics/">Mathematics</a></p>
+                            <p class="item-title"><a href="/2017/06/10/math/线性代数/" class="title">Linear Algebra</a></p>
                             <p class="item-date"><time datetime="2017-06-10T15:03:00.000Z" itemprop="datePublished">2017-06-10</time></p>
                         </div>
                     </li>
@@ -1477,15 +1703,15 @@
                             <a href="/2017/06/10/想法/" class="thumbnail">
     
     
-        <span style="background-image:url(/img/diary.jpg)" alt="想法" class="thumbnail-image"></span>
+        <span style="background-image:url(/img/diary.jpg)" alt="chrome markdown tools" class="thumbnail-image"></span>
     
 </a>
 
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2017/06/10/想法/" class="title">想法</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/idea/">idea</a></p>
+                            <p class="item-title"><a href="/2017/06/10/想法/" class="title">chrome markdown tools</a></p>
                             <p class="item-date"><time datetime="2017-06-10T15:02:31.000Z" itemprop="datePublished">2017-06-10</time></p>
                         </div>
                     </li>
@@ -1509,44 +1735,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/06/10/machine-learning/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/img/learning.png)" alt="Machine-Learning" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2017/06/10/machine-learning/" class="title">Machine-Learning</a></p>
-                            <p class="item-date"><time datetime="2017-06-10T13:00:46.000Z" itemprop="datePublished">2017-06-10</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/06/10/nodejs/node8/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/img/nodejs.png)" alt="Node 8" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/nodejs/">nodejs</a></p>
-                            <p class="item-title"><a href="/2017/06/10/nodejs/node8/" class="title">Node 8</a></p>
-                            <p class="item-date"><time datetime="2017-06-10T01:36:48.000Z" itemprop="datePublished">2017-06-10</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1554,43 +1742,43 @@
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Categorias</h3>
+        <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/diary/">diary</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/math/">math</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Mathematics/">Mathematics</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/diary/">diary</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/idea/">idea</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Archivos</h3>
+        <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">44</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Etiquetas</h3>
+        <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/">-machine-learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">-面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DB/">DB</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Security/">Security</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/">Tools</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cloud/">cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">diary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/electron/">electron</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/">math</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/srping/">srping</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/website/">website</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端知识/">前端知识</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多媒体/">多媒体</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/">-machine-learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">-面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DB/">DB</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathematics/">Mathematics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Security/">Security</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/">Tools</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cloud/">cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">diary</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/electron/">electron</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/srping/">srping</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/website/">website</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端知识/">前端知识</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多媒体/">多媒体</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Nube de etiquetas</h3>
+        <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/machine-learning/" style="font-size: 10px;">-machine-learning</a> <a href="/tags/面试/" style="font-size: 10px;">-面试</a> <a href="/tags/DB/" style="font-size: 15px;">DB</a> <a href="/tags/Security/" style="font-size: 10px;">Security</a> <a href="/tags/Tools/" style="font-size: 18.33px;">Tools</a> <a href="/tags/cloud/" style="font-size: 10px;">cloud</a> <a href="/tags/css/" style="font-size: 11.67px;">css</a> <a href="/tags/diary/" style="font-size: 10px;">diary</a> <a href="/tags/eclipse/" style="font-size: 11.67px;">eclipse</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/git/" style="font-size: 11.67px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/js/" style="font-size: 13.33px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/spring/" style="font-size: 16.67px;">spring</a> <a href="/tags/srping/" style="font-size: 10px;">srping</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/website/" style="font-size: 10px;">website</a> <a href="/tags/前端知识/" style="font-size: 11.67px;">前端知识</a> <a href="/tags/基础/" style="font-size: 11.67px;">基础</a> <a href="/tags/多媒体/" style="font-size: 10px;">多媒体</a> <a href="/tags/日志/" style="font-size: 11.67px;">日志</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a>
+            <a href="/tags/machine-learning/" style="font-size: 10px;">-machine-learning</a> <a href="/tags/面试/" style="font-size: 10px;">-面试</a> <a href="/tags/DB/" style="font-size: 15px;">DB</a> <a href="/tags/Mathematics/" style="font-size: 10px;">Mathematics</a> <a href="/tags/Security/" style="font-size: 10px;">Security</a> <a href="/tags/Tools/" style="font-size: 18.33px;">Tools</a> <a href="/tags/cloud/" style="font-size: 10px;">cloud</a> <a href="/tags/css/" style="font-size: 11.67px;">css</a> <a href="/tags/diary/" style="font-size: 11.67px;">diary</a> <a href="/tags/eclipse/" style="font-size: 11.67px;">eclipse</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/git/" style="font-size: 11.67px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 11.67px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/js/" style="font-size: 13.33px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/spring/" style="font-size: 16.67px;">spring</a> <a href="/tags/srping/" style="font-size: 10px;">srping</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/website/" style="font-size: 10px;">website</a> <a href="/tags/前端知识/" style="font-size: 11.67px;">前端知识</a> <a href="/tags/基础/" style="font-size: 11.67px;">基础</a> <a href="/tags/多媒体/" style="font-size: 10px;">多媒体</a> <a href="/tags/日志/" style="font-size: 11.67px;">日志</a> <a href="/tags/机器学习/" style="font-size: 10px;">机器学习</a>
         </div>
     </div>
 
     
         
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">Links</h3>
+        <h3 class="widget-title">links</h3>
         <div class="widget">
             <ul>
                 
