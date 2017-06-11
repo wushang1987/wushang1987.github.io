@@ -2,7 +2,9 @@
 title: Machine-Learning
 date: 2017-06-10 21:00:46
 tags:
-    -machine-learning
+    - Machine-learning
+categories:
+    - Machine-learning
 banner: /img/learning.png
 ---
 

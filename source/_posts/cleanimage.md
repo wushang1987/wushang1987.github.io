@@ -3,6 +3,8 @@ layout: clear
 title: 删除冗余图片
 date: 2017-06-04 18:56:25
 tags:
+    - idea
+categories: idea
 banner: /img/kill.jpg
 ---
 

@@ -24,3 +24,7 @@ Buffers/cached：磁盘缓存的大小。
 ## 查看版本号
 
 lsb_release -a
+
+[Ubuntu常用命令大全_Linux系统管理_操作系统_希赛网](http://www.educity.cn/linux/660186.html)
+
+[【Linux】Linux中常用操作命令 - 大牛笔记 - 博客园](http://www.cnblogs.com/laov/p/3541414.html)
