@@ -55,7 +55,7 @@
                 
                     <a class="main-nav-link" href="/about">ABOUT</a>
                 
-                    <a class="main-nav-link" href="/categories/IDEA">IDEA</a>
+                    <a class="main-nav-link" href="/categories/idea">IDEA</a>
                 
                     <a class="main-nav-link" href="https://github.com/wushang1987">GitHub</a>
                 
@@ -124,7 +124,7 @@
                 
                     <td><a class="main-nav-link" href="/about">ABOUT</a></td>
                 
-                    <td><a class="main-nav-link" href="/categories/IDEA">IDEA</a></td>
+                    <td><a class="main-nav-link" href="/categories/idea">IDEA</a></td>
                 
                     <td><a class="main-nav-link" href="https://github.com/wushang1987">GitHub</a></td>
                 
@@ -214,135 +214,6 @@
 
             
             <section id="main">
-    <article id="post-css/oocss" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/01/02/css/oocss/">oocss</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/01/02/css/oocss/">
-            <time datetime="2017-01-02T14:20:53.000Z" itemprop="datePublished">2017-01-02</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/css/">css</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p><a href="http://www.w3cplus.com/css/oocss-concept" target="_blank" rel="external">http://www.w3cplus.com/css/oocss-concept</a></p>
-<p><a href="http://www.oschina.net/question/179699_75159" target="_blank" rel="external">http://www.oschina.net/question/179699_75159</a></p>
-<p>“Object Oriented”直译就是面向对象，对于这个词，大家并不陌生，但是加上一个CSS也就是说Object Oriented CSS，对于这个还是第一次见过，被叫作OOCSS(面向对象的ＣＳＳ)，其实这个东西早在2008年被提出，有些同学也在自己的项目中用过了。但有很多同学并不清楚，就拿我来说，我一开始还以为OOCSS是一个新语言或者是CSS框架，其实都不是，他只不过是一种新的写法。那么下面就通过“什么是OOCSS”,“OOCSS理论”等几个部分和大家一起来学习OOCSS。</p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://wushang1987.github.io/2017/01/02/css/oocss/" data-id="cj3vhzmj300144cd8m13i9kg7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://wushang1987.github.io/2017/01/02/css/oocss/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/01/02/css/oocss/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <article id="post-diary/2017" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -409,7 +280,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/01/02/diary/2017/" data-id="cj3vhzmjg001f4cd8juz8fxkx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://wushang1987.github.io/2017/01/02/diary/2017/" data-id="cj3vi18uv001ahkd8yzjlt4ze" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -487,6 +358,135 @@
 
 
 
+    <article id="post-css/oocss" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/01/02/css/oocss/">oocss</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/01/02/css/oocss/">
+            <time datetime="2017-01-02T14:20:53.000Z" itemprop="datePublished">2017-01-02</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/css/">css</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p><a href="http://www.w3cplus.com/css/oocss-concept" target="_blank" rel="external">http://www.w3cplus.com/css/oocss-concept</a></p>
+<p><a href="http://www.oschina.net/question/179699_75159" target="_blank" rel="external">http://www.oschina.net/question/179699_75159</a></p>
+<p>“Object Oriented”直译就是面向对象，对于这个词，大家并不陌生，但是加上一个CSS也就是说Object Oriented CSS，对于这个还是第一次见过，被叫作OOCSS(面向对象的ＣＳＳ)，其实这个东西早在2008年被提出，有些同学也在自己的项目中用过了。但有很多同学并不清楚，就拿我来说，我一开始还以为OOCSS是一个新语言或者是CSS框架，其实都不是，他只不过是一种新的写法。那么下面就通过“什么是OOCSS”,“OOCSS理论”等几个部分和大家一起来学习OOCSS。</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://wushang1987.github.io/2017/01/02/css/oocss/" data-id="cj3vi18va001phkd85z2j19t2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://wushang1987.github.io/2017/01/02/css/oocss/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/01/02/css/oocss/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-cloud/CloudFoundry" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -539,7 +539,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/01/02/cloud/CloudFoundry/" data-id="cj3vhzmj100124cd83gy5pizs" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://wushang1987.github.io/2017/01/02/cloud/CloudFoundry/" data-id="cj3vi18uo0012hkd8uugul69h" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -677,7 +677,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2016/11/22/diary/新的开始/" data-id="cj3vhzmjo001p4cd8ak1je91e" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://wushang1987.github.io/2016/11/22/diary/新的开始/" data-id="cj3vi18v3001jhkd8r75diss4" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
