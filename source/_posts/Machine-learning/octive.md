@@ -1,6 +1,6 @@
 ---
 title: octive
-date: 2017-06-10 22:52:35
+date: 2017-06-12 22:26:35
 tags:
     - Machine-learning
 categories:
@@ -16,7 +16,11 @@ banner:
 [Octave入门 - 小菜鸟的起飞之路 - 博客频道 - CSDN.NET](http://blog.csdn.net/nishizhenlige/article/details/21662171)
 
 http://blog.csdn.net/cstopcoder/article/details/40477431
-http://www.cnblogs.com/leezx/p/5635056.html
+
+
+这篇讲的好
+
+[Octave入门 - Bioinformation - 博客园](http://www.cnblogs.com/leezx/p/5635056.html)
 
 
 

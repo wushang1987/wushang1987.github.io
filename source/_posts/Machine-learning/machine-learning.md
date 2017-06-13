@@ -1,6 +1,6 @@
 ---
 title: Machine-Learning
-date: 2017-06-10 21:00:46
+date: 2017-06-12 22:28:01
 tags:
     - Machine-learning
 categories:
@@ -19,7 +19,7 @@ banner: /img/learning.png
 黄泽武:
 http://www.jianshu.com/u/335306f03fb9
 
-## 资源：
+## online：
 stanford cs229：
 
 http://cs229.stanford.edu/
@@ -28,7 +28,11 @@ Andrew Ng:
 斯坦福大学公开课 ：机器学习课程
 http://open.163.com/special/opencourse/machinelearning.html
 
-## 用到的软件：
+## blogs
+
+[机器学习 - 标签 - Bioinformation - 博客园](http://www.cnblogs.com/leezx/tag/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/)
+
+## software：
 
 matlab：
 https://cn.mathworks.com/products/matlab.html
