@@ -75,7 +75,7 @@
             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="検索" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
@@ -94,10 +94,10 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: '投稿',
+            POSTS: 'Entradas',
             PAGES: 'Pages',
-            CATEGORIES: 'カテゴリ',
-            TAGS: 'タグ',
+            CATEGORIES: 'Categorias',
+            TAGS: 'Etiquetas',
             UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
@@ -132,7 +132,7 @@
                 <td>
                     
     <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="検索" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
     </div>
 
                 </td>
@@ -152,16 +152,16 @@
             <h2 id="name">wushang1987</h2>
             <h3 id="title">Web Developer &amp; Designer</h3>
             <span id="location"><i class="fa fa-map-marker"></i>xi`an, China</span>
-            <a id="follow" target="_blank" href="https://github.com/wushang1987">フォローする</a>
+            <a id="follow" target="_blank" href="https://github.com/wushang1987">SEGUIR</a>
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                76
-                <span>投稿</span>
+                77
+                <span>Entradas</span>
             </div>
             <div class="article-info-block">
-                28
-                <span>タグ</span>
+                31
+                <span>Etiquetas</span>
             </div>
         </div>
         
@@ -215,7 +215,7 @@
 
             
             <section id="main">
-    <article id="post-java/base/线程" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-java/base/IO/overview" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -223,7 +223,7 @@
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2017/04/16/java/base/线程/">java 线程</a>
+            <a class="article-title" href="/2017/04/16/java/base/IO/overview/">java IO</a>
         </h1>
     
 
@@ -232,8 +232,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/04/16/java/base/线程/">
-            <time datetime="2017-04-16T03:32:34.000Z" itemprop="datePublished">2017-04-16</time>
+        <a href="/2017/04/16/java/base/IO/overview/">
+            <time datetime="2017-04-16T03:32:55.000Z" itemprop="datePublished">2017-04-16</time>
         </a>
     </div>
 
@@ -253,10 +253,14 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h2 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h2><p>比如一个 ArrayList 类，在添加一个元素的时候，它可能会有两步来完成：1. 在 Items[Size] 的位置存放此元素；2. 增大 Size 的值。<br>在单线程运行的情况下，如果 Size = 0，添加一个元素后，此元素在位置 0，而且 Size=1；<br>而如果是在多线程情况下，比如有两个线程，线程 A 先将元素1存放在位置 0。但是此时 CPU 调度线程A暂停，线程 B 得到运行的机会。线程B向此 ArrayList 添加元素2，因为此时 Size 仍然等于 0 （注意，我们假设的是添加一个元素是要两个步骤，而线程A仅仅完成了步骤1），所以线程B也将元素存放在位置0。然后线程A和线程B都继续运行，都增加 Size 的值，结果Size等于2。<br>那好，我们来看看 ArrayList 的情况，期望的元素应该有2个，而实际只有一个元素，造成丢失元素，而且Size 等于 2。这就是“线程不安全”了。</p>
-<h1 id="原子操作"><a href="#原子操作" class="headerlink" title="原子操作"></a>原子操作</h1><p>“原子操作(atomic operation)是不需要synchronized”，这是Java多线程编程的老生常谈了。所谓原子操作是指不会被线程调度机制打断的操作；这种操作一旦开始，就一直运行到结束，中间不会有任何 context switch （切[1]  换到另一个线程）。</p>
-<p>在多进程（线程）访问资源时，能够确保所有其他的进程（线程）都不在同一时间内访问相同的资源。原子操作（atomic operation）是不需要synchronized，这是Java多线程编程的老生常谈了。所谓原子操作是指不会被线程调度机制打断的操作；这种操作一旦开始，就一直运行到结束，中间不会有任何 context switch （切换到另一个线程）。通常所说的原子操作包括对非long和double型的primitive进行赋值，以及返回这两者之外的primitive。之所以要把它们排除在外是因为它们都比较大，而JVM的设计规范又没有要求读操作和赋值操作必须是原子操作（JVM可以试着去这么作，但并不保证）。<br>首先处理器会自动保证基本的内存操作的原子性。处理器保证从系统内存当中读取或者写入一个字节是原子的，意思是当一个处理器读取一个字节时，其他处理器不能访问这个字节的内存地址。奔腾6和最新的处理器能自动保证单处理器对同一个缓存行里进行16/32/64位的操作是原子的，但是复杂的内存操作处理器不能自动保证其原子性，比如跨总线宽度，跨多个缓存行，跨页表的访问。但是处理器提供总线锁定和缓存锁定两个机制来保证复杂内存操作的原子性。</p>
-<p>原子操作是不可分割的，在执行完毕之前不会被任何其它任务或事件中断。在单处理器系统（UniProcessor）中，能够在单条指令中完成的操作都可以认为是” 原子操作”，因为中断只能发生于指令之间。这也是某些CPU指令系统中引入了test_and_set、test_and_clear等指令用于临界资源互斥的原因。但是，在对称多处理器（Symmetric Multi-Processor）结构中就不同了，由于系统中有多个处理器在独立地运行，即使能在单条指令中完成的操作也有可能受到干扰。我们以decl （递减指令）为例，这是一个典型的”读－改－写”过程，涉及两次内存访问。设想在不同CPU运行的两个进程都在递减某个计数值，可能发生的情况是：<br>⒈ CPU A(CPU A上所运行的进程，以下同）从内存单元把当前计数值⑵装载进它的寄存器中；<br>⒉ CPU B从内存单元把当前计数值⑵装载进它的寄存器中。<br>⒊ CPU A在它的寄存器中将计数值递减为1；<br>⒋ CPU B在它的寄存器中将计数值递减为1；<br>⒌ CPU A把修改后的计数值⑴写回内存单元。<br>⒍ CPU B把修改后的计数值⑴写回内存单元。<br>我们看到，内存里的计数值应该是0，然而它却是1。如果该计数值是一个共享资源的引用计数，每个进程都在递减后把该值与0进行比较，从而确定是否需要释放该共享资源。这时，两个进程都去掉了对该共享资源的引用，但没有一个进程能够释放它–两个进程都推断出：计数值是1，共享资源仍然在被使用。</p>
+            <h2 id="InputStream"><a href="#InputStream" class="headerlink" title="InputStream"></a>InputStream</h2><p>read<br>ByteArrayInputStream<br>FilterInputStream</p>
+<p>PipedInputString<br>PipedOutputStream</p>
+<p>SequenceInputStream<br>Enumeration</p>
+<p>DataInputStream<br>DataOutputStream</p>
+<h2 id="OutputStream"><a href="#OutputStream" class="headerlink" title="OutputStream"></a>OutputStream</h2><p>write<br>FilterOutputStream<br>ByteArrayOutputStream<br>PipedOutputStream</p>
+<h2 id="Decorator"><a href="#Decorator" class="headerlink" title="Decorator"></a>Decorator</h2><p>RandomAccessFile</p>
+<p>File<br>文件和目录路径名的抽象表示形式。 </p>
+<p>FilenameFilter<br>实现此接口的类实例可用于过滤器文件名。</p>
 
         
         </div>
@@ -267,7 +271,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/线程/" data-id="cj3vkhc3y005fzod8qzkwkw25" class="article-share-link"><i class="fa fa-share"></i>共有</a>
+    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/IO/overview/" data-id="cj5ovtcmv006he8d80gwt2k6f" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -335,7 +339,137 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/16/java/base/线程/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/base/线程/">コメント</a>
+        <a href="https://wushang1987.github.io/2017/04/16/java/base/IO/overview/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/base/IO/overview/">Comentarios</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-java/base/线程" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/04/16/java/base/线程/">java 线程</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/04/16/java/base/线程/">
+            <time datetime="2017-04-16T03:32:34.000Z" itemprop="datePublished">2017-04-16</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/java/">java</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h2><p>比如一个 ArrayList 类，在添加一个元素的时候，它可能会有两步来完成：1. 在 Items[Size] 的位置存放此元素；2. 增大 Size 的值。<br>在单线程运行的情况下，如果 Size = 0，添加一个元素后，此元素在位置 0，而且 Size=1；<br>而如果是在多线程情况下，比如有两个线程，线程 A 先将元素1存放在位置 0。但是此时 CPU 调度线程A暂停，线程 B 得到运行的机会。线程B向此 ArrayList 添加元素2，因为此时 Size 仍然等于 0 （注意，我们假设的是添加一个元素是要两个步骤，而线程A仅仅完成了步骤1），所以线程B也将元素存放在位置0。然后线程A和线程B都继续运行，都增加 Size 的值，结果Size等于2。<br>那好，我们来看看 ArrayList 的情况，期望的元素应该有2个，而实际只有一个元素，造成丢失元素，而且Size 等于 2。这就是“线程不安全”了。</p>
+<h1 id="原子操作"><a href="#原子操作" class="headerlink" title="原子操作"></a>原子操作</h1><p>“原子操作(atomic operation)是不需要synchronized”，这是Java多线程编程的老生常谈了。所谓原子操作是指不会被线程调度机制打断的操作；这种操作一旦开始，就一直运行到结束，中间不会有任何 context switch （切[1]  换到另一个线程）。</p>
+<p>在多进程（线程）访问资源时，能够确保所有其他的进程（线程）都不在同一时间内访问相同的资源。原子操作（atomic operation）是不需要synchronized，这是Java多线程编程的老生常谈了。所谓原子操作是指不会被线程调度机制打断的操作；这种操作一旦开始，就一直运行到结束，中间不会有任何 context switch （切换到另一个线程）。通常所说的原子操作包括对非long和double型的primitive进行赋值，以及返回这两者之外的primitive。之所以要把它们排除在外是因为它们都比较大，而JVM的设计规范又没有要求读操作和赋值操作必须是原子操作（JVM可以试着去这么作，但并不保证）。<br>首先处理器会自动保证基本的内存操作的原子性。处理器保证从系统内存当中读取或者写入一个字节是原子的，意思是当一个处理器读取一个字节时，其他处理器不能访问这个字节的内存地址。奔腾6和最新的处理器能自动保证单处理器对同一个缓存行里进行16/32/64位的操作是原子的，但是复杂的内存操作处理器不能自动保证其原子性，比如跨总线宽度，跨多个缓存行，跨页表的访问。但是处理器提供总线锁定和缓存锁定两个机制来保证复杂内存操作的原子性。</p>
+<p>原子操作是不可分割的，在执行完毕之前不会被任何其它任务或事件中断。在单处理器系统（UniProcessor）中，能够在单条指令中完成的操作都可以认为是” 原子操作”，因为中断只能发生于指令之间。这也是某些CPU指令系统中引入了test_and_set、test_and_clear等指令用于临界资源互斥的原因。但是，在对称多处理器（Symmetric Multi-Processor）结构中就不同了，由于系统中有多个处理器在独立地运行，即使能在单条指令中完成的操作也有可能受到干扰。我们以decl （递减指令）为例，这是一个典型的”读－改－写”过程，涉及两次内存访问。设想在不同CPU运行的两个进程都在递减某个计数值，可能发生的情况是：<br>⒈ CPU A(CPU A上所运行的进程，以下同）从内存单元把当前计数值⑵装载进它的寄存器中；<br>⒉ CPU B从内存单元把当前计数值⑵装载进它的寄存器中。<br>⒊ CPU A在它的寄存器中将计数值递减为1；<br>⒋ CPU B在它的寄存器中将计数值递减为1；<br>⒌ CPU A把修改后的计数值⑴写回内存单元。<br>⒍ CPU B把修改后的计数值⑴写回内存单元。<br>我们看到，内存里的计数值应该是0，然而它却是1。如果该计数值是一个共享资源的引用计数，每个进程都在递减后把该值与0进行比较，从而确定是否需要释放该共享资源。这时，两个进程都去掉了对该共享资源的引用，但没有一个进程能够释放它–两个进程都推断出：计数值是1，共享资源仍然在被使用。</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/线程/" data-id="cj5ovtcbx0054e8d8f8odm8w9" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://wushang1987.github.io/2017/04/16/java/base/线程/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/base/线程/">Comentarios</a>
     
 
         </footer>
@@ -398,7 +532,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/注释/" data-id="cj3vkhc3u005bzod8c0lk3za2" class="article-share-link"><i class="fa fa-share"></i>共有</a>
+    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/注释/" data-id="cj5ovtccj005ae8d8ugyyh1ig" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -466,7 +600,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/16/java/base/注释/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/base/注释/">コメント</a>
+        <a href="https://wushang1987.github.io/2017/04/16/java/base/注释/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/base/注释/">Comentarios</a>
     
 
         </footer>
@@ -530,7 +664,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/Annotation/" data-id="cj3vkhc3j0055zod8wweb0fw5" class="article-share-link"><i class="fa fa-share"></i>共有</a>
+    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/Annotation/" data-id="cj5ovtcbu0053e8d8izbh0vvc" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -598,7 +732,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/16/java/base/Annotation/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/base/Annotation/">コメント</a>
+        <a href="https://wushang1987.github.io/2017/04/16/java/base/Annotation/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/base/Annotation/">Comentarios</a>
     
 
         </footer>
@@ -656,7 +790,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/java.io.file/" data-id="cj3vkhc3h0054zod8irckst7d" class="article-share-link"><i class="fa fa-share"></i>共有</a>
+    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/java.io.file/" data-id="cj5ovtcdr005re8d8iep778ju" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -724,7 +858,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/16/java/base/java.io.file/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/base/java.io.file/">コメント</a>
+        <a href="https://wushang1987.github.io/2017/04/16/java/base/java.io.file/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/base/java.io.file/">Comentarios</a>
     
 
         </footer>
@@ -844,7 +978,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/Scanner/" data-id="cj3vkhc3p0057zod8o1kuirbc" class="article-share-link"><i class="fa fa-share"></i>共有</a>
+    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/Scanner/" data-id="cj5ovtcc90056e8d8wkdnc6r1" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -912,7 +1046,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/16/java/base/Scanner/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/base/Scanner/">コメント</a>
+        <a href="https://wushang1987.github.io/2017/04/16/java/base/Scanner/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/base/Scanner/">Comentarios</a>
     
 
         </footer>
@@ -986,7 +1120,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/system/" data-id="cj3vkhc3r0059zod8o26ub6fb" class="article-share-link"><i class="fa fa-share"></i>共有</a>
+    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/system/" data-id="cj5ovtcce0058e8d8s0rkt2lu" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1054,7 +1188,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/16/java/base/system/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/base/system/">コメント</a>
+        <a href="https://wushang1987.github.io/2017/04/16/java/base/system/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/base/system/">Comentarios</a>
     
 
         </footer>
@@ -1120,7 +1254,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/16/java/术语列表/" data-id="cj3vkhbpq001zzod8y7qjekyt" class="article-share-link"><i class="fa fa-share"></i>共有</a>
+    <a data-url="https://wushang1987.github.io/2017/04/16/java/术语列表/" data-id="cj5ovtbhf0028e8d8g2brwjo0" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1188,7 +1322,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/16/java/术语列表/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/术语列表/">コメント</a>
+        <a href="https://wushang1987.github.io/2017/04/16/java/术语列表/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/术语列表/">Comentarios</a>
     
 
         </footer>
@@ -1264,7 +1398,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/15/计算机基础知识/SSL/" data-id="cj3vkhbrx003vzod8cl12i5n7" class="article-share-link"><i class="fa fa-share"></i>共有</a>
+    <a data-url="https://wushang1987.github.io/2017/04/15/计算机基础知识/SSL/" data-id="cj5ovtbvc0046e8d89396l533" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1332,7 +1466,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/15/计算机基础知识/SSL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/15/计算机基础知识/SSL/">コメント</a>
+        <a href="https://wushang1987.github.io/2017/04/15/计算机基础知识/SSL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/15/计算机基础知识/SSL/">Comentarios</a>
     
 
         </footer>
@@ -1393,7 +1527,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/14/前端知识/新技术/" data-id="cj3vkhbrv003szod88oh1xtqe" class="article-share-link"><i class="fa fa-share"></i>共有</a>
+    <a data-url="https://wushang1987.github.io/2017/04/14/前端知识/新技术/" data-id="cj5ovtbvm004ee8d8tztdt5e5" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1461,134 +1595,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/14/前端知识/新技术/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/14/前端知识/新技术/">コメント</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-javascript/优秀文章" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/04/14/javascript/优秀文章/">js 优秀文章列表</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/04/14/javascript/优秀文章/">
-            <time datetime="2017-04-14T15:43:56.795Z" itemprop="datePublished">2017-04-14</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/js/">js</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p><a href="https://www.zhihu.com/question/49176184#answer-42154043" target="_blank" rel="external">JavaScript的功能是不是都是靠C或者C++这种编译语言提供的？</a><br><a href="http://hllvm.group.iteye.com/group/topic/37596" target="_blank" rel="external">各JavaScript引擎的简介，及相关资料/博客收集帖</a></p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://wushang1987.github.io/2017/04/14/javascript/优秀文章/" data-id="cj3vkhbpw0025zod8f943emx9" class="article-share-link"><i class="fa fa-share"></i>共有</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://wushang1987.github.io/2017/04/14/javascript/优秀文章/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/14/javascript/优秀文章/">コメント</a>
+        <a href="https://wushang1987.github.io/2017/04/14/前端知识/新技术/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/14/前端知识/新技术/">Comentarios</a>
     
 
         </footer>
@@ -1599,7 +1606,7 @@
 
 
     <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/page/5/">&laquo; 前</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/">次 &raquo;</a>
+        <a class="extend prev" rel="prev" href="/page/5/">&laquo; Anterior</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/">Siguiente  &raquo;</a>
     </nav>
 
 
@@ -1617,26 +1624,45 @@ var _hmt = _hmt || [];
    
         
     <div class="widget-wrap">
-        <h3 class="widget-title">最近の記事</h3>
+        <h3 class="widget-title">Recientes</h3>
         <div class="widget">
             <ul id="recent-post" class="">
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/06/26/unity/" class="thumbnail">
+                            <a href="/2017/07/29/movie/" class="thumbnail">
     
     
-        <span style="background-image:url(/img/)" alt="unity 站点导航" class="thumbnail-image"></span>
+        <span style="background-image:url(/img/movie.jpg)" alt="影评之前" class="thumbnail-image"></span>
     
 </a>
 
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2017/06/26/unity/" class="title">unity 站点导航</a></p>
-                            <p class="item-date"><time datetime="2017-06-26T14:13:46.000Z" itemprop="datePublished">2017-06-26</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/movie/">movie</a></p>
+                            <p class="item-title"><a href="/2017/07/29/movie/" class="title">影评之前</a></p>
+                            <p class="item-date"><time datetime="2017-07-29T05:49:03.000Z" itemprop="datePublished">2017-07-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/07/20/unity/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/img/unity5.png)" alt="unity 站点导航" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/unity/">unity</a></p>
+                            <p class="item-title"><a href="/2017/07/20/unity/" class="title">unity 站点导航</a></p>
+                            <p class="item-date"><time datetime="2017-07-20T05:58:05.000Z" itemprop="datePublished">2017-07-20</time></p>
                         </div>
                     </li>
                 
@@ -1646,14 +1672,14 @@ var _hmt = _hmt || [];
                             <a href="/2017/06/25/javascript/jsframework/" class="thumbnail">
     
     
-        <span style="background-image:url(/img/)" alt="js 框架库列表收集" class="thumbnail-image"></span>
+        <span style="background-image:url(/img/js.jpg)" alt="js 框架库列表收集" class="thumbnail-image"></span>
     
 </a>
 
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/JavaScript/">JavaScript</a></p>
                             <p class="item-title"><a href="/2017/06/25/javascript/jsframework/" class="title">js 框架库列表收集</a></p>
                             <p class="item-date"><time datetime="2017-06-25T04:24:46.000Z" itemprop="datePublished">2017-06-25</time></p>
                         </div>
@@ -1697,25 +1723,6 @@ var _hmt = _hmt || [];
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/06/12/Machine-learning/machine-learning/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/img/learning.png)" alt="Machine-Learning" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Machine-learning/">Machine-learning</a></p>
-                            <p class="item-title"><a href="/2017/06/12/Machine-learning/machine-learning/" class="title">Machine-Learning</a></p>
-                            <p class="item-date"><time datetime="2017-06-12T14:28:01.000Z" itemprop="datePublished">2017-06-12</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1723,43 +1730,43 @@ var _hmt = _hmt || [];
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">カテゴリ</h3>
+        <h3 class="widget-title">Categorias</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-learning/">Machine-learning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mathematics/">Mathematics</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/diary/">diary</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/idea/">idea</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-learning/">Machine-learning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mathematics/">Mathematics</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/diary/">diary</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/idea/">idea</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/movie/">movie</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/unity/">unity</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">アーカイブ</h3>
+        <h3 class="widget-title">Archivos</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">タグ</h3>
+        <h3 class="widget-title">Etiquetas</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">-面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DB/">DB</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-learning/">Machine-learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathematics/">Mathematics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Security/">Security</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/">Tools</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cloud/">cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">diary</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/electron/">electron</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/srping/">srping</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/website/">website</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端知识/">前端知识</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多媒体/">多媒体</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">-面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DB/">DB</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-learning/">Machine-learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathematics/">Mathematics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Security/">Security</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/">Tools</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cloud/">cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">diary</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/electron/">electron</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/movie/">movie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/srping/">srping</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/">unity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/website/">website</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端知识/">前端知识</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多媒体/">多媒体</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">タグクラウド</h3>
+        <h3 class="widget-title">Nube de etiquetas</h3>
         <div class="widget tagcloud">
-            <a href="/tags/面试/" style="font-size: 10px;">-面试</a> <a href="/tags/DB/" style="font-size: 15px;">DB</a> <a href="/tags/Machine-learning/" style="font-size: 11.67px;">Machine-learning</a> <a href="/tags/Mathematics/" style="font-size: 10px;">Mathematics</a> <a href="/tags/Security/" style="font-size: 10px;">Security</a> <a href="/tags/Tools/" style="font-size: 18.33px;">Tools</a> <a href="/tags/cloud/" style="font-size: 10px;">cloud</a> <a href="/tags/css/" style="font-size: 11.67px;">css</a> <a href="/tags/diary/" style="font-size: 13.33px;">diary</a> <a href="/tags/eclipse/" style="font-size: 11.67px;">eclipse</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/git/" style="font-size: 11.67px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 15px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/js/" style="font-size: 13.33px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/spring/" style="font-size: 16.67px;">spring</a> <a href="/tags/srping/" style="font-size: 10px;">srping</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/website/" style="font-size: 10px;">website</a> <a href="/tags/前端知识/" style="font-size: 11.67px;">前端知识</a> <a href="/tags/基础/" style="font-size: 11.67px;">基础</a> <a href="/tags/多媒体/" style="font-size: 10px;">多媒体</a> <a href="/tags/日志/" style="font-size: 11.67px;">日志</a>
+            <a href="/tags/面试/" style="font-size: 10px;">-面试</a> <a href="/tags/DB/" style="font-size: 15px;">DB</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Machine-learning/" style="font-size: 11.67px;">Machine-learning</a> <a href="/tags/Mathematics/" style="font-size: 10px;">Mathematics</a> <a href="/tags/Security/" style="font-size: 10px;">Security</a> <a href="/tags/Tools/" style="font-size: 18.33px;">Tools</a> <a href="/tags/cloud/" style="font-size: 10px;">cloud</a> <a href="/tags/css/" style="font-size: 11.67px;">css</a> <a href="/tags/diary/" style="font-size: 13.33px;">diary</a> <a href="/tags/eclipse/" style="font-size: 11.67px;">eclipse</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/git/" style="font-size: 11.67px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 15px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/js/" style="font-size: 13.33px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/spring/" style="font-size: 16.67px;">spring</a> <a href="/tags/srping/" style="font-size: 10px;">srping</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/unity/" style="font-size: 10px;">unity</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/website/" style="font-size: 10px;">website</a> <a href="/tags/前端知识/" style="font-size: 11.67px;">前端知识</a> <a href="/tags/基础/" style="font-size: 11.67px;">基础</a> <a href="/tags/多媒体/" style="font-size: 10px;">多媒体</a> <a href="/tags/日志/" style="font-size: 11.67px;">日志</a>
         </div>
     </div>
 
     
         
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">リンク</h3>
+        <h3 class="widget-title">Links</h3>
         <div class="widget">
             <ul>
                 

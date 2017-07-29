@@ -4,15 +4,60 @@
 
     
   <url>
-    <loc>https://wushang1987.github.io/2017/06/26/unity/</loc>
-    <lastmod>2017-07-02T12:23:50.532Z</lastmod>
+    <loc>https://wushang1987.github.io/2017/06/25/javascript/jsframework/</loc>
+    <lastmod>2017-07-29T06:05:12.834Z</lastmod>
+    <data>
+        <display>
+        <title>js 框架库列表收集</title>
+        <pubTime>2017-06-25T04:24:46.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="https://wushang1987.github.io/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wushang1987.github.io/2017/07/20/unity/</loc>
+    <lastmod>2017-07-29T05:59:11.193Z</lastmod>
     <data>
         <display>
         <title>unity 站点导航</title>
-        <pubTime>2017-06-26T14:13:46.000Z</pubTime>
+        <pubTime>2017-07-20T05:58:05.000Z</pubTime>
         
+        <tag>unity</tag>
+         
          
            
+             
+              <breadCrumb title="unity" url="https://wushang1987.github.io/categories/unity/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://wushang1987.github.io/2017/07/29/movie/</loc>
+    <lastmod>2017-07-29T05:56:03.669Z</lastmod>
+    <data>
+        <display>
+        <title>影评之前</title>
+        <pubTime>2017-07-29T05:49:03.000Z</pubTime>
+        
+        <tag>movie</tag>
+         
+         
+           
+             
+              <breadCrumb title="movie" url="https://wushang1987.github.io/categories/movie/"/>
+          
         </display>
     </data>
     </url>
@@ -50,21 +95,6 @@
         
         <tag>spring</tag>
          
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wushang1987.github.io/2017/06/25/javascript/jsframework/</loc>
-    <lastmod>2017-06-25T04:35:03.914Z</lastmod>
-    <data>
-        <display>
-        <title>js 框架库列表收集</title>
-        <pubTime>2017-06-25T04:24:46.000Z</pubTime>
-        
          
            
         </display>
@@ -240,9 +270,9 @@
         <title>linux</title>
         <pubTime>2017-01-14T16:07:00.000Z</pubTime>
         
-        <tag>Tools</tag>
-         
         <tag>linux</tag>
+         
+        <tag>Tools</tag>
          
          
            
