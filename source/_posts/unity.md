@@ -1,12 +1,12 @@
 ---
-title: unity 站点导航
-date: 2017-06-26 22:13:46
+title: unity 站点导航 
+date: 2017-07-20 13:58:05
 tags:
-    -
+    - unity
 categories:
-    -
+    - unity
 banner:
-    - /img/
+    - /img/unity5.png
 ---
 [Unity3D 项目用 git 做版本控制 - u012169685的博客 - 博客频道 - CSDN.NET](http://blog.csdn.net/u012169685/article/details/46378993)
 
