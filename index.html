@@ -75,7 +75,7 @@
             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
@@ -94,10 +94,10 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Entradas',
+            POSTS: 'Posts',
             PAGES: 'Pages',
-            CATEGORIES: 'Categorias',
-            TAGS: 'Etiquetas',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
             UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
@@ -132,7 +132,7 @@
                 <td>
                     
     <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
     </div>
 
                 </td>
@@ -152,16 +152,16 @@
             <h2 id="name">wushang1987</h2>
             <h3 id="title">Web Developer &amp; Designer</h3>
             <span id="location"><i class="fa fa-map-marker"></i>xi`an, China</span>
-            <a id="follow" target="_blank" href="https://github.com/wushang1987">SEGUIR</a>
+            <a id="follow" target="_blank" href="https://github.com/wushang1987">FOLLOW</a>
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                80
-                <span>Entradas</span>
+                81
+                <span>posts</span>
             </div>
             <div class="article-info-block">
-                31
-                <span>Etiquetas</span>
+                32
+                <span>tags</span>
             </div>
         </div>
         
@@ -215,6 +215,150 @@
 
             
             <section id="main">
+    <article id="post-angular/uiframework" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            
+	
+		<a href="/2018/02/28/angular/uiframework/" itemprop="url">
+            <img src="/img/angular.png" class="article-banner" />
+        </a>
+	
+
+
+
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/02/28/angular/uiframework/">angular template</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/02/28/angular/uiframework/">
+            <time datetime="2018-02-28T15:09:52.000Z" itemprop="datePublished">2018-02-28</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/angular/">angular</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/angular/">angular</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>recently I study some angualr template,so mark it in this post.</p>
+<h1 id="1-aspnetboilerplate-com"><a href="#1-aspnetboilerplate-com" class="headerlink" title="1. aspnetboilerplate.com"></a>1. <a href="https://aspnetboilerplate.com/" target="_blank" rel="external">aspnetboilerplate.com</a></h1><p>目前在用的是这套东西，angular 只是其中的前台部分，和后台配合的比较紧密。</p>
+<p>—-有时间再更新</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://wushang1987.github.io/2018/02/28/angular/uiframework/" data-id="cje77x1i60014isd8tkhd8tjx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://wushang1987.github.io/2018/02/28/angular/uiframework/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2018/02/28/angular/uiframework/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-My-New-Year" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -278,7 +422,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2018/02/26/My-New-Year/" data-id="cje4ei13b006xz0d8nxgu5zru" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2018/02/26/My-New-Year/" data-id="cje77x0wh0007isd89gd5bpwq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -346,7 +490,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2018/02/26/My-New-Year/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2018/02/26/My-New-Year/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2018/02/26/My-New-Year/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2018/02/26/My-New-Year/">Comments</a>
     
 
         </footer>
@@ -410,7 +554,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2018/01/13/movies/" data-id="cje4e9a4c000az0d8cm66xghi" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2018/01/13/movies/" data-id="cje77x0xj000fisd8ok660df2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -478,7 +622,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2018/01/13/movies/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2018/01/13/movies/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2018/01/13/movies/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2018/01/13/movies/">Comments</a>
     
 
         </footer>
@@ -553,7 +697,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/07/29/music/" data-id="cje4e9a430008z0d81y7jshnh" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/07/29/music/" data-id="cje77x0x8000aisd8427l91xh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -621,7 +765,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/07/29/music/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/07/29/music/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/07/29/music/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/07/29/music/">Comments</a>
     
 
         </footer>
@@ -696,7 +840,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/07/29/movie/" data-id="cje4e9a3u0007z0d8t2b5nk0y" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/07/29/movie/" data-id="cje77x0vi0004isd8cg1qwqz6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -764,7 +908,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/07/29/movie/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/07/29/movie/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/07/29/movie/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/07/29/movie/">Comments</a>
     
 
         </footer>
@@ -843,7 +987,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/07/20/unity/" data-id="cje4e9a4s000ez0d8vtn320yd" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/07/20/unity/" data-id="cje77x0xd000disd8zpqunn7z" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -911,7 +1055,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/07/20/unity/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/07/20/unity/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/07/20/unity/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/07/20/unity/">Comments</a>
     
 
         </footer>
@@ -987,7 +1131,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/06/25/javascript/jsframework/" data-id="cje4e9amt004bz0d8vpnwkqfl" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/06/25/javascript/jsframework/" data-id="cje77x1ke002oisd8dy21nd73" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1055,7 +1199,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/06/25/javascript/jsframework/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/06/25/javascript/jsframework/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/06/25/javascript/jsframework/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/06/25/javascript/jsframework/">Comments</a>
     
 
         </footer>
@@ -1143,7 +1287,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/06/13/IDEA/mathweb/" data-id="cje4e9ait001jz0d8t01y3o4c" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/06/13/IDEA/mathweb/" data-id="cje77x1i40013isd8526z73t3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1211,7 +1355,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/06/13/IDEA/mathweb/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/06/13/IDEA/mathweb/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/06/13/IDEA/mathweb/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/06/13/IDEA/mathweb/">Comments</a>
     
 
         </footer>
@@ -1285,7 +1429,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/06/12/python/python/" data-id="cje4e9ak6002qz0d8k1s9vi8j" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/06/12/python/python/" data-id="cje77x1lk0045isd8jd6m0wrn" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1353,7 +1497,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/06/12/python/python/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/06/12/python/python/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/06/12/python/python/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/06/12/python/python/">Comments</a>
     
 
         </footer>
@@ -1442,7 +1586,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/06/12/Machine-learning/machine-learning/" data-id="cje4e9aik0019z0d8pcehxx36" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/06/12/Machine-learning/machine-learning/" data-id="cje77x1ie001cisd8juo830oy" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1510,158 +1654,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/06/12/Machine-learning/machine-learning/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/06/12/Machine-learning/machine-learning/">Comentarios</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-Machine-learning/octive" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            
-	
-		<a href="/2017/06/12/Machine-learning/octive/" itemprop="url">
-            <img src="/img/learning.png" class="article-banner" />
-        </a>
-	
-
-
-
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/06/12/Machine-learning/octive/">octive</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/06/12/Machine-learning/octive/">
-            <time datetime="2017-06-12T14:26:35.000Z" itemprop="datePublished">2017-06-12</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Machine-learning/">Machine-learning</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Machine-learning/">Machine-learning</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>入门：</p>
-<p><a href="http://www.jianshu.com/p/f13c86f0e49f" target="_blank" rel="external">机器学习入门(9)–Octave入门</a></p>
-<p><a href="http://blog.csdn.net/nishizhenlige/article/details/21662171" target="_blank" rel="external">Octave入门 - 小菜鸟的起飞之路 - 博客频道 - CSDN.NET</a></p>
-<p><a href="http://blog.csdn.net/cstopcoder/article/details/40477431" target="_blank" rel="external">http://blog.csdn.net/cstopcoder/article/details/40477431</a></p>
-<p>这篇讲的好</p>
-<p><a href="http://www.cnblogs.com/leezx/p/5635056.html" target="_blank" rel="external">Octave入门 - Bioinformation - 博客园</a></p>
-<p>在线版本：</p>
-<p><a href="https://octave-online.net/" target="_blank" rel="external">https://octave-online.net/</a></p>
-<p>angles=linspace(0,2*pi,100),y=sin(angles),plot(angles,y)</p>
-<p>2x-y=0<br>plot(x,y)</p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://wushang1987.github.io/2017/06/12/Machine-learning/octive/" data-id="cje4e9aib0011z0d886z5g8pe" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://wushang1987.github.io/2017/06/12/Machine-learning/octive/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/06/12/Machine-learning/octive/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/06/12/Machine-learning/machine-learning/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/06/12/Machine-learning/machine-learning/">Comments</a>
     
 
         </footer>
@@ -1672,7 +1665,7 @@
 
 
     <nav id="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Siguiente  &raquo;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
 
 
@@ -1690,9 +1683,28 @@ var _hmt = _hmt || [];
    
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Recientes</h3>
+        <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/02/28/angular/uiframework/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/img/angular.png)" alt="angular template" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/angular/">angular</a></p>
+                            <p class="item-title"><a href="/2018/02/28/angular/uiframework/" class="title">angular template</a></p>
+                            <p class="item-date"><time datetime="2018-02-28T15:09:52.000Z" itemprop="datePublished">2018-02-28</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1770,25 +1782,6 @@ var _hmt = _hmt || [];
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/07/20/unity/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/img/unity5.png)" alt="unity 站点导航" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/unity/">unity</a></p>
-                            <p class="item-title"><a href="/2017/07/20/unity/" class="title">unity 站点导航</a></p>
-                            <p class="item-date"><time datetime="2017-07-20T05:58:05.000Z" itemprop="datePublished">2017-07-20</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1796,43 +1789,43 @@ var _hmt = _hmt || [];
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Categorias</h3>
+        <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-learning/">Machine-learning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mathematics/">Mathematics</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/diary/">diary</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/idea/">idea</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/movie/">movie</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/unity/">unity</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-learning/">Machine-learning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mathematics/">Mathematics</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/angular/">angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/diary/">diary</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/idea/">idea</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/movie/">movie</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/unity/">unity</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Archivos</h3>
+        <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Etiquetas</h3>
+        <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">-面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DB/">DB</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-learning/">Machine-learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathematics/">Mathematics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Security/">Security</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/">Tools</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cloud/">cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">diary</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/electron/">electron</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/movie/">movie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/srping/">srping</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/">unity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/website/">website</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端知识/">前端知识</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多媒体/">多媒体</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">-面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DB/">DB</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-learning/">Machine-learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathematics/">Mathematics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Security/">Security</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/">Tools</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cloud/">cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">diary</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/electron/">electron</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/movie/">movie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/srping/">srping</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/">unity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/website/">website</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端知识/">前端知识</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多媒体/">多媒体</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Nube de etiquetas</h3>
+        <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/面试/" style="font-size: 10px;">-面试</a> <a href="/tags/DB/" style="font-size: 14.29px;">DB</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Machine-learning/" style="font-size: 11.43px;">Machine-learning</a> <a href="/tags/Mathematics/" style="font-size: 10px;">Mathematics</a> <a href="/tags/Security/" style="font-size: 10px;">Security</a> <a href="/tags/Tools/" style="font-size: 18.57px;">Tools</a> <a href="/tags/cloud/" style="font-size: 10px;">cloud</a> <a href="/tags/css/" style="font-size: 11.43px;">css</a> <a href="/tags/diary/" style="font-size: 12.86px;">diary</a> <a href="/tags/eclipse/" style="font-size: 11.43px;">eclipse</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/git/" style="font-size: 11.43px;">git</a> <a href="/tags/hexo/" style="font-size: 11.43px;">hexo</a> <a href="/tags/idea/" style="font-size: 15.71px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/js/" style="font-size: 12.86px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/spring/" style="font-size: 17.14px;">spring</a> <a href="/tags/srping/" style="font-size: 10px;">srping</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/unity/" style="font-size: 10px;">unity</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/website/" style="font-size: 10px;">website</a> <a href="/tags/前端知识/" style="font-size: 11.43px;">前端知识</a> <a href="/tags/基础/" style="font-size: 11.43px;">基础</a> <a href="/tags/多媒体/" style="font-size: 10px;">多媒体</a> <a href="/tags/日志/" style="font-size: 11.43px;">日志</a>
+            <a href="/tags/面试/" style="font-size: 10px;">-面试</a> <a href="/tags/DB/" style="font-size: 14.29px;">DB</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Machine-learning/" style="font-size: 11.43px;">Machine-learning</a> <a href="/tags/Mathematics/" style="font-size: 10px;">Mathematics</a> <a href="/tags/Security/" style="font-size: 10px;">Security</a> <a href="/tags/Tools/" style="font-size: 18.57px;">Tools</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/cloud/" style="font-size: 10px;">cloud</a> <a href="/tags/css/" style="font-size: 11.43px;">css</a> <a href="/tags/diary/" style="font-size: 12.86px;">diary</a> <a href="/tags/eclipse/" style="font-size: 11.43px;">eclipse</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/git/" style="font-size: 11.43px;">git</a> <a href="/tags/hexo/" style="font-size: 11.43px;">hexo</a> <a href="/tags/idea/" style="font-size: 15.71px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/js/" style="font-size: 12.86px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/spring/" style="font-size: 17.14px;">spring</a> <a href="/tags/srping/" style="font-size: 10px;">srping</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/unity/" style="font-size: 10px;">unity</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/website/" style="font-size: 10px;">website</a> <a href="/tags/前端知识/" style="font-size: 11.43px;">前端知识</a> <a href="/tags/基础/" style="font-size: 11.43px;">基础</a> <a href="/tags/多媒体/" style="font-size: 10px;">多媒体</a> <a href="/tags/日志/" style="font-size: 11.43px;">日志</a>
         </div>
     </div>
 
     
         
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">Links</h3>
+        <h3 class="widget-title">links</h3>
         <div class="widget">
             <ul>
                 

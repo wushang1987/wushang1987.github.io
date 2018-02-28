@@ -75,7 +75,7 @@
             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
@@ -94,10 +94,10 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Entradas',
+            POSTS: 'Posts',
             PAGES: 'Pages',
-            CATEGORIES: 'Categorias',
-            TAGS: 'Etiquetas',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
             UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
@@ -132,7 +132,7 @@
                 <td>
                     
     <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
     </div>
 
                 </td>
@@ -152,16 +152,16 @@
             <h2 id="name">wushang1987</h2>
             <h3 id="title">Web Developer &amp; Designer</h3>
             <span id="location"><i class="fa fa-map-marker"></i>xi`an, China</span>
-            <a id="follow" target="_blank" href="https://github.com/wushang1987">SEGUIR</a>
+            <a id="follow" target="_blank" href="https://github.com/wushang1987">FOLLOW</a>
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                80
-                <span>Entradas</span>
+                81
+                <span>posts</span>
             </div>
             <div class="article-info-block">
-                31
-                <span>Etiquetas</span>
+                32
+                <span>tags</span>
             </div>
         </div>
         
@@ -215,7 +215,7 @@
 
             
             <section id="main">
-    <article id="post-java/术语列表" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-java/base/system" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -223,7 +223,7 @@
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2017/04/16/java/术语列表/">java 术语</a>
+            <a class="article-title" href="/2017/04/16/java/base/system/">java system 对象</a>
         </h1>
     
 
@@ -232,8 +232,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/04/16/java/术语列表/">
-            <time datetime="2017-04-16T03:26:45.000Z" itemprop="datePublished">2017-04-16</time>
+        <a href="/2017/04/16/java/base/system/">
+            <time datetime="2017-04-16T03:28:37.000Z" itemprop="datePublished">2017-04-16</time>
         </a>
     </div>
 
@@ -253,14 +253,22 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p><a href="http://baike.baidu.com/link?url=1ZWlqAfIJH5_rf87oCXGd8LBBcpKaFs_778TS3HrLa137DZbS8w0llgeX6AgfJGui-5kyGzDpS_WEMY-bmsnn_" target="_blank" rel="external">Aspectj</a></p>
-<p>AspectJ是一个面向切面的框架，它扩展了Java语言。AspectJ定义了AOP语法所以它有一个专门的编译器用来生成遵守Java字节编码规范的Class文件。</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://www.oschina.net/translate/comparative_analysis_between_spring_aop_and_aspectj" target="_blank" rel="external">比较分析 Spring AOP 和 AspectJ 之间的差别</a></p>
-<p><a href="http://blog.csdn.net/starchu1981/article/details/15557" target="_blank" rel="external">跟我学AspectJ（一）</a></p>
-<p>什么是事务？</p>
-<p>我们在开发企业应用时，对于业务人员的一个操作实际是对数据读写的多步操作的结合。由于数据操作在顺序执行的过程中，任何一步操作都有可能发生异常，异常会导致后续操作无法完成，此时由于业务逻辑并未正确的完成，之前成功操作数据的并不可靠，需要在这种情况下进行回退。</p>
-<p>事务的作用就是为了保证用户的每一个操作都是可靠的，事务中的每一步操作都必须成功执行，只要有发生异常就回退到事务开始未进行操作的状态。</p>
-<p>事务管理是Spring框架中最为常用的功能之一，我们在使用Spring Boot开发应用时，大部分情况下也都需要使用事务。</p>
+            <p>关于Java中使用的System对象，我们经常使用的是Systme.out.print ,而且也仅仅知道这是一个可以在控制台打印出语句，而没有去深究它的内在实现原理。下面我就详细地介绍System对象。 </p>
+<p>1.JDK中有如下定义：.The System class contains several useful class fields and methods. It cannot be instantiated.<br>也就是说System对象是不能被实例化的，只能通过调用它的属性和方法来使用它。 </p>
+<p>2.System中的属性 Systme.in 是InputStream类型的，可以接受控制台输入的信息； System.out 和 System.err 都是PrintStream类型的 ，可以在控制台输出信息。 </p>
+<p>3.System.getProperties() 返回的是Properties类型的对象，而返回的信息是Java虚拟机启动过程中所要加载的环境配置信息。可以通过下面的代码获取和输出信息，由于Properties是HashTable的一个子类，因此可以通过Map方法取出该集合中的元素 </p>
+<p>Java代码<br>[java] view plain copy<br>package javase.day18;    </p>
+<p>import java.util.Properties;    </p>
+<p>public class SystemDemo {<br>    public static void main(String[] args) {<br>        // TODO Auto-generated method stub<br>        Properties prop=System.getProperties();<br>        for(Object key:prop.keySet()){<br>            String keyStr=(String)key;<br>            String value=prop.getProperty(keyStr);<br>            System.out.println(keyStr+” — “+value);<br>        }<br>    }<br>}    </p>
+<p>结果：<br>控制台输出系统环境配置信息：</p>
+<p>java.runtime.name — Java(TM) SE Runtime Environment<br>sun.boot.library.path — C:\Java\developerEnv\Java\jdk1.6.0_16\jre\bin<br>java.vm.version — 14.2-b01<br>java.vm.vendor — Sun Microsystems Inc.<br>java.vendor.url — <a href="http://java.sun.com/" target="_blank" rel="external">http://java.sun.com/</a><br>path.separator — ;<br>java.vm.name — Java HotSpot(TM) Client VM<br>file.encoding.pkg — sun.io<br>sun.java.launcher — SUN_STANDARD<br>user.country — CN<br>sun.os.patch.level — Service Pack 3<br>java.vm.specification.name — Java Virtual Machine Specification<br>user.dir — D:\workspace\BlackHorse<br>java.runtime.version — 1.6.0_16-b01<br>java.awt.graphicsenv — sun.awt.Win32GraphicsEnvironment<br>java.endorsed.dirs — C:\Java\developerEnv\Java\jdk1.6.0_16\jre\lib\endorsed<br>os.arch — x86<br>java.io.tmpdir — C:\DOCUME~1\CHENGR~1\LOCALS~1\Temp\<br>line.separator —<br>……</p>
+<p>……<br>……</p>
+<p>使用以下代码也可以使控制台输出系统环境配置信息：</p>
+<p>[java] view plain copy<br>public class SystemDemo {<br>    public static void main(String[] args) {<br>        System.getProperties().list(System.out);<br>    }<br>}  </p>
+<p>4.可以通过System对象在系统中自定义一些特有的信息：<br>System.setProperty(myKey , myValue); </p>
+<p>另外需要注意的一点是： 所谓的 system porperty，system 指的是 JRE (runtime)system，不是指 OS。<br>System.setProperty(“net.jxta.tls.principal”, “client”);<br>System.setProperty(“net.jxta.tls.password”, “password”);<br>System.setProperty(“JXTA_HOME”,System.getProperty(“JXTA_HOME”,”client”));<br>可以利用系统属性来加载多个驱动</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://blog.csdn.net/alex_zhuang/article/details/6918147" target="_blank" rel="external">http://blog.csdn.net/alex_zhuang/article/details/6918147</a></p>
+<p><a href="http://www.cnblogs.com/xuhuan/articles/1522212.html" target="_blank" rel="external">http://www.cnblogs.com/xuhuan/articles/1522212.html</a></p>
 
         
         </div>
@@ -271,7 +279,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/16/java/术语列表/" data-id="cje4e9ajo002az0d8fqozf7cj" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/system/" data-id="cje77x1rk005sisd83d7ui6gu" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -339,7 +347,141 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/16/java/术语列表/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/术语列表/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/04/16/java/base/system/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/base/system/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-java/术语列表" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/04/16/java/术语列表/">java 术语</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/04/16/java/术语列表/">
+            <time datetime="2017-04-16T03:26:45.000Z" itemprop="datePublished">2017-04-16</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/java/">java</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p><a href="http://baike.baidu.com/link?url=1ZWlqAfIJH5_rf87oCXGd8LBBcpKaFs_778TS3HrLa137DZbS8w0llgeX6AgfJGui-5kyGzDpS_WEMY-bmsnn_" target="_blank" rel="external">Aspectj</a></p>
+<p>AspectJ是一个面向切面的框架，它扩展了Java语言。AspectJ定义了AOP语法所以它有一个专门的编译器用来生成遵守Java字节编码规范的Class文件。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://www.oschina.net/translate/comparative_analysis_between_spring_aop_and_aspectj" target="_blank" rel="external">比较分析 Spring AOP 和 AspectJ 之间的差别</a></p>
+<p><a href="http://blog.csdn.net/starchu1981/article/details/15557" target="_blank" rel="external">跟我学AspectJ（一）</a></p>
+<p>什么是事务？</p>
+<p>我们在开发企业应用时，对于业务人员的一个操作实际是对数据读写的多步操作的结合。由于数据操作在顺序执行的过程中，任何一步操作都有可能发生异常，异常会导致后续操作无法完成，此时由于业务逻辑并未正确的完成，之前成功操作数据的并不可靠，需要在这种情况下进行回退。</p>
+<p>事务的作用就是为了保证用户的每一个操作都是可靠的，事务中的每一步操作都必须成功执行，只要有发生异常就回退到事务开始未进行操作的状态。</p>
+<p>事务管理是Spring框架中最为常用的功能之一，我们在使用Spring Boot开发应用时，大部分情况下也都需要使用事务。</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://wushang1987.github.io/2017/04/16/java/术语列表/" data-id="cje77x1kc002lisd81pgwrqtm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://wushang1987.github.io/2017/04/16/java/术语列表/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/术语列表/">Comments</a>
     
 
         </footer>
@@ -415,7 +557,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/15/计算机基础知识/SSL/" data-id="cje4e9aml0043z0d8e0nrrqyx" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/04/15/计算机基础知识/SSL/" data-id="cje77x1m5004pisd867lkk1j6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -483,7 +625,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/15/计算机基础知识/SSL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/15/计算机基础知识/SSL/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/04/15/计算机基础知识/SSL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/15/计算机基础知识/SSL/">Comments</a>
     
 
         </footer>
@@ -544,7 +686,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/14/前端知识/新技术/" data-id="cje4e9amg003wz0d8n4wb91p6" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/04/14/前端知识/新技术/" data-id="cje77x1lp004cisd8vyynuuae" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -612,7 +754,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/14/前端知识/新技术/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/14/前端知识/新技术/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/04/14/前端知识/新技术/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/14/前端知识/新技术/">Comments</a>
     
 
         </footer>
@@ -671,7 +813,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/14/javascript/优秀文章/" data-id="cje4e9amr004az0d8hao7e6pf" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/04/14/javascript/优秀文章/" data-id="cje77x1ks0037isd80qd3e7wu" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -739,7 +881,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/14/javascript/优秀文章/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/14/javascript/优秀文章/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/04/14/javascript/优秀文章/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/14/javascript/优秀文章/">Comments</a>
     
 
         </footer>
@@ -768,7 +910,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/14/java/java8/java8新增功能汇总/" data-id="cje4e9azz005jz0d8e9sjyfve" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/04/14/java/java8/java8新增功能汇总/" data-id="cje77x1s00064isd8lu2owsz5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -836,7 +978,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/14/java/java8/java8新增功能汇总/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/14/java/java8/java8新增功能汇总/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/04/14/java/java8/java8新增功能汇总/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/14/java/java8/java8新增功能汇总/">Comments</a>
     
 
         </footer>
@@ -912,7 +1054,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/14/tools/gitlab/" data-id="cje4e9al3003az0d8v9deahkz" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/04/14/tools/gitlab/" data-id="cje77x1l1003hisd8c66rdbkl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -980,7 +1122,136 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/14/tools/gitlab/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/14/tools/gitlab/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/04/14/tools/gitlab/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/14/tools/gitlab/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-css/技术前沿" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/04/13/css/技术前沿/">css 前沿技术</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/04/13/css/技术前沿/">
+            <time datetime="2017-04-13T13:47:00.000Z" itemprop="datePublished">2017-04-13</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/css/">css</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>CSS, Sass, SCSS, Compass, Less,BEM, SMACSS, OOCSS, ACSS, CCSS, WTFSS?</p>
+<p><a href="http://www.w3cplus.com/css/css-sass-scss-compass-less-bem-smacss-oocss-acss-ccss-wtfss.html" target="_blank" rel="external">http://www.w3cplus.com/css/css-sass-scss-compass-less-bem-smacss-oocss-acss-ccss-wtfss.html</a></p>
+<p><a href="https://segmentfault.com/a/1190000000389838" target="_blank" rel="external">https://segmentfault.com/a/1190000000389838</a></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://wushang1987.github.io/2017/04/13/css/技术前沿/" data-id="cje77x1k10029isd84apbchk6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://wushang1987.github.io/2017/04/13/css/技术前沿/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/13/css/技术前沿/">Comments</a>
     
 
         </footer>
@@ -1056,7 +1327,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/13/tools/工具插件开发/" data-id="cje4e9am7003pz0d84d6gvzxe" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/04/13/tools/工具插件开发/" data-id="cje77x1lc003tisd876l7k3na" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1124,136 +1395,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/13/tools/工具插件开发/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/13/tools/工具插件开发/">Comentarios</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-css/技术前沿" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/04/13/css/技术前沿/">css 前沿技术</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/04/13/css/技术前沿/">
-            <time datetime="2017-04-13T13:47:00.000Z" itemprop="datePublished">2017-04-13</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/css/">css</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>CSS, Sass, SCSS, Compass, Less,BEM, SMACSS, OOCSS, ACSS, CCSS, WTFSS?</p>
-<p><a href="http://www.w3cplus.com/css/css-sass-scss-compass-less-bem-smacss-oocss-acss-ccss-wtfss.html" target="_blank" rel="external">http://www.w3cplus.com/css/css-sass-scss-compass-less-bem-smacss-oocss-acss-ccss-wtfss.html</a></p>
-<p><a href="https://segmentfault.com/a/1190000000389838" target="_blank" rel="external">https://segmentfault.com/a/1190000000389838</a></p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://wushang1987.github.io/2017/04/13/css/技术前沿/" data-id="cje4e9aj1001sz0d8mz3u28uj" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://wushang1987.github.io/2017/04/13/css/技术前沿/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/13/css/技术前沿/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/04/13/tools/工具插件开发/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/13/tools/工具插件开发/">Comments</a>
     
 
         </footer>
@@ -1326,7 +1468,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/09/diary/My-New-Post/" data-id="cje4e9aj7001xz0d87o0zc4w9" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/04/09/diary/My-New-Post/" data-id="cje77x1jq001zisd8mjiu07sw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1394,149 +1536,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/09/diary/My-New-Post/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/09/diary/My-New-Post/">Comentarios</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-diary/test-post" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            
-	
-		<a href="/2017/04/09/diary/test-post/" itemprop="url">
-            <img src="/img/diary.jpg" class="article-banner" />
-        </a>
-	
-
-
-
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/04/09/diary/test-post/">跑通全流程</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/04/09/diary/test-post/">
-            <time datetime="2017-04-09T12:34:50.000Z" itemprop="datePublished">2017-04-09</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/diary/">diary</a>
-    </div>
-
-                        
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>最近持续关注了一下github 周边的服务，不断的摸索，填坑，今天总算是能够跑个简单的流程。</p>
-<p>现在还没有什么服务，只是简单的展示了一个service API. </p>
-<p>但已经能够串联起来github + travis-CI + Azure </p>
-<p>另外博客也用Travis 做了自动部署功能，用起来能简单一些，<br>只需要提交到github上面就可以了</p>
-<p>这个服务器会监听吗</p>
-<p>好像修改文件是有问题的，再测试一次</p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://wushang1987.github.io/2017/04/09/diary/test-post/" data-id="cje4e9ajg0027z0d887qe9qk4" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://wushang1987.github.io/2017/04/09/diary/test-post/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/09/diary/test-post/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/04/09/diary/My-New-Post/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/09/diary/My-New-Post/">Comments</a>
     
 
         </footer>
@@ -1547,7 +1547,7 @@
 
 
     <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/page/6/">&laquo; Anterior</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/8/">Siguiente  &raquo;</a>
+        <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
     </nav>
 
 
@@ -1565,9 +1565,28 @@ var _hmt = _hmt || [];
    
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Recientes</h3>
+        <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/02/28/angular/uiframework/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/img/angular.png)" alt="angular template" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/angular/">angular</a></p>
+                            <p class="item-title"><a href="/2018/02/28/angular/uiframework/" class="title">angular template</a></p>
+                            <p class="item-date"><time datetime="2018-02-28T15:09:52.000Z" itemprop="datePublished">2018-02-28</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1645,25 +1664,6 @@ var _hmt = _hmt || [];
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/07/20/unity/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/img/unity5.png)" alt="unity 站点导航" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/unity/">unity</a></p>
-                            <p class="item-title"><a href="/2017/07/20/unity/" class="title">unity 站点导航</a></p>
-                            <p class="item-date"><time datetime="2017-07-20T05:58:05.000Z" itemprop="datePublished">2017-07-20</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1671,43 +1671,43 @@ var _hmt = _hmt || [];
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Categorias</h3>
+        <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-learning/">Machine-learning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mathematics/">Mathematics</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/diary/">diary</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/idea/">idea</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/movie/">movie</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/unity/">unity</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-learning/">Machine-learning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mathematics/">Mathematics</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/angular/">angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/diary/">diary</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/idea/">idea</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/movie/">movie</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/unity/">unity</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Archivos</h3>
+        <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Etiquetas</h3>
+        <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">-面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DB/">DB</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-learning/">Machine-learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathematics/">Mathematics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Security/">Security</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/">Tools</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cloud/">cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">diary</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/electron/">electron</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/movie/">movie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/srping/">srping</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/">unity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/website/">website</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端知识/">前端知识</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多媒体/">多媒体</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">-面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DB/">DB</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-learning/">Machine-learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathematics/">Mathematics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Security/">Security</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/">Tools</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cloud/">cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">diary</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/electron/">electron</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/movie/">movie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/srping/">srping</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/">unity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/website/">website</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端知识/">前端知识</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多媒体/">多媒体</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Nube de etiquetas</h3>
+        <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/面试/" style="font-size: 10px;">-面试</a> <a href="/tags/DB/" style="font-size: 14.29px;">DB</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Machine-learning/" style="font-size: 11.43px;">Machine-learning</a> <a href="/tags/Mathematics/" style="font-size: 10px;">Mathematics</a> <a href="/tags/Security/" style="font-size: 10px;">Security</a> <a href="/tags/Tools/" style="font-size: 18.57px;">Tools</a> <a href="/tags/cloud/" style="font-size: 10px;">cloud</a> <a href="/tags/css/" style="font-size: 11.43px;">css</a> <a href="/tags/diary/" style="font-size: 12.86px;">diary</a> <a href="/tags/eclipse/" style="font-size: 11.43px;">eclipse</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/git/" style="font-size: 11.43px;">git</a> <a href="/tags/hexo/" style="font-size: 11.43px;">hexo</a> <a href="/tags/idea/" style="font-size: 15.71px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/js/" style="font-size: 12.86px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/spring/" style="font-size: 17.14px;">spring</a> <a href="/tags/srping/" style="font-size: 10px;">srping</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/unity/" style="font-size: 10px;">unity</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/website/" style="font-size: 10px;">website</a> <a href="/tags/前端知识/" style="font-size: 11.43px;">前端知识</a> <a href="/tags/基础/" style="font-size: 11.43px;">基础</a> <a href="/tags/多媒体/" style="font-size: 10px;">多媒体</a> <a href="/tags/日志/" style="font-size: 11.43px;">日志</a>
+            <a href="/tags/面试/" style="font-size: 10px;">-面试</a> <a href="/tags/DB/" style="font-size: 14.29px;">DB</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Machine-learning/" style="font-size: 11.43px;">Machine-learning</a> <a href="/tags/Mathematics/" style="font-size: 10px;">Mathematics</a> <a href="/tags/Security/" style="font-size: 10px;">Security</a> <a href="/tags/Tools/" style="font-size: 18.57px;">Tools</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/cloud/" style="font-size: 10px;">cloud</a> <a href="/tags/css/" style="font-size: 11.43px;">css</a> <a href="/tags/diary/" style="font-size: 12.86px;">diary</a> <a href="/tags/eclipse/" style="font-size: 11.43px;">eclipse</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/git/" style="font-size: 11.43px;">git</a> <a href="/tags/hexo/" style="font-size: 11.43px;">hexo</a> <a href="/tags/idea/" style="font-size: 15.71px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/js/" style="font-size: 12.86px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/spring/" style="font-size: 17.14px;">spring</a> <a href="/tags/srping/" style="font-size: 10px;">srping</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/unity/" style="font-size: 10px;">unity</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/website/" style="font-size: 10px;">website</a> <a href="/tags/前端知识/" style="font-size: 11.43px;">前端知识</a> <a href="/tags/基础/" style="font-size: 11.43px;">基础</a> <a href="/tags/多媒体/" style="font-size: 10px;">多媒体</a> <a href="/tags/日志/" style="font-size: 11.43px;">日志</a>
         </div>
     </div>
 
     
         
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">Links</h3>
+        <h3 class="widget-title">links</h3>
         <div class="widget">
             <ul>
                 
