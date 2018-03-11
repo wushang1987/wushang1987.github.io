@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>https://wushang1987.github.io/2018/03/11/javascript/typescript/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2018-03-11T15:26:28.021Z</lastmod>
+    <data>
+        <display>
+        <title>typeScript</title>
+        <pubTime>2018-03-11T15:21:28.374Z</pubTime>
+        
+        <tag>typeScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="typeScript" url="https://wushang1987.github.io/categories/typeScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://wushang1987.github.io/2018/02/28/angular/uiframework/</loc>
-    <lastmod>2018-02-28T15:31:06.060Z</lastmod>
+    <lastmod>2018-03-11T14:40:50.069Z</lastmod>
     <data>
         <display>
         <title>angular template</title>
@@ -25,7 +45,7 @@
     
   <url>
     <loc>https://wushang1987.github.io/2018/02/26/My-New-Year/</loc>
-    <lastmod>2018-02-26T16:16:36.106Z</lastmod>
+    <lastmod>2018-03-11T14:29:56.365Z</lastmod>
     <data>
         <display>
         <title>New Year</title>
@@ -342,9 +362,9 @@
         <title>linux</title>
         <pubTime>2017-01-14T16:07:00.000Z</pubTime>
         
-        <tag>Tools</tag>
-         
         <tag>linux</tag>
+         
+        <tag>Tools</tag>
          
          
            
