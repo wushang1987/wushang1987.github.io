@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://wushang1987.github.io/2018/11/24/javascript/%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/</loc>
+    <lastmod>2018-11-24T16:33:30.115Z</lastmod>
+    <data>
+        <display>
+        <title>理解javaScript中的函数柯里化（草稿）</title>
+        <pubTime>2018-11-24T15:59:00.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://wushang1987.github.io/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://wushang1987.github.io/2018/03/11/javascript/typescript/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2018-03-11T15:26:28.021Z</lastmod>
     <data>
@@ -362,9 +382,9 @@
         <title>linux</title>
         <pubTime>2017-01-14T16:07:00.000Z</pubTime>
         
-        <tag>Tools</tag>
-         
         <tag>linux</tag>
+         
+        <tag>Tools</tag>
          
          
            
