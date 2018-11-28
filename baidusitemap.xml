@@ -4,19 +4,19 @@
 
     
   <url>
-    <loc>https://wushang1987.github.io/2018/11/24/javascript/%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/</loc>
-    <lastmod>2018-11-24T16:33:30.115Z</lastmod>
+    <loc>https://wushang1987.github.io/2018/11/29/music/</loc>
+    <lastmod>2018-11-28T16:49:34.114Z</lastmod>
     <data>
         <display>
-        <title>理解javaScript中的函数柯里化（草稿）</title>
-        <pubTime>2018-11-24T15:59:00.000Z</pubTime>
+        <title>如何显示乐谱</title>
+        <pubTime>2018-11-28T16:40:24.000Z</pubTime>
         
-        <tag>javascript</tag>
+        <tag>idea</tag>
          
          
            
              
-              <breadCrumb title="javascript" url="https://wushang1987.github.io/categories/javascript/"/>
+              <breadCrumb title="idea" url="https://wushang1987.github.io/categories/idea/"/>
           
         </display>
     </data>
@@ -75,26 +75,6 @@
          
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://wushang1987.github.io/2017/07/29/music/</loc>
-    <lastmod>2018-01-13T08:34:19.825Z</lastmod>
-    <data>
-        <display>
-        <title>如何显示乐谱</title>
-        <pubTime>2017-07-29T06:31:59.000Z</pubTime>
-        
-        <tag>idea</tag>
-         
-         
-           
-             
-              <breadCrumb title="idea" url="https://wushang1987.github.io/categories/idea/"/>
-          
         </display>
     </data>
     </url>

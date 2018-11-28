@@ -75,7 +75,7 @@
             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Rechercher" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
@@ -94,10 +94,10 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Entradas',
+            POSTS: 'Articles',
             PAGES: 'Pages',
-            CATEGORIES: 'Categorias',
-            TAGS: 'Etiquetas',
+            CATEGORIES: 'Catégories',
+            TAGS: 'Tags',
             UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
@@ -132,7 +132,7 @@
                 <td>
                     
     <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Rechercher" />
     </div>
 
                 </td>
@@ -158,18 +158,18 @@
             <span id="location"><i class="fa fa-map-marker"></i>
                 xi`an, China</span>
             <a id="follow" target="_blank" href="https://github.com/wushang1987">
-                SEGUIR</a>
+                SUIVRE</a>
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                83
+                82
                 <span>
-                    Entradas</span>
+                    Articles</span>
             </div>
             <div class="article-info-block">
-                34
+                33
                 <span>
-                    Etiquetas</span>
+                    Tags</span>
             </div>
         </div>
         
@@ -224,137 +224,6 @@
 </aside>
             
             <section id="main">
-<article id="post-java/base/java.io.file" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/04/16/java/base/java.io.file/">java IO</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/04/16/java/base/java.io.file/">
-            <time datetime="2017-04-16T03:29:53.000Z" itemprop="datePublished">2017-04-16</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/java/">java</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> cn.edu.tongji.cims.wade.system;   </div><div class="line">  </div><div class="line"><span class="keyword">import</span> java.io.*;   </div><div class="line">  </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileOperate</span> </span>&#123;   </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">FileOperate</span><span class="params">()</span> </span>&#123;   </div><div class="line">  &#125;   </div><div class="line">  </div><div class="line">  <span class="comment">/**  </span></div><div class="line">   * 新建目录  </div><div class="line">   * <span class="doctag">@param</span> folderPath String 如 c:/fqf  </div><div class="line">   * <span class="doctag">@return</span> boolean  </div><div class="line">   */  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">newFolder</span><span class="params">(String folderPath)</span> </span>&#123;   </div><div class="line">    <span class="keyword">try</span> &#123;   </div><div class="line">      String filePath = folderPath;   </div><div class="line">      filePath = filePath.toString();   </div><div class="line">      java.io.File myFilePath = <span class="keyword">new</span> java.io.File(filePath);   </div><div class="line">      <span class="keyword">if</span> (!myFilePath.exists()) &#123;   </div><div class="line">        myFilePath.mkdir();   </div><div class="line">      &#125;   </div><div class="line">    &#125;   </div><div class="line">    <span class="keyword">catch</span> (Exception e) &#123;   </div><div class="line">      System.out.println(<span class="string">"新建目录操作出错"</span>);   </div><div class="line">      e.printStackTrace();   </div><div class="line">    &#125;   </div><div class="line">  &#125;   </div><div class="line">  </div><div class="line">  <span class="comment">/**  </span></div><div class="line">   * 新建文件  </div><div class="line">   * <span class="doctag">@param</span> filePathAndName String 文件路径及名称 如c:/fqf.txt  </div><div class="line">   * <span class="doctag">@param</span> fileContent String 文件内容  </div><div class="line">   * <span class="doctag">@return</span> boolean  </div><div class="line">   */  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">newFile</span><span class="params">(String filePathAndName, String fileContent)</span> </span>&#123;   </div><div class="line">  </div><div class="line">    <span class="keyword">try</span> &#123;   </div><div class="line">      String filePath = filePathAndName;   </div><div class="line">      filePath = filePath.toString();   </div><div class="line">      File myFilePath = <span class="keyword">new</span> File(filePath);   </div><div class="line">      <span class="keyword">if</span> (!myFilePath.exists()) &#123;   </div><div class="line">        myFilePath.createNewFile();   </div><div class="line">      &#125;   </div><div class="line">      FileWriter resultFile = <span class="keyword">new</span> FileWriter(myFilePath);   </div><div class="line">      PrintWriter myFile = <span class="keyword">new</span> PrintWriter(resultFile);   </div><div class="line">      String strContent = fileContent;   </div><div class="line">      myFile.println(strContent);   </div><div class="line">      resultFile.close();   </div><div class="line">  </div><div class="line">    &#125;   </div><div class="line">    <span class="keyword">catch</span> (Exception e) &#123;   </div><div class="line">      System.out.println(<span class="string">"新建目录操作出错"</span>);   </div><div class="line">      e.printStackTrace();   </div><div class="line">  </div><div class="line">    &#125;   </div><div class="line">  </div><div class="line">  &#125;   </div><div class="line">  </div><div class="line">  <span class="comment">/**  </span></div><div class="line">   * 删除文件  </div><div class="line">   * <span class="doctag">@param</span> filePathAndName String 文件路径及名称 如c:/fqf.txt  </div><div class="line">   * <span class="doctag">@param</span> fileContent String  </div><div class="line">   * <span class="doctag">@return</span> boolean  </div><div class="line">   */  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delFile</span><span class="params">(String filePathAndName)</span> </span>&#123;   </div><div class="line">    <span class="keyword">try</span> &#123;   </div><div class="line">      String filePath = filePathAndName;   </div><div class="line">      filePath = filePath.toString();   </div><div class="line">      java.io.File myDelFile = <span class="keyword">new</span> java.io.File(filePath);   </div><div class="line">      myDelFile.delete();   </div><div class="line">  </div><div class="line">    &#125;   </div><div class="line">    <span class="keyword">catch</span> (Exception e) &#123;   </div><div class="line">      System.out.println(<span class="string">"删除文件操作出错"</span>);   </div><div class="line">      e.printStackTrace();   </div><div class="line">  </div><div class="line">    &#125;   </div><div class="line">  </div><div class="line">  &#125;   </div><div class="line">  </div><div class="line">  <span class="comment">/**  </span></div><div class="line">   * 删除文件夹  </div><div class="line">   * <span class="doctag">@param</span> filePathAndName String 文件夹路径及名称 如c:/fqf  </div><div class="line">   * <span class="doctag">@param</span> fileContent String  </div><div class="line">   * <span class="doctag">@return</span> boolean  </div><div class="line">   */  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delFolder</span><span class="params">(String folderPath)</span> </span>&#123;   </div><div class="line">    <span class="keyword">try</span> &#123;   </div><div class="line">      delAllFile(folderPath); <span class="comment">//删除完里面所有内容   </span></div><div class="line">      String filePath = folderPath;   </div><div class="line">      filePath = filePath.toString();   </div><div class="line">      java.io.File myFilePath = <span class="keyword">new</span> java.io.File(filePath);   </div><div class="line">      myFilePath.delete(); <span class="comment">//删除空文件夹   </span></div><div class="line">  </div><div class="line">    &#125;   </div><div class="line">    <span class="keyword">catch</span> (Exception e) &#123;   </div><div class="line">      System.out.println(<span class="string">"删除文件夹操作出错"</span>);   </div><div class="line">      e.printStackTrace();   </div><div class="line">  </div><div class="line">    &#125;   </div><div class="line">  </div><div class="line">  &#125;   </div><div class="line">  </div><div class="line">  <span class="comment">/**  </span></div><div class="line">   * 删除文件夹里面的所有文件  </div><div class="line">   * <span class="doctag">@param</span> path String 文件夹路径 如 c:/fqf  </div><div class="line">   */  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delAllFile</span><span class="params">(String path)</span> </span>&#123;   </div><div class="line">    File file = <span class="keyword">new</span> File(path);   </div><div class="line">    <span class="keyword">if</span> (!file.exists()) &#123;   </div><div class="line">      <span class="keyword">return</span>;   </div><div class="line">    &#125;   </div><div class="line">    <span class="keyword">if</span> (!file.isDirectory()) &#123;   </div><div class="line">      <span class="keyword">return</span>;   </div><div class="line">    &#125;   </div><div class="line">    String[] tempList = file.list();   </div><div class="line">    File temp = <span class="keyword">null</span>;   </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tempList.length; i++) &#123;   </div><div class="line">      <span class="keyword">if</span> (path.endsWith(File.separator)) &#123;   </div><div class="line">        temp = <span class="keyword">new</span> File(path + tempList[i]);   </div><div class="line">      &#125;   </div><div class="line">      <span class="keyword">else</span> &#123;   </div><div class="line">        temp = <span class="keyword">new</span> File(path + File.separator + tempList[i]);   </div><div class="line">      &#125;   </div><div class="line">      <span class="keyword">if</span> (temp.isFile()) &#123;   </div><div class="line">        temp.delete();   </div><div class="line">      &#125;   </div><div class="line">      <span class="keyword">if</span> (temp.isDirectory()) &#123;   </div><div class="line">        delAllFile(path+<span class="string">"/"</span>+ tempList[i]);<span class="comment">//先删除文件夹里面的文件   </span></div><div class="line">        delFolder(path+<span class="string">"/"</span>+ tempList[i]);<span class="comment">//再删除空文件夹   </span></div><div class="line">      &#125;   </div><div class="line">    &#125;   </div><div class="line">  &#125;   </div><div class="line">  </div><div class="line">  <span class="comment">/**  </span></div><div class="line">   * 复制单个文件  </div><div class="line">   * <span class="doctag">@param</span> oldPath String 原文件路径 如：c:/fqf.txt  </div><div class="line">   * <span class="doctag">@param</span> newPath String 复制后路径 如：f:/fqf.txt  </div><div class="line">   * <span class="doctag">@return</span> boolean  </div><div class="line">   */  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">copyFile</span><span class="params">(String oldPath, String newPath)</span> </span>&#123;   </div><div class="line">    <span class="keyword">try</span> &#123;   </div><div class="line">      <span class="keyword">int</span> bytesum = <span class="number">0</span>;   </div><div class="line">      <span class="keyword">int</span> byteread = <span class="number">0</span>;   </div><div class="line">      File oldfile = <span class="keyword">new</span> File(oldPath);   </div><div class="line">      <span class="keyword">if</span> (oldfile.exists()) &#123; <span class="comment">//文件存在时   </span></div><div class="line">        InputStream inStream = <span class="keyword">new</span> FileInputStream(oldPath); <span class="comment">//读入原文件   </span></div><div class="line">        FileOutputStream fs = <span class="keyword">new</span> FileOutputStream(newPath);   </div><div class="line">        <span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1444</span>];   </div><div class="line">        <span class="keyword">int</span> length;   </div><div class="line">        <span class="keyword">while</span> ( (byteread = inStream.read(buffer)) != -<span class="number">1</span>) &#123;   </div><div class="line">          bytesum += byteread; <span class="comment">//字节数 文件大小   </span></div><div class="line">          System.out.println(bytesum);   </div><div class="line">          fs.write(buffer, <span class="number">0</span>, byteread);   </div><div class="line">        &#125;   </div><div class="line">        inStream.close();   </div><div class="line">      &#125;   </div><div class="line">    &#125;   </div><div class="line">    <span class="keyword">catch</span> (Exception e) &#123;   </div><div class="line">      System.out.println(<span class="string">"复制单个文件操作出错"</span>);   </div><div class="line">      e.printStackTrace();   </div><div class="line">  </div><div class="line">    &#125;   </div><div class="line">  </div><div class="line">  &#125;   </div><div class="line">  </div><div class="line">  <span class="comment">/**  </span></div><div class="line">   * 复制整个文件夹内容  </div><div class="line">   * <span class="doctag">@param</span> oldPath String 原文件路径 如：c:/fqf  </div><div class="line">   * <span class="doctag">@param</span> newPath String 复制后路径 如：f:/fqf/ff  </div><div class="line">   * <span class="doctag">@return</span> boolean  </div><div class="line">   */  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">copyFolder</span><span class="params">(String oldPath, String newPath)</span> </span>&#123;   </div><div class="line">  </div><div class="line">    <span class="keyword">try</span> &#123;   </div><div class="line">      (<span class="keyword">new</span> File(newPath)).mkdirs(); <span class="comment">//如果文件夹不存在 则建立新文件夹   </span></div><div class="line">      File a=<span class="keyword">new</span> File(oldPath);   </div><div class="line">      String[] file=a.list();   </div><div class="line">      File temp=<span class="keyword">null</span>;   </div><div class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; file.length; i++) &#123;   </div><div class="line">        <span class="keyword">if</span>(oldPath.endsWith(File.separator))&#123;   </div><div class="line">          temp=<span class="keyword">new</span> File(oldPath+file[i]);   </div><div class="line">        &#125;   </div><div class="line">        <span class="keyword">else</span>&#123;   </div><div class="line">          temp=<span class="keyword">new</span> File(oldPath+File.separator+file[i]);   </div><div class="line">        &#125;   </div><div class="line">  </div><div class="line">        <span class="keyword">if</span>(temp.isFile())&#123;   </div><div class="line">          FileInputStream input = <span class="keyword">new</span> FileInputStream(temp);   </div><div class="line">          FileOutputStream output = <span class="keyword">new</span> FileOutputStream(newPath + <span class="string">"/"</span> +   </div><div class="line">              (temp.getName()).toString());   </div><div class="line">          <span class="keyword">byte</span>[] b = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span> * <span class="number">5</span>];   </div><div class="line">          <span class="keyword">int</span> len;   </div><div class="line">          <span class="keyword">while</span> ( (len = input.read(b)) != -<span class="number">1</span>) &#123;   </div><div class="line">            output.write(b, <span class="number">0</span>, len);   </div><div class="line">          &#125;   </div><div class="line">          output.flush();   </div><div class="line">          output.close();   </div><div class="line">          input.close();   </div><div class="line">        &#125;   </div><div class="line">        <span class="keyword">if</span>(temp.isDirectory())&#123;<span class="comment">//如果是子文件夹   </span></div><div class="line">          copyFolder(oldPath+<span class="string">"/"</span>+file[i],newPath+<span class="string">"/"</span>+file[i]);   </div><div class="line">        &#125;   </div><div class="line">      &#125;   </div><div class="line">    &#125;   </div><div class="line">    <span class="keyword">catch</span> (Exception e) &#123;   </div><div class="line">      System.out.println(<span class="string">"复制整个文件夹内容操作出错"</span>);   </div><div class="line">      e.printStackTrace();   </div><div class="line">  </div><div class="line">    &#125;   </div><div class="line">  </div><div class="line">  &#125;   </div><div class="line">  </div><div class="line">  <span class="comment">/**  </span></div><div class="line">   * 移动文件到指定目录  </div><div class="line">   * <span class="doctag">@param</span> oldPath String 如：c:/fqf.txt  </div><div class="line">   * <span class="doctag">@param</span> newPath String 如：d:/fqf.txt  </div><div class="line">   */  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">moveFile</span><span class="params">(String oldPath, String newPath)</span> </span>&#123;   </div><div class="line">    copyFile(oldPath, newPath);   </div><div class="line">    delFile(oldPath);   </div><div class="line">  </div><div class="line">  &#125;   </div><div class="line">  </div><div class="line">  <span class="comment">/**  </span></div><div class="line">   * 移动文件到指定目录  </div><div class="line">   * <span class="doctag">@param</span> oldPath String 如：c:/fqf.txt  </div><div class="line">   * <span class="doctag">@param</span> newPath String 如：d:/fqf.txt  </div><div class="line">   */  </div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">moveFolder</span><span class="params">(String oldPath, String newPath)</span> </span>&#123;   </div><div class="line">    copyFolder(oldPath, newPath);   </div><div class="line">    delFolder(oldPath);   </div><div class="line">  </div><div class="line">  &#125;   </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/java.io.file/" data-id="cjovojf7g005v58d8yyxrs9b1" class="article-share-link"><i class="fa fa-share"></i>
-    Compartir</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof (__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function () {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function (e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')) {
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                    '<input class="article-share-input" value="' + url + '">',
-                    '<div class="article-share-links">',
-                    '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl +
-                    '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                    '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl +
-                    '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                    '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl +
-                    '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                    '<a href="https://plus.google.com/share?url=' + encodedUrl +
-                    '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                    '</div>',
-                    '</div>',
-                ].join('');
-
-                box = $(html);
-
-                $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://wushang1987.github.io/2017/04/16/java/base/java.io.file/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/base/java.io.file/">Comentarios</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
 <article id="post-java/base/Scanner" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -465,8 +334,8 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/Scanner/" data-id="cjovojf7i005w58d8cv0so2dg" class="article-share-link"><i class="fa fa-share"></i>
-    Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/Scanner/" data-id="cjp1dmgw10064qsd82hoyszyt" class="article-share-link"><i class="fa fa-share"></i>
+    Partager</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -538,7 +407,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/16/java/base/Scanner/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/base/Scanner/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/04/16/java/base/Scanner/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/base/Scanner/">Commentaires</a>
     
 
         </footer>
@@ -612,8 +481,8 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/system/" data-id="cjovojf7n006058d8h621wsp3" class="article-share-link"><i class="fa fa-share"></i>
-    Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/system/" data-id="cjp1dmgvn005vqsd82gyqp0ph" class="article-share-link"><i class="fa fa-share"></i>
+    Partager</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -685,7 +554,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/16/java/base/system/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/base/system/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/04/16/java/base/system/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/base/system/">Commentaires</a>
     
 
         </footer>
@@ -751,8 +620,8 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/16/java/术语列表/" data-id="cjovojevs002j58d8kgjcegr9" class="article-share-link"><i class="fa fa-share"></i>
-    Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/04/16/java/术语列表/" data-id="cjp1dmgh3002aqsd8oxczmw7g" class="article-share-link"><i class="fa fa-share"></i>
+    Partager</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -824,7 +693,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/16/java/术语列表/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/术语列表/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/04/16/java/术语列表/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/术语列表/">Commentaires</a>
     
 
         </footer>
@@ -900,8 +769,8 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/15/计算机基础知识/SSL/" data-id="cjovojey8004m58d8xwantzz2" class="article-share-link"><i class="fa fa-share"></i>
-    Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/04/15/计算机基础知识/SSL/" data-id="cjp1dmgk9004gqsd8ps0f9r6b" class="article-share-link"><i class="fa fa-share"></i>
+    Partager</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -973,7 +842,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/15/计算机基础知识/SSL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/15/计算机基础知识/SSL/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/04/15/计算机基础知识/SSL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/15/计算机基础知识/SSL/">Commentaires</a>
     
 
         </footer>
@@ -1034,8 +903,8 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/14/前端知识/新技术/" data-id="cjovojey1004g58d8ekj1pabq" class="article-share-link"><i class="fa fa-share"></i>
-    Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/04/14/前端知识/新技术/" data-id="cjp1dmgjx004aqsd88s8gif81" class="article-share-link"><i class="fa fa-share"></i>
+    Partager</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1107,7 +976,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/14/前端知识/新技术/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/14/前端知识/新技术/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/04/14/前端知识/新技术/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/14/前端知识/新技术/">Commentaires</a>
     
 
         </footer>
@@ -1166,8 +1035,8 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/14/javascript/优秀文章/" data-id="cjovojevw002p58d8h8uqluae" class="article-share-link"><i class="fa fa-share"></i>
-    Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/04/14/javascript/优秀文章/" data-id="cjp1dmgi4002vqsd8shd96zq6" class="article-share-link"><i class="fa fa-share"></i>
+    Partager</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1239,7 +1108,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/14/javascript/优秀文章/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/14/javascript/优秀文章/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/04/14/javascript/优秀文章/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/14/javascript/优秀文章/">Commentaires</a>
     
 
         </footer>
@@ -1268,8 +1137,8 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/14/java/java8/java8新增功能汇总/" data-id="cjovojf7s006458d8w0x4n4t9" class="article-share-link"><i class="fa fa-share"></i>
-    Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/04/14/java/java8/java8新增功能汇总/" data-id="cjp1dmgvy0062qsd8fil9da2y" class="article-share-link"><i class="fa fa-share"></i>
+    Partager</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1341,7 +1210,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/14/java/java8/java8新增功能汇总/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/14/java/java8/java8新增功能汇总/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/04/14/java/java8/java8新增功能汇总/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/14/java/java8/java8新增功能汇总/">Commentaires</a>
     
 
         </footer>
@@ -1417,8 +1286,8 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/14/tools/gitlab/" data-id="cjovojexe003o58d8y9cv70p6" class="article-share-link"><i class="fa fa-share"></i>
-    Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/04/14/tools/gitlab/" data-id="cjp1dmgix003iqsd8u0c82xqu" class="article-share-link"><i class="fa fa-share"></i>
+    Partager</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1490,7 +1359,141 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/14/tools/gitlab/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/14/tools/gitlab/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/04/14/tools/gitlab/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/14/tools/gitlab/">Commentaires</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+<article id="post-css/技术前沿" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/04/13/css/技术前沿/">css 前沿技术</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/04/13/css/技术前沿/">
+            <time datetime="2017-04-13T13:47:00.000Z" itemprop="datePublished">2017-04-13</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/css/">css</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>CSS, Sass, SCSS, Compass, Less,BEM, SMACSS, OOCSS, ACSS, CCSS, WTFSS?</p>
+<p><a href="http://www.w3cplus.com/css/css-sass-scss-compass-less-bem-smacss-oocss-acss-ccss-wtfss.html" target="_blank" rel="external">http://www.w3cplus.com/css/css-sass-scss-compass-less-bem-smacss-oocss-acss-ccss-wtfss.html</a></p>
+<p><a href="https://segmentfault.com/a/1190000000389838" target="_blank" rel="external">https://segmentfault.com/a/1190000000389838</a></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://wushang1987.github.io/2017/04/13/css/技术前沿/" data-id="cjp1dmgfv001mqsd8fv8o8tky" class="article-share-link"><i class="fa fa-share"></i>
+    Partager</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof (__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function () {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function (e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')) {
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                    '<input class="article-share-input" value="' + url + '">',
+                    '<div class="article-share-links">',
+                    '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl +
+                    '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                    '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl +
+                    '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                    '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl +
+                    '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                    '<a href="https://plus.google.com/share?url=' + encodedUrl +
+                    '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                    '</div>',
+                    '</div>',
+                ].join('');
+
+                box = $(html);
+
+                $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://wushang1987.github.io/2017/04/13/css/技术前沿/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/13/css/技术前沿/">Commentaires</a>
     
 
         </footer>
@@ -1566,8 +1569,8 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/13/tools/工具插件开发/" data-id="cjovojey5004j58d8w1xa8392" class="article-share-link"><i class="fa fa-share"></i>
-    Compartir</a>
+    <a data-url="https://wushang1987.github.io/2017/04/13/tools/工具插件开发/" data-id="cjp1dmgjk003xqsd86k0gt5nq" class="article-share-link"><i class="fa fa-share"></i>
+    Partager</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1639,7 +1642,7 @@
 
             
     
-        <a href="https://wushang1987.github.io/2017/04/13/tools/工具插件开发/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/13/tools/工具插件开发/">Comentarios</a>
+        <a href="https://wushang1987.github.io/2017/04/13/tools/工具插件开发/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/13/tools/工具插件开发/">Commentaires</a>
     
 
         </footer>
@@ -1650,7 +1653,7 @@
 
 
 <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/6/">&laquo; Anterior</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/8/">Siguiente  &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/6/">&laquo; Préc</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/8/">Suiv &raquo;</a>
 </nav>
 
 
@@ -1681,26 +1684,26 @@
    
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Recientes</h3>
+        <h3 class="widget-title">Récents</h3>
         <div class="widget">
             <ul id="recent-post" class="">
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/11/24/javascript/函数柯里化/" class="thumbnail">
+                            <a href="/2018/11/29/music/" class="thumbnail">
     
     
-        <span style="background-image:url(/img/js.jpg)" alt="理解javaScript中的函数柯里化（草稿）" class="thumbnail-image"></span>
+        <span style="background-image:url(/img/music.jpeg)" alt="如何显示乐谱" class="thumbnail-image"></span>
     
 </a>
 
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/javascript/">javascript</a></p>
-                            <p class="item-title"><a href="/2018/11/24/javascript/函数柯里化/" class="title">理解javaScript中的函数柯里化（草稿）</a></p>
-                            <p class="item-date"><time datetime="2018-11-24T15:59:00.000Z" itemprop="datePublished">2018-11-24</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/idea/">idea</a></p>
+                            <p class="item-title"><a href="/2018/11/29/music/" class="title">如何显示乐谱</a></p>
+                            <p class="item-date"><time datetime="2018-11-28T16:40:24.000Z" itemprop="datePublished">2018-11-29</time></p>
                         </div>
                     </li>
                 
@@ -1787,43 +1790,43 @@
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Categorias</h3>
+        <h3 class="widget-title">Catégories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-learning/">Machine-learning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mathematics/">Mathematics</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/angular/">angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/diary/">diary</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/idea/">idea</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/movie/">movie</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/typeScript/">typeScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/unity/">unity</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-learning/">Machine-learning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mathematics/">Mathematics</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/angular/">angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/diary/">diary</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/idea/">idea</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/movie/">movie</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/typeScript/">typeScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/unity/">unity</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Archivos</h3>
+        <h3 class="widget-title">Archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Etiquetas</h3>
+        <h3 class="widget-title">Tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">-面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DB/">DB</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-learning/">Machine-learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathematics/">Mathematics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Security/">Security</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/">Tools</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cloud/">cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">diary</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/electron/">electron</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/movie/">movie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/srping/">srping</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typeScript/">typeScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/">unity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/website/">website</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端知识/">前端知识</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多媒体/">多媒体</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">-面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DB/">DB</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-learning/">Machine-learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathematics/">Mathematics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Security/">Security</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/">Tools</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cloud/">cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">diary</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/electron/">electron</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/movie/">movie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/srping/">srping</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typeScript/">typeScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/">unity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/website/">website</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端知识/">前端知识</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多媒体/">多媒体</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Nube de etiquetas</h3>
+        <h3 class="widget-title">Nuage de tags</h3>
         <div class="widget tagcloud">
-            <a href="/tags/面试/" style="font-size: 10px;">-面试</a> <a href="/tags/DB/" style="font-size: 14.29px;">DB</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Machine-learning/" style="font-size: 11.43px;">Machine-learning</a> <a href="/tags/Mathematics/" style="font-size: 10px;">Mathematics</a> <a href="/tags/Security/" style="font-size: 10px;">Security</a> <a href="/tags/Tools/" style="font-size: 18.57px;">Tools</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/cloud/" style="font-size: 10px;">cloud</a> <a href="/tags/css/" style="font-size: 11.43px;">css</a> <a href="/tags/diary/" style="font-size: 12.86px;">diary</a> <a href="/tags/eclipse/" style="font-size: 11.43px;">eclipse</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/git/" style="font-size: 11.43px;">git</a> <a href="/tags/hexo/" style="font-size: 11.43px;">hexo</a> <a href="/tags/idea/" style="font-size: 15.71px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/js/" style="font-size: 12.86px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/spring/" style="font-size: 17.14px;">spring</a> <a href="/tags/srping/" style="font-size: 10px;">srping</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/typeScript/" style="font-size: 10px;">typeScript</a> <a href="/tags/unity/" style="font-size: 10px;">unity</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/website/" style="font-size: 10px;">website</a> <a href="/tags/前端知识/" style="font-size: 11.43px;">前端知识</a> <a href="/tags/基础/" style="font-size: 11.43px;">基础</a> <a href="/tags/多媒体/" style="font-size: 10px;">多媒体</a> <a href="/tags/日志/" style="font-size: 11.43px;">日志</a>
+            <a href="/tags/面试/" style="font-size: 10px;">-面试</a> <a href="/tags/DB/" style="font-size: 14.29px;">DB</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Machine-learning/" style="font-size: 11.43px;">Machine-learning</a> <a href="/tags/Mathematics/" style="font-size: 10px;">Mathematics</a> <a href="/tags/Security/" style="font-size: 10px;">Security</a> <a href="/tags/Tools/" style="font-size: 18.57px;">Tools</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/cloud/" style="font-size: 10px;">cloud</a> <a href="/tags/css/" style="font-size: 11.43px;">css</a> <a href="/tags/diary/" style="font-size: 12.86px;">diary</a> <a href="/tags/eclipse/" style="font-size: 11.43px;">eclipse</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/git/" style="font-size: 11.43px;">git</a> <a href="/tags/hexo/" style="font-size: 11.43px;">hexo</a> <a href="/tags/idea/" style="font-size: 15.71px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/js/" style="font-size: 12.86px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/spring/" style="font-size: 17.14px;">spring</a> <a href="/tags/srping/" style="font-size: 10px;">srping</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/typeScript/" style="font-size: 10px;">typeScript</a> <a href="/tags/unity/" style="font-size: 10px;">unity</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/website/" style="font-size: 10px;">website</a> <a href="/tags/前端知识/" style="font-size: 11.43px;">前端知识</a> <a href="/tags/基础/" style="font-size: 11.43px;">基础</a> <a href="/tags/多媒体/" style="font-size: 10px;">多媒体</a> <a href="/tags/日志/" style="font-size: 11.43px;">日志</a>
         </div>
     </div>
 
     
         
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">Links</h3>
+        <h3 class="widget-title">Liens</h3>
         <div class="widget">
             <ul>
                 
