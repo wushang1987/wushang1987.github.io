@@ -162,7 +162,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                83
+                84
                 <span>
                     posts</span>
             </div>
@@ -224,6 +224,143 @@
 </aside>
             
             <section id="main">
+<article id="post-java/base/Annotation" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/04/16/java/base/Annotation/">java annotation</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/04/16/java/base/Annotation/">
+            <time datetime="2017-04-16T03:31:38.000Z" itemprop="datePublished">2017-04-16</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/java/">java</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>注解（Annotation），也叫元数据。一种代码级别的说明。它是JDK1.5及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释。</p>
+<p>作用分类：<br>①编写文档：通过代码里标识的元数据生成文档【生成文档doc文档】<br>② 代码分析：通过代码里标识的元数据对代码进行分析【使用反射】<br>③编译检查：通过代码里标识的元数据让编译器能够实现基本的编译检查【Override】</p>
+<h2 id="常见注解"><a href="#常见注解" class="headerlink" title="常见注解"></a>常见注解</h2><p>@Override<br>它的作用是对覆盖超类中方法的方法进行标记，如果被标记的方法并没有实际覆盖超类中的方法，则编译器会发出错误警告。</p>
+<p>@Deprecated<br>它的作用是对不应该再使用的方法添加注解，当编程人员使用这些方法时，将会在编译时显示提示信息，它与javadoc里的@deprecated标记有相同的功能，准确的说，它还不如javadoc @deprecated，因为它不支持参数，使用@Deprecated的示例代码示例如下：</p>
+<p>@SuppressWarnings<br>其参数有：<br>deprecation，使用了过时的类或方法时的警告<br>unchecked，执行了未检查的转换时的警告<br>fallthrough，当 switch 程序块直接通往下一种情况而没有 break 时的警告<br>path，在类路径、源文件路径等中有不存在的路径时的警告<br>serial，当在可序列化的类上缺少serialVersionUID 定义时的警告<br>finally ，任何 finally 子句不能正常完成时的警告<br>all，关于以上所有情况的警告</p>
+<h2 id="注解的分类"><a href="#注解的分类" class="headerlink" title="注解的分类"></a>注解的分类</h2><h2 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h2><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p>深入理解Java：注解（Annotation）自定义注解入门<br><a href="http://www.cnblogs.com/peida/archive/2013/04/24/3036689.html" target="_blank" rel="external">http://www.cnblogs.com/peida/archive/2013/04/24/3036689.html</a></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/Annotation/" data-id="cjpldowdy0063xwd89tqmb6c1" class="article-share-link"><i class="fa fa-share"></i>
+    Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof (__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function () {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function (e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')) {
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                    '<input class="article-share-input" value="' + url + '">',
+                    '<div class="article-share-links">',
+                    '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl +
+                    '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                    '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl +
+                    '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                    '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl +
+                    '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                    '<a href="https://plus.google.com/share?url=' + encodedUrl +
+                    '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                    '</div>',
+                    '</div>',
+                ].join('');
+
+                box = $(html);
+
+                $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://wushang1987.github.io/2017/04/16/java/base/Annotation/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/16/java/base/Annotation/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
 <article id="post-java/base/java.io.file" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -272,7 +409,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/java.io.file/" data-id="cjpgzv4a30061d4d8zj5ml0be" class="article-share-link"><i class="fa fa-share"></i>
+    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/java.io.file/" data-id="cjpldowdv0061xwd887jflc9g" class="article-share-link"><i class="fa fa-share"></i>
     Share</a>
 <script>
     (function ($) {
@@ -465,7 +602,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/Scanner/" data-id="cjpgzv49v005zd4d8u48buutg" class="article-share-link"><i class="fa fa-share"></i>
+    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/Scanner/" data-id="cjpldowdr005yxwd8sfvimajp" class="article-share-link"><i class="fa fa-share"></i>
     Share</a>
 <script>
     (function ($) {
@@ -612,7 +749,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/system/" data-id="cjpgzv4a80063d4d8sbhtgcg7" class="article-share-link"><i class="fa fa-share"></i>
+    <a data-url="https://wushang1987.github.io/2017/04/16/java/base/system/" data-id="cjpldowe60069xwd85j8jxgwa" class="article-share-link"><i class="fa fa-share"></i>
     Share</a>
 <script>
     (function ($) {
@@ -751,7 +888,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/16/java/术语列表/" data-id="cjpgzv3lq002ld4d89m7kw6oo" class="article-share-link"><i class="fa fa-share"></i>
+    <a data-url="https://wushang1987.github.io/2017/04/16/java/术语列表/" data-id="cjpldovuc0030xwd8r9rr8gfs" class="article-share-link"><i class="fa fa-share"></i>
     Share</a>
 <script>
     (function ($) {
@@ -900,7 +1037,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/15/计算机基础知识/SSL/" data-id="cjpgzv3nu004rd4d8jvdvy543" class="article-share-link"><i class="fa fa-share"></i>
+    <a data-url="https://wushang1987.github.io/2017/04/15/计算机基础知识/SSL/" data-id="cjpldovvo004lxwd88mnpbt16" class="article-share-link"><i class="fa fa-share"></i>
     Share</a>
 <script>
     (function ($) {
@@ -1034,7 +1171,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/14/前端知识/新技术/" data-id="cjpgzv3nq004kd4d8lna250s0" class="article-share-link"><i class="fa fa-share"></i>
+    <a data-url="https://wushang1987.github.io/2017/04/14/前端知识/新技术/" data-id="cjpldovw0004yxwd8f111ihn6" class="article-share-link"><i class="fa fa-share"></i>
     Share</a>
 <script>
     (function ($) {
@@ -1166,7 +1303,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/14/javascript/优秀文章/" data-id="cjpgzv3lv002pd4d85rfecjnm" class="article-share-link"><i class="fa fa-share"></i>
+    <a data-url="https://wushang1987.github.io/2017/04/14/javascript/优秀文章/" data-id="cjpldovus003nxwd8q3p7a69i" class="article-share-link"><i class="fa fa-share"></i>
     Share</a>
 <script>
     (function ($) {
@@ -1268,7 +1405,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/14/java/java8/java8新增功能汇总/" data-id="cjpgzv4av006ed4d899r9levg" class="article-share-link"><i class="fa fa-share"></i>
+    <a data-url="https://wushang1987.github.io/2017/04/14/java/java8/java8新增功能汇总/" data-id="cjpldowe30067xwd8qrupgepj" class="article-share-link"><i class="fa fa-share"></i>
     Share</a>
 <script>
     (function ($) {
@@ -1417,7 +1554,7 @@
 
 </div>
 
-    <a data-url="https://wushang1987.github.io/2017/04/14/tools/gitlab/" data-id="cjpgzv3mo003md4d8xjoir7mz" class="article-share-link"><i class="fa fa-share"></i>
+    <a data-url="https://wushang1987.github.io/2017/04/14/tools/gitlab/" data-id="cjpldovv70040xwd8lc51yayt" class="article-share-link"><i class="fa fa-share"></i>
     Share</a>
 <script>
     (function ($) {
@@ -1500,140 +1637,6 @@
 
 
 
-<article id="post-css/技术前沿" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/04/13/css/技术前沿/">css 前沿技术</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/04/13/css/技术前沿/">
-            <time datetime="2017-04-13T13:47:00.000Z" itemprop="datePublished">2017-04-13</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/css/">css</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>CSS, Sass, SCSS, Compass, Less,BEM, SMACSS, OOCSS, ACSS, CCSS, WTFSS?</p>
-<p><a href="http://www.w3cplus.com/css/css-sass-scss-compass-less-bem-smacss-oocss-acss-ccss-wtfss.html" target="_blank" rel="external">http://www.w3cplus.com/css/css-sass-scss-compass-less-bem-smacss-oocss-acss-ccss-wtfss.html</a></p>
-<p><a href="https://segmentfault.com/a/1190000000389838" target="_blank" rel="external">https://segmentfault.com/a/1190000000389838</a></p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://wushang1987.github.io/2017/04/13/css/技术前沿/" data-id="cjpgzv3l1001sd4d8vcxetb6t" class="article-share-link"><i class="fa fa-share"></i>
-    Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof (__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function () {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function (e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')) {
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                    '<input class="article-share-input" value="' + url + '">',
-                    '<div class="article-share-links">',
-                    '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl +
-                    '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                    '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl +
-                    '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                    '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl +
-                    '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                    '<a href="https://plus.google.com/share?url=' + encodedUrl +
-                    '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                    '</div>',
-                    '</div>',
-                ].join('');
-
-                box = $(html);
-
-                $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://wushang1987.github.io/2017/04/13/css/技术前沿/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/04/13/css/技术前沿/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
 <nav id="page-nav">
     <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
 </nav>
@@ -1669,6 +1672,25 @@
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/12/13/interview/codeTest/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/img/tools.jpg)" alt="开发技能评测工具" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/12/13/interview/codeTest/" class="title">开发技能评测工具</a></p>
+                            <p class="item-date"><time datetime="2018-12-12T16:16:27.000Z" itemprop="datePublished">2018-12-13</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1746,25 +1768,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/02/26/My-New-Year/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/img/dog.jpg)" alt="New Year" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/02/26/My-New-Year/" class="title">New Year</a></p>
-                            <p class="item-date"><time datetime="2018-02-26T15:56:13.000Z" itemprop="datePublished">2018-02-26</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1783,7 +1786,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
