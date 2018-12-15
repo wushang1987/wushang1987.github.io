@@ -27,6 +27,8 @@ banner:
 
 [flat.io](https://flat.io/)
 
+<!--more-->
+
 flat 官方提供的几个项目也是不错的学习资料
 
 [FlatIO/embed-client: 🎼 Sheet Music & Tabs Embed JavaScript Client](https://github.com/FlatIO/embed-client)
