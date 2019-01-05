@@ -1,286 +1,166 @@
 <!DOCTYPE html>
-<html lang=en>
+<html  lang="en">
 <head>
     <meta charset="utf-8">
-    
-    <title>删除冗余图片 | wushang1987</title>
-    <meta name="baidu-site-verification" content="JLjGyMFoL2" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>删除冗余图片 - Wang Weidong`s Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+
     <meta name="description" content="2017-06-03 23:57:25 这两天和大芒果讨论了一下关于在项目中清除冗余图片的问题，之前没有关注到这块，整理一下在这个方面搜集到的资料。 2017-06-04 10:48:01清除冗余是一个有意思的问题，同理可以衍生出一些其他的可以操作的比如清除冗余的CSS。清除冗余js方法等等。另外这个问题的场景比较固定，只考虑在前端静态页面开发过程中引入的图片资源问题。如果扩散一下删除冗余图片的问">
 <meta name="keywords" content="idea">
 <meta property="og:type" content="article">
 <meta property="og:title" content="删除冗余图片">
 <meta property="og:url" content="https://wushang1987.github.io/2017/06/04/IDEA/cleanimage/index.html">
-<meta property="og:site_name" content="wushang1987">
+<meta property="og:site_name" content="Wang Weidong`s Blog">
 <meta property="og:description" content="2017-06-03 23:57:25 这两天和大芒果讨论了一下关于在项目中清除冗余图片的问题，之前没有关注到这块，整理一下在这个方面搜集到的资料。 2017-06-04 10:48:01清除冗余是一个有意思的问题，同理可以衍生出一些其他的可以操作的比如清除冗余的CSS。清除冗余js方法等等。另外这个问题的场景比较固定，只考虑在前端静态页面开发过程中引入的图片资源问题。如果扩散一下删除冗余图片的问">
-<meta property="og:image" content="https://wushang1987.github.io/img/kill.jpg">
 <meta property="og:updated_time" content="2017-06-13T11:41:47.639Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="删除冗余图片">
 <meta name="twitter:description" content="2017-06-03 23:57:25 这两天和大芒果讨论了一下关于在项目中清除冗余图片的问题，之前没有关注到这块，整理一下在这个方面搜集到的资料。 2017-06-04 10:48:01清除冗余是一个有意思的问题，同理可以衍生出一些其他的可以操作的比如清除冗余的CSS。清除冗余js方法等等。另外这个问题的场景比较固定，只考虑在前端静态页面开发过程中引入的图片资源问题。如果扩散一下删除冗余图片的问">
-<meta name="twitter:image" content="https://wushang1987.github.io/img/kill.jpg">
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
     
 
     
-
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
     
 
-    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
-    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
-
-    <link rel="stylesheet" href="/css/style.css">
-
-    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
-    
-    
-        <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
-    
-    
     
     
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
 </head>
-
-<body>
-    <div id="container">
-        <header id="header">
-    <div id="header-main" class="header-inner">
-        <div class="outer">
-            <a href="/" id="logo">
-                <i class="logo"></i>
-                <span class="site-title">wushang1987</span>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/avatar1.png" alt="删除冗余图片" height="28">
+            
             </a>
-            <nav id="main-nav">
-                
-                    <a class="main-nav-link" href="/.">HOME</a>
-                
-                    <a class="main-nav-link" href="/archives">Archives</a>
-                
-                    <a class="main-nav-link" href="/categories">categories</a>
-                
-                    <a class="main-nav-link" href="/tags">Tags</a>
-                
-                    <a class="main-nav-link" href="/about">ABOUT</a>
-                
-                    <a class="main-nav-link" href="/categories/idea">IDEA</a>
-                
-                    <a class="main-nav-link" href="https://github.com/wushang1987">GitHub</a>
-                
-            </nav>
+        </div>
+        <div class="navbar-menu">
             
+            <div class="navbar-start">
                 
-                <nav id="sub-nav">
-                    <div class="profile" id="profile-nav">
-                        <a id="profile-anchor" href="javascript:;">
-                            <img class="avatar" src="/css/images/avatar.jpg" />
-                            <i class="fa fa-caret-down"></i>
-                        </a>
-                    </div>
-                </nav>
-            
-            <div id="search-form-wrap">
-
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
-
-</div>
-        </div>
-    </div>
-    <div id="main-nav-mobile" class="header-sub header-inner">
-        <table class="menu outer">
-            <tr>
+                <a class="navbar-item"
+                href="/">Home</a>
                 
-                    <td><a class="main-nav-link" href="/.">HOME</a></td>
+                <a class="navbar-item"
+                href="/archives">Archives</a>
                 
-                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                <a class="navbar-item"
+                href="/categories">Categories</a>
                 
-                    <td><a class="main-nav-link" href="/categories">categories</a></td>
+                <a class="navbar-item"
+                href="/tags">Tags</a>
                 
-                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                <a class="navbar-item"
+                href="/about">About</a>
                 
-                    <td><a class="main-nav-link" href="/about">ABOUT</a></td>
-                
-                    <td><a class="main-nav-link" href="/categories/idea">IDEA</a></td>
-                
-                    <td><a class="main-nav-link" href="https://github.com/wushang1987">GitHub</a></td>
-                
-                <td>
-                    
-    <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
-    </div>
-
-                </td>
-            </tr>
-        </table>
-    </div>
-</header>
-
-        <div class="outer">
-            
-                
-
-<aside id="profile">
-    <div class="inner profile-inner">
-        <div class="base-info profile-block">
-            <img id="avatar" src="/css/images/avatar.jpg" />
-            <h2 id="name">
-                wushang1987
-            </h2>
-            <h3 id="title">
-                Web Developer &amp; Designer
-            </h3>
-            <span id="location"><i class="fa fa-map-marker"></i>
-                xi`an, China</span>
-            <a id="follow" target="_blank" href="https://github.com/wushang1987">
-                FOLLOW</a>
-        </div>
-        <div class="article-info profile-block">
-            <div class="article-info-block">
-                84
-                <span>
-                    posts</span>
             </div>
-            <div class="article-info-block">
-                34
-                <span>
-                    tags</span>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Github" href="https://github.com/wushang1987">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
             </div>
         </div>
-        
-        <div class="profile-block social-links">
-            <table>
-                <tr>
-                    
-                    
-                    <td>
-                        <a href="https://github.com/wushang1987" target="_blank" title="github" class=tooltip>
-                            <i class="fa fa-github"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="https://codepen.io/wushang1987/" target="_blank" title="codepen" class=tooltip>
-                            <i class="fa fa-codepen"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="https://plus.google.com/u/0/+%E7%8E%8B%E7%BB%B4%E6%A0%8Bwwd" target="_blank" title="google-plus" class=tooltip>
-                            <i class="fa fa-google-plus"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="https://jsfiddle.net/user/wushang/fiddles/" target="_blank" title="jsfiddle" class=tooltip>
-                            <i class="fa fa-jsfiddle"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="https://twitter.com/wushang19871" target="_blank" title="twitter" class=tooltip>
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="https://www.freecodecamp.com/wushang1987" target="_blank" title="free-code-camp" class=tooltip>
-                            <i class="fa fa-free-code-camp"></i>
-                        </a>
-                    </td>
-                    
-                </tr>
-            </table>
-        </div>
-        
-
-        <div class="friendBlog">朋友博客:<a href="https://wanzhouyi.github.io/">芒果Python</a></div>
     </div>
-</aside>
-            
-            <section id="main"><article id="clear-IDEA/cleanimage" class="article article-type-clear" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            
-	
-		<img src="/img/kill.jpg" class="article-banner" />
-	
-
-
-
-        
-        
-            <header class="article-header">
-                
+</nav>
     
-        <h1 class="article-title" itemprop="name">
-            删除冗余图片
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2017-06-04T10:56:25.000Z">2017-06-04</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/idea/">idea</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 295 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                删除冗余图片
+            
         </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2017/06/04/IDEA/cleanimage/">
-            <time datetime="2017-06-04T10:56:25.000Z" itemprop="datePublished">2017-06-04</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/idea/">idea</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/idea/">idea</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
+        <div class="content">
             <p>2017-06-03 23:57:25</p>
 <p>这两天和大芒果讨论了一下关于在项目中清除冗余图片的问题，之前没有关注到这块，整理一下在<br>这个方面搜集到的资料。</p>
 <p>2017-06-04 10:48:01<br>清除冗余是一个有意思的问题，同理可以衍生出一些其他的可以操作的比如清除冗余的CSS。清除冗余<br>js方法等等。<br>另外这个问题的场景比较固定，只考虑在前端静态页面开发过程中引入的图片资源问题。如果扩散一下<br>删除冗余图片的问题可能会复杂些，例如：如何删除博客上传的冗余图片 <a href="https://www.zhihu.com/question/36277221?from=profile_question_card" target="_blank" rel="external">知乎上面的这个问题</a></p>
@@ -296,339 +176,1789 @@
 <li><a href="https://github.com/tomchentw/unused-files-webpack-plugin" target="_blank" rel="external">unused-files-webpack-plugin</a></li>
 </ol>
 
-        
         </div>
-        <footer class="article-footer">
-            <div class="share-container">
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/idea/">idea</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
 
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2017/06/04/多媒体/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">多媒体</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2017/06/04/hexo/">
+                <span class="level-item">hexo</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
 </div>
+                
 
-    <a data-url="https://wushang1987.github.io/2017/06/04/IDEA/cleanimage/" data-id="cjplejnfl001aekd8tcyo6bb3" class="article-share-link"><i class="fa fa-share"></i>
-    Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof (__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function () {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function (e) {
-            e.stopPropagation();
 
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
 
-            if ($('#' + id).length) {
-                box = $('#' + id);
 
-                if (box.hasClass('on')) {
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                    '<input class="article-share-input" value="' + url + '">',
-                    '<div class="article-share-links">',
-                    '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl +
-                    '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                    '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl +
-                    '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                    '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl +
-                    '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                    '<a href="https://plus.google.com/share?url=' + encodedUrl +
-                    '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                    '</div>',
-                    '</div>',
-                ].join('');
-
-                box = $(html);
-
-                $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://wushang1987.github.io/2017/06/04/IDEA/cleanimage/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://wushang1987.github.io/2017/06/04/IDEA/cleanimage/">Comments</a>
-    
-
-        </footer>
-    </div>
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
     
         
-<nav id="article-nav">
-    
-        <a href="/2017/06/04/多媒体/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Newer</strong>
-            <div class="article-nav-title">
-                
-                    多媒体
-                
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <img class="image is-128x128 has-mb-6" src="/images/avatar1.png" alt="wang weidong">
+                    
+                    <p class="is-size-4 is-block">
+                        wang weidong
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Web Developer
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>China Xi`An</span>
+                    </p>
+                    
+                </div>
             </div>
-        </a>
-    
-    
-        <a href="/2017/06/04/hexo/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">hexo</div>
-        </a>
-    
-</nav>
-
-
-    
-</article>
-
-
-    
-    <section id="comments">
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        85
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        12
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        34
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/wushang1987">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Github" href="https://github.com/wushang1987">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="codepen" href="https://codepen.io/wushang1987/">
+                
+                <i class="fab fa-codepen"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Twitter" href=" https://twitter.com/wushang19871">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="jsfiddle" href="https://jsfiddle.net/user/wushang/fiddles/">
+                
+                <i class="fab fa-jsfiddle"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
     
         
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://wanzhouyi.github.io/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">芒果Python</span>
+                    </span>
+                    <!-- <span class="level-right">
+                        <span class="level-item tag">https://wanzhouyi.github.io/</span>
+                    </span> -->
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="http://watermark.wwd1987.com/#/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Watermark</span>
+                    </span>
+                    <!-- <span class="level-right">
+                        <span class="level-item tag">http://watermark.wwd1987.com/#/</span>
+                    </span> -->
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="http://sheetmusic.wwd1987.com/#/posts" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Sheetmusic</span>
+                    </span>
+                    <!-- <span class="level-right">
+                        <span class="level-item tag">http://sheetmusic.wwd1987.com/#/posts</span>
+                    </span> -->
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="http://chat.wwd1987.com/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Chat</span>
+                    </span>
+                    <!-- <span class="level-right">
+                        <span class="level-item tag">http://chat.wwd1987.com/</span>
+                    </span> -->
+                </a>
+            </li>
+        
+        </ul>
+        </div>
     </div>
+</div>
+
 
     
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/JavaScript/">
+            <span class="level-start">
+                <span class="level-item">JavaScript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Machine-learning/">
+            <span class="level-start">
+                <span class="level-item">Machine-learning</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Mathematics/">
+            <span class="level-start">
+                <span class="level-item">Mathematics</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Tools/">
+            <span class="level-start">
+                <span class="level-item">Tools</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">12</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/angular/">
+            <span class="level-start">
+                <span class="level-item">angular</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/diary/">
+            <span class="level-start">
+                <span class="level-item">diary</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">8</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/idea/">
+            <span class="level-start">
+                <span class="level-item">idea</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/movie/">
+            <span class="level-start">
+                <span class="level-item">movie</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/nodejs/">
+            <span class="level-start">
+                <span class="level-item">nodejs</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/typeScript/">
+            <span class="level-start">
+                <span class="level-item">typeScript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/unity/">
+            <span class="level-start">
+                <span class="level-item">unity</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/计算机基础/">
+            <span class="level-start">
+                <span class="level-item">计算机基础</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/面试/" style="font-size: 10px;">-面试</a> <a href="/tags/DB/" style="font-size: 14.29px;">DB</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Machine-learning/" style="font-size: 11.43px;">Machine-learning</a> <a href="/tags/Mathematics/" style="font-size: 10px;">Mathematics</a> <a href="/tags/Security/" style="font-size: 10px;">Security</a> <a href="/tags/Tools/" style="font-size: 18.57px;">Tools</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/cloud/" style="font-size: 10px;">cloud</a> <a href="/tags/css/" style="font-size: 11.43px;">css</a> <a href="/tags/diary/" style="font-size: 12.86px;">diary</a> <a href="/tags/eclipse/" style="font-size: 11.43px;">eclipse</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/git/" style="font-size: 11.43px;">git</a> <a href="/tags/hexo/" style="font-size: 11.43px;">hexo</a> <a href="/tags/idea/" style="font-size: 15.71px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/js/" style="font-size: 12.86px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/spring/" style="font-size: 17.14px;">spring</a> <a href="/tags/srping/" style="font-size: 10px;">srping</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/typeScript/" style="font-size: 10px;">typeScript</a> <a href="/tags/unity/" style="font-size: 10px;">unity</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/website/" style="font-size: 10px;">website</a> <a href="/tags/前端知识/" style="font-size: 11.43px;">前端知识</a> <a href="/tags/基础/" style="font-size: 11.43px;">基础</a> <a href="/tags/多媒体/" style="font-size: 10px;">多媒体</a> <a href="/tags/日志/" style="font-size: 11.43px;">日志</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/01/04/diary/2018-1-4/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/2019.jpg" alt="2019 Flags">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-03T16:20:04.000Z">2019-01-04</time></div>
+                    <a href="/2019/01/04/diary/2018-1-4/" class="has-link-black-ter is-size-6">2019 Flags</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/13/interview/codeTest/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/tools.jpg" alt="开发技能评测工具">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-12T16:16:27.000Z">2018-12-13</time></div>
+                    <a href="/2018/12/13/interview/codeTest/" class="has-link-black-ter is-size-6">开发技能评测工具</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/09/npm/2018-12-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/npm.jpg" alt="用到的npm库介绍 第一期 (每周15库)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-09T14:38:37.000Z">2018-12-09</time></div>
+                    <a href="/2018/12/09/npm/2018-12-1/" class="has-link-black-ter is-size-6">用到的npm库介绍 第一期 (每周15库)</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/03/music/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/music.jpeg" alt="如何显示乐谱">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T15:46:46.000Z">2018-12-03</time></div>
+                    <a href="/2018/12/03/music/" class="has-link-black-ter is-size-6">如何显示乐谱</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/idea/">idea</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/03/11/javascript/typescript/学习记录/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/js.jpg" alt="typeScript">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-03-11T15:21:28.375Z">2018-03-11</time></div>
+                    <a href="/2018/03/11/javascript/typescript/学习记录/" class="has-link-black-ter is-size-6">typeScript</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/typeScript/">typeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">19</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">43</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">7</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <ul class="menu-list">
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/面试/">
+                        <span class="level-start">
+                            <span class="level-item">-面试</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/DB/">
+                        <span class="level-start">
+                            <span class="level-item">DB</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">4</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/JavaScript/">
+                        <span class="level-start">
+                            <span class="level-item">JavaScript</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Machine-learning/">
+                        <span class="level-start">
+                            <span class="level-item">Machine-learning</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Mathematics/">
+                        <span class="level-start">
+                            <span class="level-item">Mathematics</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Security/">
+                        <span class="level-start">
+                            <span class="level-item">Security</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Tools/">
+                        <span class="level-start">
+                            <span class="level-item">Tools</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">12</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/angular/">
+                        <span class="level-start">
+                            <span class="level-item">angular</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/cloud/">
+                        <span class="level-start">
+                            <span class="level-item">cloud</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/css/">
+                        <span class="level-start">
+                            <span class="level-item">css</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/diary/">
+                        <span class="level-start">
+                            <span class="level-item">diary</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">3</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/eclipse/">
+                        <span class="level-start">
+                            <span class="level-item">eclipse</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/electron/">
+                        <span class="level-start">
+                            <span class="level-item">electron</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/git/">
+                        <span class="level-start">
+                            <span class="level-item">git</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/hexo/">
+                        <span class="level-start">
+                            <span class="level-item">hexo</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/idea/">
+                        <span class="level-start">
+                            <span class="level-item">idea</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">5</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/java/">
+                        <span class="level-start">
+                            <span class="level-item">java</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">14</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/js/">
+                        <span class="level-start">
+                            <span class="level-item">js</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">3</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/linux/">
+                        <span class="level-start">
+                            <span class="level-item">linux</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/movie/">
+                        <span class="level-start">
+                            <span class="level-item">movie</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/nodejs/">
+                        <span class="level-start">
+                            <span class="level-item">nodejs</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/npm/">
+                        <span class="level-start">
+                            <span class="level-item">npm</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/spring/">
+                        <span class="level-start">
+                            <span class="level-item">spring</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">7</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/srping/">
+                        <span class="level-start">
+                            <span class="level-item">srping</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/sublime/">
+                        <span class="level-start">
+                            <span class="level-item">sublime</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/tools/">
+                        <span class="level-start">
+                            <span class="level-item">tools</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/typeScript/">
+                        <span class="level-start">
+                            <span class="level-item">typeScript</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/unity/">
+                        <span class="level-start">
+                            <span class="level-item">unity</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/vscode/">
+                        <span class="level-start">
+                            <span class="level-item">vscode</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/website/">
+                        <span class="level-start">
+                            <span class="level-item">website</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/前端知识/">
+                        <span class="level-start">
+                            <span class="level-item">前端知识</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/基础/">
+                        <span class="level-start">
+                            <span class="level-item">基础</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/多媒体/">
+                        <span class="level-start">
+                            <span class="level-item">多媒体</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/日志/">
+                        <span class="level-start">
+                            <span class="level-item">日志</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/01/04/diary/2018-1-4/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/2019.jpg" alt="2019 Flags">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-03T16:20:04.000Z">2019-01-04</time></div>
+                    <a href="/2019/01/04/diary/2018-1-4/" class="has-link-black-ter is-size-6">2019 Flags</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/13/interview/codeTest/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/tools.jpg" alt="开发技能评测工具">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-12T16:16:27.000Z">2018-12-13</time></div>
+                    <a href="/2018/12/13/interview/codeTest/" class="has-link-black-ter is-size-6">开发技能评测工具</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/09/npm/2018-12-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/npm.jpg" alt="用到的npm库介绍 第一期 (每周15库)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-09T14:38:37.000Z">2018-12-09</time></div>
+                    <a href="/2018/12/09/npm/2018-12-1/" class="has-link-black-ter is-size-6">用到的npm库介绍 第一期 (每周15库)</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/03/music/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/music.jpeg" alt="如何显示乐谱">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T15:46:46.000Z">2018-12-03</time></div>
+                    <a href="/2018/12/03/music/" class="has-link-black-ter is-size-6">如何显示乐谱</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/idea/">idea</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/03/11/javascript/typescript/学习记录/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/js.jpg" alt="typeScript">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-03-11T15:21:28.375Z">2018-03-11</time></div>
+                    <a href="/2018/03/11/javascript/typescript/学习记录/" class="has-link-black-ter is-size-6">typeScript</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/typeScript/">typeScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">19</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">43</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">7</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <ul class="menu-list">
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/面试/">
+                        <span class="level-start">
+                            <span class="level-item">-面试</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/DB/">
+                        <span class="level-start">
+                            <span class="level-item">DB</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">4</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/JavaScript/">
+                        <span class="level-start">
+                            <span class="level-item">JavaScript</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Machine-learning/">
+                        <span class="level-start">
+                            <span class="level-item">Machine-learning</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Mathematics/">
+                        <span class="level-start">
+                            <span class="level-item">Mathematics</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Security/">
+                        <span class="level-start">
+                            <span class="level-item">Security</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Tools/">
+                        <span class="level-start">
+                            <span class="level-item">Tools</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">12</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/angular/">
+                        <span class="level-start">
+                            <span class="level-item">angular</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/cloud/">
+                        <span class="level-start">
+                            <span class="level-item">cloud</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/css/">
+                        <span class="level-start">
+                            <span class="level-item">css</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/diary/">
+                        <span class="level-start">
+                            <span class="level-item">diary</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">3</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/eclipse/">
+                        <span class="level-start">
+                            <span class="level-item">eclipse</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/electron/">
+                        <span class="level-start">
+                            <span class="level-item">electron</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/git/">
+                        <span class="level-start">
+                            <span class="level-item">git</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/hexo/">
+                        <span class="level-start">
+                            <span class="level-item">hexo</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/idea/">
+                        <span class="level-start">
+                            <span class="level-item">idea</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">5</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/java/">
+                        <span class="level-start">
+                            <span class="level-item">java</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">14</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/js/">
+                        <span class="level-start">
+                            <span class="level-item">js</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">3</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/linux/">
+                        <span class="level-start">
+                            <span class="level-item">linux</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/movie/">
+                        <span class="level-start">
+                            <span class="level-item">movie</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/nodejs/">
+                        <span class="level-start">
+                            <span class="level-item">nodejs</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/npm/">
+                        <span class="level-start">
+                            <span class="level-item">npm</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/spring/">
+                        <span class="level-start">
+                            <span class="level-item">spring</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">7</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/srping/">
+                        <span class="level-start">
+                            <span class="level-item">srping</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/sublime/">
+                        <span class="level-start">
+                            <span class="level-item">sublime</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/tools/">
+                        <span class="level-start">
+                            <span class="level-item">tools</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/typeScript/">
+                        <span class="level-start">
+                            <span class="level-item">typeScript</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/unity/">
+                        <span class="level-start">
+                            <span class="level-item">unity</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/vscode/">
+                        <span class="level-start">
+                            <span class="level-item">vscode</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/website/">
+                        <span class="level-start">
+                            <span class="level-item">website</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/前端知识/">
+                        <span class="level-start">
+                            <span class="level-item">前端知识</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/基础/">
+                        <span class="level-start">
+                            <span class="level-item">基础</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/多媒体/">
+                        <span class="level-start">
+                            <span class="level-item">多媒体</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/日志/">
+                        <span class="level-start">
+                            <span class="level-item">日志</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
     </section>
-
-</section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/avatar1.png" alt="删除冗余图片" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 wushang1987&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
             
-                <aside id="sidebar">
-   
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">recent</h3>
-        <div class="widget">
-            <ul id="recent-post" class="">
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/12/13/interview/codeTest/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/img/tools.jpg)" alt="开发技能评测工具" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/12/13/interview/codeTest/" class="title">开发技能评测工具</a></p>
-                            <p class="item-date"><time datetime="2018-12-12T16:16:27.000Z" itemprop="datePublished">2018-12-13</time></p>
-                        </div>
-                    </li>
                 
-                    <li>
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
                         
-                        <div class="item-thumbnail">
-                            <a href="/2018/12/09/npm/2018-12-1/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/img/npm.jpg)" alt="用到的npm库介绍 第一期 (每周15库)" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
+                        <i class="fab fa-creative-commons"></i>
                         
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/12/09/npm/2018-12-1/" class="title">用到的npm库介绍 第一期 (每周15库)</a></p>
-                            <p class="item-date"><time datetime="2018-12-09T14:38:37.000Z" itemprop="datePublished">2018-12-09</time></p>
-                        </div>
-                    </li>
+                    </a>
+                </p>
                 
-                    <li>
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
                         
-                        <div class="item-thumbnail">
-                            <a href="/2018/12/03/music/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/img/music.jpeg)" alt="如何显示乐谱" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
+                        <i class="fab fa-creative-commons-by"></i>
                         
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/idea/">idea</a></p>
-                            <p class="item-title"><a href="/2018/12/03/music/" class="title">如何显示乐谱</a></p>
-                            <p class="item-date"><time datetime="2018-12-03T15:46:46.000Z" itemprop="datePublished">2018-12-03</time></p>
-                        </div>
-                    </li>
+                    </a>
+                </p>
                 
-                    <li>
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Github" href="https://github.com/wushang1987">
                         
-                        <div class="item-thumbnail">
-                            <a href="/2018/03/11/javascript/typescript/学习记录/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/img/js.jpg)" alt="typeScript" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
+                        <i class="fab fa-github"></i>
                         
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/typeScript/">typeScript</a></p>
-                            <p class="item-title"><a href="/2018/03/11/javascript/typescript/学习记录/" class="title">typeScript</a></p>
-                            <p class="item-date"><time datetime="2018-03-11T15:21:28.375Z" itemprop="datePublished">2018-03-11</time></p>
-                        </div>
-                    </li>
+                    </a>
+                </p>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/02/28/angular/uiframework/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/img/angular.png)" alt="angular template" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/angular/">angular</a></p>
-                            <p class="item-title"><a href="/2018/02/28/angular/uiframework/" class="title">angular template</a></p>
-                            <p class="item-date"><time datetime="2018-02-28T15:09:52.000Z" itemprop="datePublished">2018-02-28</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">categories</h3>
-        <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-learning/">Machine-learning</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mathematics/">Mathematics</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/angular/">angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/diary/">diary</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/idea/">idea</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/movie/">movie</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/typeScript/">typeScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/unity/">unity</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机基础/">计算机基础</a><span class="category-list-count">1</span></li></ul>
-        </div>
-    </div>
-
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">archives</h3>
-        <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li></ul>
-        </div>
-    </div>
-
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">tags</h3>
-        <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">-面试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DB/">DB</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-learning/">Machine-learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mathematics/">Mathematics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Security/">Security</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/">Tools</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cloud/">cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">diary</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/electron/">electron</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/movie/">movie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/srping/">srping</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typeScript/">typeScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/">unity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/website/">website</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端知识/">前端知识</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多媒体/">多媒体</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日志/">日志</a><span class="tag-list-count">2</span></li></ul>
-        </div>
-    </div>
-
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">tag cloud</h3>
-        <div class="widget tagcloud">
-            <a href="/tags/面试/" style="font-size: 10px;">-面试</a> <a href="/tags/DB/" style="font-size: 14.29px;">DB</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Machine-learning/" style="font-size: 11.43px;">Machine-learning</a> <a href="/tags/Mathematics/" style="font-size: 10px;">Mathematics</a> <a href="/tags/Security/" style="font-size: 10px;">Security</a> <a href="/tags/Tools/" style="font-size: 18.57px;">Tools</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/cloud/" style="font-size: 10px;">cloud</a> <a href="/tags/css/" style="font-size: 11.43px;">css</a> <a href="/tags/diary/" style="font-size: 12.86px;">diary</a> <a href="/tags/eclipse/" style="font-size: 11.43px;">eclipse</a> <a href="/tags/electron/" style="font-size: 10px;">electron</a> <a href="/tags/git/" style="font-size: 11.43px;">git</a> <a href="/tags/hexo/" style="font-size: 11.43px;">hexo</a> <a href="/tags/idea/" style="font-size: 15.71px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/js/" style="font-size: 12.86px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/spring/" style="font-size: 17.14px;">spring</a> <a href="/tags/srping/" style="font-size: 10px;">srping</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/typeScript/" style="font-size: 10px;">typeScript</a> <a href="/tags/unity/" style="font-size: 10px;">unity</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/website/" style="font-size: 10px;">website</a> <a href="/tags/前端知识/" style="font-size: 11.43px;">前端知识</a> <a href="/tags/基础/" style="font-size: 11.43px;">基础</a> <a href="/tags/多媒体/" style="font-size: 10px;">多媒体</a> <a href="/tags/日志/" style="font-size: 11.43px;">日志</a>
-        </div>
-    </div>
-
-    
-        
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a href="http://hexo.io">Hexo</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-
-    
-    <div id="toTop" class="fa fa-angle-up"></div>
-</aside>
+                </div>
             
-        </div>
-        <footer id="footer">
-    <div class="outer">
-        <div id="footer-info" class="inner">
-            &copy; 2018 wushang1987<br>
-            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+            </div>
         </div>
     </div>
 </footer>
-        
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
     
-    <script>
-    var disqus_config = function () {
-        
-            this.page.url = 'https://wushang1987.github.io/2017/06/04/IDEA/cleanimage/';
-        
-        this.page.identifier = 'IDEA/cleanimage';
-    };
-    (function() { 
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'githubwushang' + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
 </script>
 
 
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {matchFontHeight: false},
+        SVG: {matchFontHeight: false},
+        CommonHTML: {matchFontHeight: false}
+    });
+});
+</script>
 
     
-        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
-        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
     
 
 
-<!-- Custom Scripts -->
-<script src="/js/main.js"></script>
+<script src="/js/main.js" defer></script>
 
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
     </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
 </body>
 </html>
