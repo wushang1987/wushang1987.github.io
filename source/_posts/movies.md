@@ -2,8 +2,7 @@
 title: 暴雪将至
 date: 2018-01-13 16:04:10
 tags:
-banner:
-    - /img/bigsnow.jpg
+thumbnail: /img/bigsnow.jpg
 ---
 
 

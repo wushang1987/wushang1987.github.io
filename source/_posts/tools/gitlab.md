@@ -5,8 +5,7 @@ tags:
     - Tools
 categories:
     - Tools
-banner:
-    - /img/tools.jpg
+thumbnail: /img/tools.jpg
 ---
 
 平时在家github用的多些，在单位就主要是gitlab了。实际上gitlab.com 功能也很多。

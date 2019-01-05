@@ -4,8 +4,7 @@ date: 2018-12-03 23:46:46
 tags:
     - idea
 categories: idea
-banner:
-    - /img/music.jpeg
+thumbnail: /img/music.jpeg
 ---
 
 

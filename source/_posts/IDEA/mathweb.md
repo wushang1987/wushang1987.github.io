@@ -4,8 +4,7 @@ date: 2017-06-13 19:50:21
 tags:
     - idea
 categories: idea
-banner:
-    - /img/diary.jpg
+thumbnail: /img/diary.jpg
 ---
 
 MathType (数学公式编辑器)

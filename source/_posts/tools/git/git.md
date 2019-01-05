@@ -6,8 +6,7 @@ tags:
     - Tools
 categories:
     - Tools
-banner:
-    - /img/tools.jpg
+thumbnail: /img/tools.jpg
 ---
 
 1.5 起步 - 初次运行 Git 前的配置

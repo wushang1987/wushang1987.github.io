@@ -5,8 +5,7 @@ tags:
     - Machine-learning
 categories:
     - Machine-learning
-banner:
-    - /img/learning.png
+thumbnail: /img/learning.png
 ---
 
 入门：

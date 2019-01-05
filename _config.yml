@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: wushang1987
+title: Wang Weidong`s Blog
 subtitle: web 相关
 description:
 author: wushang1987
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: icarus
+theme: icarus2
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

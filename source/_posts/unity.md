@@ -5,8 +5,7 @@ tags:
     - unity
 categories:
     - unity
-banner:
-    - /img/unity5.png
+thumbnail: /img/unity5.png
 ---
 [Unity3D 项目用 git 做版本控制 - u012169685的博客 - 博客频道 - CSDN.NET](http://blog.csdn.net/u012169685/article/details/46378993)
 

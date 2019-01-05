@@ -5,8 +5,7 @@ tags:
     - angular
 categories:
     - angular
-banner:
-    - /img/angular.png
+thumbnail: /img/angular.png
 ---
 recently I study some angualr template,so mark it in this post.
 

@@ -5,8 +5,7 @@ tags:
     - Tools
 categories:
     - Tools
-banner:
-    - /img/tools.jpg
+thumbnail: /img/tools.jpg
 ---
 
 [Chrome DevTools 代码覆盖率功能详解](http://www.jianshu.com/p/9ae48cfe02f3)

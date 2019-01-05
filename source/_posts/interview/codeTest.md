@@ -5,8 +5,7 @@ tags:
     -
 categories:
     -
-banner:
-    - /img/tools.jpg
+thumbnail: /img/tools.jpg
 ---
 
 如何在招聘中评测开发人员技能水平？ 

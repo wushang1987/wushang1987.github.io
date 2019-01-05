@@ -6,8 +6,7 @@ tags:
     - Tools
 categories:
     - Tools
-banner:
-    - /img/tools.jpg
+thumbnail: /img/tools.jpg
 ---
 # 记录maven 相关知识
 

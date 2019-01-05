@@ -4,8 +4,7 @@ date: 2017-06-12 20:57:11
 tags:
     - idea
 categories: idea
-banner:
-    - /img/diary.jpg
+thumbnail: /img/diary.jpg
 ---
 
 目前网站用的留言系统是disqus的，以前做FIGE的时候就用的，一晃都六七年光景了。

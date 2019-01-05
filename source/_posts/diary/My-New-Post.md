@@ -4,8 +4,7 @@ date: 2017-04-09 21:48:35
 tags:
 categories:
     - diary
-banner:
-    - /img/diary.jpg
+thumbnail: /img/diary.jpg
 ---
 
 好像文件修改不会发生变化，测试一下

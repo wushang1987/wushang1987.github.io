@@ -4,8 +4,7 @@ date: 2017-06-10 23:02:31
 tags:
     - idea
 categories: idea
-banner:
-    - /img/diary.jpg
+thumbnail: /img/diary.jpg
 ---
 
 

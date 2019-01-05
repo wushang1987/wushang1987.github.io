@@ -4,8 +4,7 @@ date: 2017-04-09 20:34:50
 tags:
 categories:
     - diary
-banner:
-    - /img/diary.jpg
+thumbnail: /img/diary.jpg
 ---
 最近持续关注了一下github 周边的服务，不断的摸索，填坑，今天总算是能够跑个简单的流程。
 
