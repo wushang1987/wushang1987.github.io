@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="en">
-<head>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
 <title>java system 对象 - Wang Weidong`s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -14,6 +14,7 @@
 <meta property="og:url" content="https://wushang1987.github.io/2017/04/16/java/base/system/index.html">
 <meta property="og:site_name" content="Wang Weidong`s Blog">
 <meta property="og:description" content="关于Java中使用的System对象，我们经常使用的是Systme.out.print ,而且也仅仅知道这是一个可以在控制台打印出语句，而没有去深究它的内在实现原理。下面我就详细地介绍System对象。  1.JDK中有如下定义：.The System class contains several useful class fields and methods. It cannot be inst">
+<meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2017-04-16T03:28:54.002Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java system 对象">
@@ -91,20 +92,15 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">Home</a>
+                <a class="navbar-item" href="/">Home</a>
                 
-                <a class="navbar-item"
-                href="/archives">Archives</a>
+                <a class="navbar-item" href="/archives">Archives</a>
                 
-                <a class="navbar-item"
-                href="/categories">Categories</a>
+                <a class="navbar-item" href="/categories">Categories</a>
                 
-                <a class="navbar-item"
-                href="/tags">Tags</a>
+                <a class="navbar-item" href="/tags">Tags</a>
                 
-                <a class="navbar-item"
-                href="/about">About</a>
+                <a class="navbar-item" href="/about">About</a>
                 
             </div>
             
@@ -165,14 +161,14 @@
 <p>import java.util.Properties;    </p>
 <p>public class SystemDemo {<br>    public static void main(String[] args) {<br>        // TODO Auto-generated method stub<br>        Properties prop=System.getProperties();<br>        for(Object key:prop.keySet()){<br>            String keyStr=(String)key;<br>            String value=prop.getProperty(keyStr);<br>            System.out.println(keyStr+” — “+value);<br>        }<br>    }<br>}    </p>
 <p>结果：<br>控制台输出系统环境配置信息：</p>
-<p>java.runtime.name — Java(TM) SE Runtime Environment<br>sun.boot.library.path — C:\Java\developerEnv\Java\jdk1.6.0_16\jre\bin<br>java.vm.version — 14.2-b01<br>java.vm.vendor — Sun Microsystems Inc.<br>java.vendor.url — <a href="http://java.sun.com/" target="_blank" rel="external">http://java.sun.com/</a><br>path.separator — ;<br>java.vm.name — Java HotSpot(TM) Client VM<br>file.encoding.pkg — sun.io<br>sun.java.launcher — SUN_STANDARD<br>user.country — CN<br>sun.os.patch.level — Service Pack 3<br>java.vm.specification.name — Java Virtual Machine Specification<br>user.dir — D:\workspace\BlackHorse<br>java.runtime.version — 1.6.0_16-b01<br>java.awt.graphicsenv — sun.awt.Win32GraphicsEnvironment<br>java.endorsed.dirs — C:\Java\developerEnv\Java\jdk1.6.0_16\jre\lib\endorsed<br>os.arch — x86<br>java.io.tmpdir — C:\DOCUME~1\CHENGR~1\LOCALS~1\Temp\<br>line.separator —<br>……</p>
+<p>java.runtime.name — Java(TM) SE Runtime Environment<br>sun.boot.library.path — C:\Java\developerEnv\Java\jdk1.6.0_16\jre\bin<br>java.vm.version — 14.2-b01<br>java.vm.vendor — Sun Microsystems Inc.<br>java.vendor.url — <a href="http://java.sun.com/" target="_blank" rel="noopener">http://java.sun.com/</a><br>path.separator — ;<br>java.vm.name — Java HotSpot(TM) Client VM<br>file.encoding.pkg — sun.io<br>sun.java.launcher — SUN_STANDARD<br>user.country — CN<br>sun.os.patch.level — Service Pack 3<br>java.vm.specification.name — Java Virtual Machine Specification<br>user.dir — D:\workspace\BlackHorse<br>java.runtime.version — 1.6.0_16-b01<br>java.awt.graphicsenv — sun.awt.Win32GraphicsEnvironment<br>java.endorsed.dirs — C:\Java\developerEnv\Java\jdk1.6.0_16\jre\lib\endorsed<br>os.arch — x86<br>java.io.tmpdir — C:\DOCUME~1\CHENGR~1\LOCALS~1\Temp\<br>line.separator —<br>……</p>
 <p>……<br>……</p>
 <p>使用以下代码也可以使控制台输出系统环境配置信息：</p>
 <p>[java] view plain copy<br>public class SystemDemo {<br>    public static void main(String[] args) {<br>        System.getProperties().list(System.out);<br>    }<br>}  </p>
 <p>4.可以通过System对象在系统中自定义一些特有的信息：<br>System.setProperty(myKey , myValue); </p>
 <p>另外需要注意的一点是： 所谓的 system porperty，system 指的是 JRE (runtime)system，不是指 OS。<br>System.setProperty(“net.jxta.tls.principal”, “client”);<br>System.setProperty(“net.jxta.tls.password”, “password”);<br>System.setProperty(“JXTA_HOME”,System.getProperty(“JXTA_HOME”,”client”));<br>可以利用系统属性来加载多个驱动</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://blog.csdn.net/alex_zhuang/article/details/6918147" target="_blank" rel="external">http://blog.csdn.net/alex_zhuang/article/details/6918147</a></p>
-<p><a href="http://www.cnblogs.com/xuhuan/articles/1522212.html" target="_blank" rel="external">http://www.cnblogs.com/xuhuan/articles/1522212.html</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://blog.csdn.net/alex_zhuang/article/details/6918147" target="_blank" rel="noopener">http://blog.csdn.net/alex_zhuang/article/details/6918147</a></p>
+<p><a href="http://www.cnblogs.com/xuhuan/articles/1522212.html" target="_blank" rel="noopener">http://www.cnblogs.com/xuhuan/articles/1522212.html</a></p>
 
         </div>
         
@@ -195,16 +191,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2017/04/16/java/术语列表/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2017/04/16/java/base/Scanner/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">java 术语</span>
+                <span class="level-item">java scanner</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2017/04/16/java/base/Scanner/">
-                <span class="level-item">java scanner</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2017/04/16/java/术语列表/">
+                <span class="level-item">java 术语</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -213,6 +209,30 @@
 </div>
 
 
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://wushang1987.github.io/2017/04/16/java/base/system/';
+        this.page.identifier = '2017/04/16/java/base/system/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'githubwushang' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
 </div>
                 
 
@@ -254,7 +274,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        86
+                        87
                     </p>
                 </div>
             </div>
@@ -287,29 +307,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="https://github.com/wushang1987">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/wushang1987">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="codepen" href="https://codepen.io/wushang1987/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="codepen" href="https://codepen.io/wushang1987/">
                 
                 <i class="fab fa-codepen"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Twitter" href=" https://twitter.com/wushang19871">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href=" https://twitter.com/wushang19871">
                 
                 <i class="fab fa-twitter"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="jsfiddle" href="https://jsfiddle.net/user/wushang/fiddles/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="jsfiddle" href="https://jsfiddle.net/user/wushang/fiddles/">
                 
                 <i class="fab fa-jsfiddle"></i>
                 
@@ -516,6 +532,25 @@
         
         <article class="media">
             
+            <a href="/2019/07/13/Weekly-Update-2019-7-13/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Weekly Update 2019-7-13">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-13T15:39:45.000Z">2019-07-13</time></div>
+                    <a href="/2019/07/13/Weekly-Update-2019-7-13/" class="has-link-black-ter is-size-6">Weekly Update 2019-7-13</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/01/13/diary/2019-1-13/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/img/diary.jpg" alt="GitHUB is Free">
@@ -524,7 +559,7 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T15:38:55.000Z">2019-01-13</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T15:38:00.000Z">2019-01-13</time></div>
                     <a href="/2019/01/13/diary/2019-1-13/" class="has-link-black-ter is-size-6">GitHUB is Free</a>
                     <p class="is-size-7 is-uppercase">
                         
@@ -590,25 +625,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2018/12/03/music/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/img/music.jpeg" alt="如何显示乐谱">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T15:46:46.000Z">2018-12-03</time></div>
-                    <a href="/2018/12/03/music/" class="has-link-black-ter is-size-6">如何显示乐谱</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/idea/">idea</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -620,6 +636,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/01/">
@@ -1165,6 +1192,25 @@
         
         <article class="media">
             
+            <a href="/2019/07/13/Weekly-Update-2019-7-13/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Weekly Update 2019-7-13">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-13T15:39:45.000Z">2019-07-13</time></div>
+                    <a href="/2019/07/13/Weekly-Update-2019-7-13/" class="has-link-black-ter is-size-6">Weekly Update 2019-7-13</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/01/13/diary/2019-1-13/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/img/diary.jpg" alt="GitHUB is Free">
@@ -1173,7 +1219,7 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T15:38:55.000Z">2019-01-13</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T15:38:00.000Z">2019-01-13</time></div>
                     <a href="/2019/01/13/diary/2019-1-13/" class="has-link-black-ter is-size-6">GitHUB is Free</a>
                     <p class="is-size-7 is-uppercase">
                         
@@ -1239,25 +1285,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2018/12/03/music/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/img/music.jpeg" alt="如何显示乐谱">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T15:46:46.000Z">2018-12-03</time></div>
-                    <a href="/2018/12/03/music/" class="has-link-black-ter is-size-6">如何显示乐谱</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/idea/">idea</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1269,6 +1296,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/01/">
@@ -1811,8 +1849,7 @@
                 </a>
                 <p class="is-size-7">
                 &copy; 2019 wushang1987&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
                 </p>
             </div>
             <div class="level-end">
@@ -1931,7 +1968,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

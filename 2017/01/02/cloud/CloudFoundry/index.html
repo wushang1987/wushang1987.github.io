@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="en">
-<head>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
 <title>Cloud Foundry - Wang Weidong`s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -14,6 +14,7 @@
 <meta property="og:url" content="https://wushang1987.github.io/2017/01/02/cloud/CloudFoundry/index.html">
 <meta property="og:site_name" content="Wang Weidong`s Blog">
 <meta property="og:description" content="Cloud Foundry是VMware推出的业界第一个开源PaaS云平台，它支持多种框架、语言、运行时环境、云平台及应用服务，使开发人员能够在几秒钟内进行应用程序的部署和扩展，无需担心任何基础架构的问题。同时，它本身是一个基于Ruby on Rails的由多个相对独立的子系统通过消息机制组成的分布式系统，使平台在各层级都可水平扩展，既能在大型数据中心里运行，也能运行在一台桌面电脑中，二者使用相同">
+<meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2017-04-09T12:30:38.621Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cloud Foundry">
@@ -91,20 +92,15 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">Home</a>
+                <a class="navbar-item" href="/">Home</a>
                 
-                <a class="navbar-item"
-                href="/archives">Archives</a>
+                <a class="navbar-item" href="/archives">Archives</a>
                 
-                <a class="navbar-item"
-                href="/categories">Categories</a>
+                <a class="navbar-item" href="/categories">Categories</a>
                 
-                <a class="navbar-item"
-                href="/tags">Tags</a>
+                <a class="navbar-item" href="/tags">Tags</a>
                 
-                <a class="navbar-item"
-                href="/about">About</a>
+                <a class="navbar-item" href="/about">About</a>
                 
             </div>
             
@@ -160,7 +156,7 @@
             <p>Cloud Foundry是VMware推出的业界第一个开源PaaS云平台，它支持多种框架、语言、运行时环境、云平台及应用服务，使开发人员能够在几秒钟内进行应用程序的部署和扩展，无需担心任何基础架构的问题。同时，它本身是一个基于Ruby on Rails的由多个相对独立的子系统通过消息机制组成的分布式系统，使平台在各层级都可水平扩展，既能在大型数据中心里运行，也能运行在一台桌面电脑中，二者使用相同的代码库。[1]<br>作为新一代云应用平台，Cloud Foundry专为私有云计算环境、企业级数据中心和公有云服务提供商所打造。Cloud Foundry云平台可以简化现代应用程序的开发、交付和运行过程，在面对多种公有云和私有云选择、符合业界标准的高效开发框架以及应用基础设施服务时，可以显著提高开发者在云环境中部署和运行应用程序的能力</p>
 <p>Cloud Foundry是由相对独立的多个模块构成的分布式系统，每个模块单独存在和运行，各模块之间通过消息机制进行通信。Cloud Foundry各模块本身是基于Ruby语言开发的，每个部分可以认为拿来即可运行，不存在编译等过程。Cloud Foundry云平台整体逻辑组成如右下图所示：<br>Cloud Foundry云平台逻辑视图<br>Cloud Foundry云平台逻辑视图<br>从图中可以看到，Cloud Foundry云平台是完全模块化的分布式系统，各个模块之间是相互独立的，通过消息总线进行相互连接和通信，这种结构不仅使系统各模块之间的耦合度降低，而且使系统功能容易扩充。此外，开发人员可以通过VMC命令行工具或STS插件方便的部署应用程序到Cloud Foundry云平台上，最终用户可以通过浏览器访问运行在Cloud Foundry云平台上的应用。所有的访问请求都通过Router进行转发，分别由云控制器Cloud Controller和应用运行代理DEA模块进行请求响应，应用生命周期管理Health Manager模块负责监控和管理整个应用在云平台上的正常运行，云平台的各种应用服务由Services模块提供，可以灵活扩展。Cloud Foundry云平台整体架构如右下图所示：[2]<br>Cloud Foundry云平台整体架构<br>Cloud Foundry云平台整体架构<br>从图中可以看到，Cloud Foundry云平台主要有Router、Cloud Controller、Health Manager、DEA、NFS、NATS、Cloud Controller Database以及Service等模块组成。这些模块协同合作，通过特定的消息传输机制和API接口进行通信，就可以使整个云平台正常运行。由于在集群环境下每个模块都有多个部署节点，从而保证了云平台的可靠性和弹性动态扩展的需求，使得应用程序可以稳定可靠的运行在Cloud Foundry云平台上。[2] </p>
 <p>相关连接</p>
-<p><a href="http://baike.baidu.com/link?url=GtPRRFoqg-UQcR0gD0owycwkzUC0UGEs2T5fCg_y8urZ_YwIl-juvVukdFAq8wIathvBfglSZ1sY0mrHDbyvVa" target="_blank" rel="external">http://baike.baidu.com/link?url=GtPRRFoqg-UQcR0gD0owycwkzUC0UGEs2T5fCg_y8urZ_YwIl-juvVukdFAq8wIathvBfglSZ1sY0mrHDbyvVa</a></p>
+<p><a href="http://baike.baidu.com/link?url=GtPRRFoqg-UQcR0gD0owycwkzUC0UGEs2T5fCg_y8urZ_YwIl-juvVukdFAq8wIathvBfglSZ1sY0mrHDbyvVa" target="_blank" rel="noopener">http://baike.baidu.com/link?url=GtPRRFoqg-UQcR0gD0owycwkzUC0UGEs2T5fCg_y8urZ_YwIl-juvVukdFAq8wIathvBfglSZ1sY0mrHDbyvVa</a></p>
 
         </div>
         
@@ -183,9 +179,9 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2016/11/22/diary/新的开始/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2017/01/09/javascript/es6-技术/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">新的开始</span>
+                <span class="level-item">es6 技术</span>
             </a>
         </div>
         
@@ -201,6 +197,30 @@
 </div>
 
 
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://wushang1987.github.io/2017/01/02/cloud/CloudFoundry/';
+        this.page.identifier = '2017/01/02/cloud/CloudFoundry/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'githubwushang' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
 </div>
                 
 
@@ -242,7 +262,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        86
+                        87
                     </p>
                 </div>
             </div>
@@ -275,29 +295,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="https://github.com/wushang1987">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/wushang1987">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="codepen" href="https://codepen.io/wushang1987/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="codepen" href="https://codepen.io/wushang1987/">
                 
                 <i class="fab fa-codepen"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Twitter" href=" https://twitter.com/wushang19871">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href=" https://twitter.com/wushang19871">
                 
                 <i class="fab fa-twitter"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="jsfiddle" href="https://jsfiddle.net/user/wushang/fiddles/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="jsfiddle" href="https://jsfiddle.net/user/wushang/fiddles/">
                 
                 <i class="fab fa-jsfiddle"></i>
                 
@@ -504,6 +520,25 @@
         
         <article class="media">
             
+            <a href="/2019/07/13/Weekly-Update-2019-7-13/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Weekly Update 2019-7-13">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-13T15:39:45.000Z">2019-07-13</time></div>
+                    <a href="/2019/07/13/Weekly-Update-2019-7-13/" class="has-link-black-ter is-size-6">Weekly Update 2019-7-13</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/01/13/diary/2019-1-13/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/img/diary.jpg" alt="GitHUB is Free">
@@ -512,7 +547,7 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T15:38:55.000Z">2019-01-13</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T15:38:00.000Z">2019-01-13</time></div>
                     <a href="/2019/01/13/diary/2019-1-13/" class="has-link-black-ter is-size-6">GitHUB is Free</a>
                     <p class="is-size-7 is-uppercase">
                         
@@ -578,25 +613,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2018/12/03/music/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/img/music.jpeg" alt="如何显示乐谱">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T15:46:46.000Z">2018-12-03</time></div>
-                    <a href="/2018/12/03/music/" class="has-link-black-ter is-size-6">如何显示乐谱</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/idea/">idea</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -608,6 +624,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/01/">
@@ -1153,6 +1180,25 @@
         
         <article class="media">
             
+            <a href="/2019/07/13/Weekly-Update-2019-7-13/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Weekly Update 2019-7-13">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-13T15:39:45.000Z">2019-07-13</time></div>
+                    <a href="/2019/07/13/Weekly-Update-2019-7-13/" class="has-link-black-ter is-size-6">Weekly Update 2019-7-13</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/01/13/diary/2019-1-13/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/img/diary.jpg" alt="GitHUB is Free">
@@ -1161,7 +1207,7 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T15:38:55.000Z">2019-01-13</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T15:38:00.000Z">2019-01-13</time></div>
                     <a href="/2019/01/13/diary/2019-1-13/" class="has-link-black-ter is-size-6">GitHUB is Free</a>
                     <p class="is-size-7 is-uppercase">
                         
@@ -1227,25 +1273,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2018/12/03/music/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/img/music.jpeg" alt="如何显示乐谱">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T15:46:46.000Z">2018-12-03</time></div>
-                    <a href="/2018/12/03/music/" class="has-link-black-ter is-size-6">如何显示乐谱</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/idea/">idea</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1257,6 +1284,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/01/">
@@ -1799,8 +1837,7 @@
                 </a>
                 <p class="is-size-7">
                 &copy; 2019 wushang1987&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
                 </p>
             </div>
             <div class="level-end">
@@ -1919,7 +1956,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">
