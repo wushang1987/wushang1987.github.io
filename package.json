@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "3.3.1"
+    "version": "3.8.0"
   },
   "scripts": {
     "build": "hexo generate",
@@ -12,6 +12,8 @@
   "dependencies": {
     "ejs": "^2.5.6",
     "hexo": "^3.2.0",
+    "hexo-admin": "^2.3.0",
+    "hexo-admin-ehc": "^3.0.0",
     "hexo-asset-image": "^0.0.3",
     "hexo-deployer-git": "^0.2.0",
     "hexo-generator-archive": "^0.1.4",

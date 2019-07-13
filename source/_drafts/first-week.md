@@ -1,6 +1,10 @@
-recently 
-
-creat a video 
+title: dddd
+tags: []
+categories: []
+thumbnail: /img/
+date: 2019-01-20 00:14:00
+---
+recently  a video 
 
 
 code tea
