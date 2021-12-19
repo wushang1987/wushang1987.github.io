@@ -82,6 +82,104 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2017-04-16T11:29:00.000Z">2017-04-16</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    6 minutes read (About 855 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2017/04/16/java/base/Scanner/">java scanner</a>
+            
+        </h1>
+        <div class="content">
+            <p>java.util.Scanner是Java5的新特征，主要功能是简化文本扫描。这个类最实用的地方表现在获取控制台输入，其他的功能都很鸡肋，尽管Java API文档中列举了大量的API方法，但是都不怎么地</p>
+<p>一、扫描控制台输入</p>
+<p>这个例子是常常会用到，但是如果没有Scanner，你写写就知道多难受了。<br>当通过new Scanner(System.in)创建一个Scanner，控制台会一直等待输入，直到敲回车键结束，把所输入的内容传给Scanner，作为扫描对象。如果要获取输入的内容，则只需要调用Scanner的nextLine()方法即可。</p>
+<p>/** </p>
+<ul>
+<li>扫描控制台输入 </li>
+<li></li>
+<li>@author leizhimin 2009-7-24 11:24:47<br>*/<br>public class TestScanner { <pre><code>public static void main(String[] args) { 
+        Scanner s = new Scanner(System.in); 
+        System.out.println(&quot;请输入字符串：&quot;); 
+        while (true) { 
+                String line = s.nextLine(); 
+                if (line.equals(&quot;exit&quot;)) break; 
+                System.out.println(&quot;&gt;&gt;&gt;&quot; + line); 
+        } 
+} 
+</code></pre>}</li>
+</ul>
+<p>请输入字符串：<br>234 </p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>234<br>wer<br>wer<br>bye<br>bye<br>exit </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Process finished with exit code 0</p>
+<p>先写这里吧，有空再继续完善。</p>
+<p>二、如果说Scanner使用简便，不如说Scanner的构造器支持多种方式，构建Scanner的对象很方便。</p>
+<p>可以从字符串（Readable）、输入流、文件等等来直接构建Scanner对象，有了Scanner了，就可以逐段（根据正则分隔式）来扫描整个文本，并对扫描后的结果做想要的处理。</p>
+<p>三、Scanner默认使用空格作为分割符来分隔文本，但允许你指定新的分隔符</p>
+<p>使用默认的空格分隔符：<br>        public static void main(String[] args) throws FileNotFoundException {<br>                Scanner s = new Scanner(“123 asdf sd 45 789 sdf asdfl,sdf.sdfl,asdf    ……asdfkl    las”);<br>//                s.useDelimiter(“ |,|\.”);<br>                while (s.hasNext()) {<br>                        System.out.println(s.next());<br>                }<br>        }</p>
+<p>123<br>asdf<br>sd<br>45<br>789<br>sdf<br>asdfl,sdf.sdfl,asdf<br>……asdfkl<br>las </p>
+<p>Process finished with exit code 0</p>
+<p>将注释行去掉，使用空格或逗号或点号作为分隔符，输出结果如下：<br>123<br>asdf<br>sd<br>45<br>789<br>sdf<br>asdfl<br>sdf<br>sdfl<br>asdf </p>
+<p>asdfkl </p>
+<p>las </p>
+<p>Process finished with exit code 0</p>
+<p>四、一大堆API函数，实用的没几个</p>
+<p>（很多API，注释很让人迷惑，几乎毫无用处，这个类就这样被糟蹋了，启了很不错的名字，实际上做的全是龌龊事）</p>
+<p>下面这几个相对实用：</p>
+<p>delimiter()<br>          返回此 Scanner 当前正在用于匹配分隔符的 Pattern。<br>hasNext()<br>          判断扫描器中当前扫描位置后是否还存在下一段。（原APIDoc的注释很扯淡）<br>hasNextLine()<br>          如果在此扫描器的输入中存在另一行，则返回 true。<br>next()<br>          查找并返回来自此扫描器的下一个完整标记。<br>nextLine()<br>          此扫描器执行当前行，并返回跳过的输入信息。</p>
+<p>五、逐行扫描文件，并逐行输出</p>
+<p>看不到价值的扫描过程<br>        public static void main(String[] args) throws FileNotFoundException {<br>                InputStream in = new FileInputStream(new File(“C:\AutoSubmit.java”));<br>                Scanner s = new Scanner(in);<br>                while(s.hasNextLine()){<br>                        System.out.println(s.nextLine());<br>                }<br>        }</p>
+<p>package own; </p>
+<p>import java.io.BufferedReader;<br>import java.io.BufferedWriter;<br>import java.io.InputStream;<br>import java.io.InputStreamReader;<br>import java.io.OutputStreamWriter;<br>import java.net.HttpURLConnection;<br>import java.net.ProtocolException;<br>import java.net.URL; </p>
+<p>import com.verisign.uuid.UUID; </p>
+<p>/** </p>
+<ul>
+<li>@author wangpeng </li>
+<li><p>*/<br>public class AutoSubmit { </p>
+<p>/** </p>
+<ul>
+<li>@param args </li>
+<li>@throws Exception<br>*/<br>public static void main(String[] args) throws Exception { </li>
+</ul>
+</li>
+</ul>
+<p>…在此省略N行 </p>
+<p>Process finished with exit code 0</p>
+<p>Java对字符串支持还是比较弱的，尽管Java一直在努力。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="http://bbs.itheima.com/thread-90856-1-1.html" target="_blank" rel="noopener">http://bbs.itheima.com/thread-90856-1-1.html</a></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2017-04-16T11:28:37.000Z">2017-04-16</time>
                 
                 
@@ -537,53 +635,6 @@
 <ul>
 <li>大部分MongoDB驱动客户端会包含_id字段，并且在发送insert操作的时候生成一个ObjectId。但是如果客户端发送一个不带_id字段的document，mongod会添加_id字段并产生一个ObjectId *</li>
 </ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2017/02/28/diary/痛苦的春天/" class="image is-7by1">
-            <img class="thumbnail" src="/img/diary.jpg" alt="痛苦的春天">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2017-02-28T23:34:40.000Z">2017-02-28</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/diary/">diary</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a few seconds read (About 10 words)
-                </span>
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2017/02/28/diary/痛苦的春天/">痛苦的春天</a>
-            
-        </h1>
-        <div class="content">
-            <p>痛苦的春天<br>失去了一切</p>
 
         </div>
         
