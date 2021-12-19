@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+<title>MongoDB - Wang Weidong`s Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="alternate" href="/atom.xml" title="Wang Weidong`s Blog" type="application/atom+xml">
+</head>
+<body class="is-1-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                My Beautiful Site
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="GitHub" href="https://github.com">
+                        
+                        GitHub
+                        
+                    </a>
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-12 has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2017-02-28T23:34:40.000Z">2017-02-28</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    10 minutes read (About 1530 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                MongoDB
+            
+        </h1>
+        <div class="content">
+            <p>MongoDB以BSON格式的文档（Documents）形式存储。Databases中包含集合（Collections），集合（Collections）中存储文档（Documents）。</p>
+<p>BSON是一个二进制形式的JSON文档，它比JSON包含更多的数据类型。对于BSON规格，可参见bsonspec.org，也可参考BSON类型。</p>
+<p>Databases</p>
+<p>在MongoDB中，databases保存文档（Documents）的集合（Collections）。</p>
+<p>在Mongo Shell中，通过使用use <db>命令来选中database，就像下面的例子：</db></p>
+<p>use myDB<br>创建Database</p>
+<p>如果database不存在，MongoDB会在第一次为database存储数据的时候创建。因此，你可以直接切换到一个不存在的数据库，然后执行下面的语句：</p>
+<p>use myNewDB</p>
+<p>db.myNewCollection1.insert( { x: 1 } )<br>insert()操作会创建名为myNewDB的database和名为myNewCollection1的collection（如果他们不存在的话）。</p>
+<p>Collections</p>
+<p>MongoDB在collections中存储文档（documents）。Collections类似于关系型数据库中的表（tables）。</p>
+<p>创建Collection</p>
+<p>如果collection不存在，MongoDB会在第一次为collection存储数据的时候创建。</p>
+<p>db.myNewCollection2.insert( { x: 1 } )<br>db.myNewCollection3.createIndex( { y: 1 } )<br>无论是insert()还是createIndex()操作，都会创建它们各自指定的收集，如果他们不存在的话。</p>
+<p>显式创建</p>
+<p>MongoDB提供db.createCollection()方法来显式创建一个collection，同时还能设置各种选项，例如：设置最大尺寸和文档校验规则。如果你没有指定这些选项，那么你就不需要显式创建collection，因为MongoDB会在你创建第一个数据的时候自动创建collection。</p>
+<p>若要修改这些collection选择，可查看collMod。</p>
+<p>Documents校验</p>
+<p>3.2.x版本新增内容。</p>
+<p>默认情况下，collection不要求文档有相同的结构；例如，在一个collection的文档不必具有相同的fields，对于单个field在一个collection中的不同文档中可以是不同的数据类型。</p>
+<p>从MongoDB 3.2开始，你可以在对collection进行update和insert操作的时候执行文档（documents）校验规则。具体可参见文档验证的详细信息。</p>
+<p>Documents</p>
+<p>Document结构</p>
+<p>MongoDB的文件是由field和value对的结构组成，例如下面这样的结构：</p>
+<p>{<br>   field1: value1,<br>   field2: value2,<br>   field3: value3,<br>   …<br>   fieldN: valueN<br>}<br>value值可以是任何BSON数据类型，包括：其他document，数字，和document数组。</p>
+<p>例如下面的document，包含各种不同类型的值：</p>
+<p>var mydoc = {<br>    _id: ObjectId(“5099803df3f4948bd2f98391”),<br>    name: {<br>        first: “Alan”, last: “Turing”<br>    },<br>    birth: new Date(‘Jun 23, 1912’),<br>    death: new Date(‘Jun 07, 1954’),<br>    contribs: [ “Turing machine”, “Turing test”, “Turingery” ],<br>    views : NumberLong(1250000)<br>}<br>上面例子中的各fields有下列数据类型：</p>
+<p>_id：ObjectId类型<br>name：一个嵌入的document，包含first和last字段<br>birth和death：Date类型<br>contribs：字符串数组<br>views：NumberLong类型<br>Field名</p>
+<p>Field名是一个字符串。</p>
+<p>Documents中的filed名有下列限制：</p>
+<p>_id被保留用于主键；其值必须是集合中唯一的、不可变的、并且可以是数组以外的任何数据类型<br>不能以美元符号$开头<br>不能包含点字符.<br>不能包含空字符<br>Field Value限制</p>
+<p>对于索引的collections，索引字段中的值有最大长度限制。详情请参见Maximum Index Key Length。</p>
+<p>圆点符号</p>
+<p>MongoDB中使用圆点符号.访问数组中的元素，也可以访问嵌入式Documents的fields。</p>
+<p>Arrays数组</p>
+<p>通过圆点符号.来链接Arrays数组名字和从0开始的数字位置，来定位和访问一个元素数组：</p>
+<p>“<array>.<index>“<br>举例：对于下面的document：</index></array></p>
+<p>{<br>   …<br>   contribs: [ “Turing machine”, “Turing test”, “Turingery” ],<br>   …<br>}<br>要访问contribs数组中的第三个元素，可以这样访问：</p>
+<p>“contribs.2”<br>嵌入式Documents</p>
+<p>通过圆点符号.来链接嵌入式document的名字和field名，来定位和访问嵌入式document：</p>
+<p>“<embedded document>.<field>“<br>举例：对于下面的document：</field></embedded></p>
+<p>{<br>   …<br>   name: { first: “Alan”, last: “Turing” },<br>   …<br>}<br>要访问name中的last字段，可以这样使用：</p>
+<p>“name.last”<br>Documents限制</p>
+<p>Documents有下面这些属性和限制：</p>
+<p>Document大小限制</p>
+<p>每个BSON文档的最大尺寸为16兆字节。</p>
+<p>最大文档大小有助于确保一个单个文档不会使用过量的内存，或通信过程中过大的带宽占用。</p>
+<p>若要存储超过最大尺寸的文档，MongoDB提供了GridFS API。可以看mongofiles和更多有关GridFS的文档</p>
+<p>Document Field顺序</p>
+<p>MongoDB中field的顺序默认是按照写操作的顺序来保存的，除了下面几种情况：</p>
+<p>_id总是document的第一个field<br>可能会导致文档中的字段的重新排序的更新，包括字段名重命名。<br>在2.6版本起，MongoDB开始积极地尝试保留document中field的顺序。</p>
+<p>_id字段</p>
+<p>_id字段有以下行为和限制：</p>
+<p>默认情况下，MongoDB会在创建collection时创建一个_id字段的唯一索引<br>id字段总是documents中的第一个字段。如果服务器接收到一个docuement，它的第一个字段不是id，那么服务器会将_id字段移在开头<br>_id字段可以是除了array数组之外的任何BSON数据格式<br>以下是存储_id值的常用选项：</p>
+<p>使用ObjectId<br>最好使用自然的唯一标识符，可以节省空间并避免额外的索引<br>生成一个自动递增的数字。请参阅创建一个自动递增序列字段<br>在您的应用程序代码中生成UUID。为了更高效的在collection和_id索引中存储UUID值，可以用BSON的BinData类型存储UUID。</p>
+<ul>
+<li>大部分MongoDB驱动客户端会包含_id字段，并且在发送insert操作的时候生成一个ObjectId。但是如果客户端发送一个不带_id字段的document，mongod会添加_id字段并产生一个ObjectId *</li>
+</ul>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/DB/">DB</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2017/04/09/diary/test-post/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">跑通全流程</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2017/02/28/diary/痛苦的春天/">
+                <span class="level-item">痛苦的春天</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    My Beautiful Site
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2021 wushang1987&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+</body>
+</html>

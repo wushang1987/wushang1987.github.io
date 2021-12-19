@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+<title>java system 对象 - Wang Weidong`s Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="alternate" href="/atom.xml" title="Wang Weidong`s Blog" type="application/atom+xml">
+</head>
+<body class="is-1-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                My Beautiful Site
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="GitHub" href="https://github.com">
+                        
+                        GitHub
+                        
+                    </a>
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-12 has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2017-04-16T11:28:37.000Z">2017-04-16</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes read (About 599 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                java system 对象
+            
+        </h1>
+        <div class="content">
+            <p>关于Java中使用的System对象，我们经常使用的是Systme.out.print ,而且也仅仅知道这是一个可以在控制台打印出语句，而没有去深究它的内在实现原理。下面我就详细地介绍System对象。 </p>
+<p>1.JDK中有如下定义：.The System class contains several useful class fields and methods. It cannot be instantiated.<br>也就是说System对象是不能被实例化的，只能通过调用它的属性和方法来使用它。 </p>
+<p>2.System中的属性 Systme.in 是InputStream类型的，可以接受控制台输入的信息； System.out 和 System.err 都是PrintStream类型的 ，可以在控制台输出信息。 </p>
+<p>3.System.getProperties() 返回的是Properties类型的对象，而返回的信息是Java虚拟机启动过程中所要加载的环境配置信息。可以通过下面的代码获取和输出信息，由于Properties是HashTable的一个子类，因此可以通过Map方法取出该集合中的元素 </p>
+<p>Java代码<br>[java] view plain copy<br>package javase.day18;    </p>
+<p>import java.util.Properties;    </p>
+<p>public class SystemDemo {<br>    public static void main(String[] args) {<br>        // TODO Auto-generated method stub<br>        Properties prop=System.getProperties();<br>        for(Object key:prop.keySet()){<br>            String keyStr=(String)key;<br>            String value=prop.getProperty(keyStr);<br>            System.out.println(keyStr+” — “+value);<br>        }<br>    }<br>}    </p>
+<p>结果：<br>控制台输出系统环境配置信息：</p>
+<p>java.runtime.name — Java(TM) SE Runtime Environment<br>sun.boot.library.path — C:\Java\developerEnv\Java\jdk1.6.0_16\jre\bin<br>java.vm.version — 14.2-b01<br>java.vm.vendor — Sun Microsystems Inc.<br>java.vendor.url — <a href="http://java.sun.com/" target="_blank" rel="noopener">http://java.sun.com/</a><br>path.separator — ;<br>java.vm.name — Java HotSpot(TM) Client VM<br>file.encoding.pkg — sun.io<br>sun.java.launcher — SUN_STANDARD<br>user.country — CN<br>sun.os.patch.level — Service Pack 3<br>java.vm.specification.name — Java Virtual Machine Specification<br>user.dir — D:\workspace\BlackHorse<br>java.runtime.version — 1.6.0_16-b01<br>java.awt.graphicsenv — sun.awt.Win32GraphicsEnvironment<br>java.endorsed.dirs — C:\Java\developerEnv\Java\jdk1.6.0_16\jre\lib\endorsed<br>os.arch — x86<br>java.io.tmpdir — C:\DOCUME~1\CHENGR~1\LOCALS~1\Temp\<br>line.separator —<br>……</p>
+<p>……<br>……</p>
+<p>使用以下代码也可以使控制台输出系统环境配置信息：</p>
+<p>[java] view plain copy<br>public class SystemDemo {<br>    public static void main(String[] args) {<br>        System.getProperties().list(System.out);<br>    }<br>}  </p>
+<p>4.可以通过System对象在系统中自定义一些特有的信息：<br>System.setProperty(myKey , myValue); </p>
+<p>另外需要注意的一点是： 所谓的 system porperty，system 指的是 JRE (runtime)system，不是指 OS。<br>System.setProperty(“net.jxta.tls.principal”, “client”);<br>System.setProperty(“net.jxta.tls.password”, “password”);<br>System.setProperty(“JXTA_HOME”,System.getProperty(“JXTA_HOME”,”client”));<br>可以利用系统属性来加载多个驱动</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://blog.csdn.net/alex_zhuang/article/details/6918147" target="_blank" rel="noopener">http://blog.csdn.net/alex_zhuang/article/details/6918147</a></p>
+<p><a href="http://www.cnblogs.com/xuhuan/articles/1522212.html" target="_blank" rel="noopener">http://www.cnblogs.com/xuhuan/articles/1522212.html</a></p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/java/">java</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2017/04/16/java/base/Scanner/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">java scanner</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2017/04/16/java/术语列表/">
+                <span class="level-item">java 术语</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    My Beautiful Site
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2021 wushang1987&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+</body>
+</html>

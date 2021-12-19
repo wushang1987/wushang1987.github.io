@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+<title>java scanner - Wang Weidong`s Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="alternate" href="/atom.xml" title="Wang Weidong`s Blog" type="application/atom+xml">
+</head>
+<body class="is-1-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                My Beautiful Site
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="GitHub" href="https://github.com">
+                        
+                        GitHub
+                        
+                    </a>
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-12 has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2017-04-16T11:29:00.000Z">2017-04-16</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    6 minutes read (About 855 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                java scanner
+            
+        </h1>
+        <div class="content">
+            <p>java.util.Scanner是Java5的新特征，主要功能是简化文本扫描。这个类最实用的地方表现在获取控制台输入，其他的功能都很鸡肋，尽管Java API文档中列举了大量的API方法，但是都不怎么地</p>
+<p>一、扫描控制台输入</p>
+<p>这个例子是常常会用到，但是如果没有Scanner，你写写就知道多难受了。<br>当通过new Scanner(System.in)创建一个Scanner，控制台会一直等待输入，直到敲回车键结束，把所输入的内容传给Scanner，作为扫描对象。如果要获取输入的内容，则只需要调用Scanner的nextLine()方法即可。</p>
+<p>/** </p>
+<ul>
+<li>扫描控制台输入 </li>
+<li></li>
+<li>@author leizhimin 2009-7-24 11:24:47<br>*/<br>public class TestScanner { <pre><code>public static void main(String[] args) { 
+        Scanner s = new Scanner(System.in); 
+        System.out.println(&quot;请输入字符串：&quot;); 
+        while (true) { 
+                String line = s.nextLine(); 
+                if (line.equals(&quot;exit&quot;)) break; 
+                System.out.println(&quot;&gt;&gt;&gt;&quot; + line); 
+        } 
+} 
+</code></pre>}</li>
+</ul>
+<p>请输入字符串：<br>234 </p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>234<br>wer<br>wer<br>bye<br>bye<br>exit </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Process finished with exit code 0</p>
+<p>先写这里吧，有空再继续完善。</p>
+<p>二、如果说Scanner使用简便，不如说Scanner的构造器支持多种方式，构建Scanner的对象很方便。</p>
+<p>可以从字符串（Readable）、输入流、文件等等来直接构建Scanner对象，有了Scanner了，就可以逐段（根据正则分隔式）来扫描整个文本，并对扫描后的结果做想要的处理。</p>
+<p>三、Scanner默认使用空格作为分割符来分隔文本，但允许你指定新的分隔符</p>
+<p>使用默认的空格分隔符：<br>        public static void main(String[] args) throws FileNotFoundException {<br>                Scanner s = new Scanner(“123 asdf sd 45 789 sdf asdfl,sdf.sdfl,asdf    ……asdfkl    las”);<br>//                s.useDelimiter(“ |,|\.”);<br>                while (s.hasNext()) {<br>                        System.out.println(s.next());<br>                }<br>        }</p>
+<p>123<br>asdf<br>sd<br>45<br>789<br>sdf<br>asdfl,sdf.sdfl,asdf<br>……asdfkl<br>las </p>
+<p>Process finished with exit code 0</p>
+<p>将注释行去掉，使用空格或逗号或点号作为分隔符，输出结果如下：<br>123<br>asdf<br>sd<br>45<br>789<br>sdf<br>asdfl<br>sdf<br>sdfl<br>asdf </p>
+<p>asdfkl </p>
+<p>las </p>
+<p>Process finished with exit code 0</p>
+<p>四、一大堆API函数，实用的没几个</p>
+<p>（很多API，注释很让人迷惑，几乎毫无用处，这个类就这样被糟蹋了，启了很不错的名字，实际上做的全是龌龊事）</p>
+<p>下面这几个相对实用：</p>
+<p>delimiter()<br>          返回此 Scanner 当前正在用于匹配分隔符的 Pattern。<br>hasNext()<br>          判断扫描器中当前扫描位置后是否还存在下一段。（原APIDoc的注释很扯淡）<br>hasNextLine()<br>          如果在此扫描器的输入中存在另一行，则返回 true。<br>next()<br>          查找并返回来自此扫描器的下一个完整标记。<br>nextLine()<br>          此扫描器执行当前行，并返回跳过的输入信息。</p>
+<p>五、逐行扫描文件，并逐行输出</p>
+<p>看不到价值的扫描过程<br>        public static void main(String[] args) throws FileNotFoundException {<br>                InputStream in = new FileInputStream(new File(“C:\AutoSubmit.java”));<br>                Scanner s = new Scanner(in);<br>                while(s.hasNextLine()){<br>                        System.out.println(s.nextLine());<br>                }<br>        }</p>
+<p>package own; </p>
+<p>import java.io.BufferedReader;<br>import java.io.BufferedWriter;<br>import java.io.InputStream;<br>import java.io.InputStreamReader;<br>import java.io.OutputStreamWriter;<br>import java.net.HttpURLConnection;<br>import java.net.ProtocolException;<br>import java.net.URL; </p>
+<p>import com.verisign.uuid.UUID; </p>
+<p>/** </p>
+<ul>
+<li>@author wangpeng </li>
+<li><p>*/<br>public class AutoSubmit { </p>
+<p>/** </p>
+<ul>
+<li>@param args </li>
+<li>@throws Exception<br>*/<br>public static void main(String[] args) throws Exception { </li>
+</ul>
+</li>
+</ul>
+<p>…在此省略N行 </p>
+<p>Process finished with exit code 0</p>
+<p>Java对字符串支持还是比较弱的，尽管Java一直在努力。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="http://bbs.itheima.com/thread-90856-1-1.html" target="_blank" rel="noopener">http://bbs.itheima.com/thread-90856-1-1.html</a></p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/java/">java</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2017/04/16/java/base/java.io.file/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">java IO</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2017/04/16/java/base/system/">
+                <span class="level-item">java system 对象</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    My Beautiful Site
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2021 wushang1987&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+</body>
+</html>
