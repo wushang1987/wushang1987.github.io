@@ -4,6 +4,9 @@ logo:
     text: My Beautiful Site
 head:
     favicon: /img/favicon.svg
+    meta:
+        - 'name=theme-color;content=#123456'
+        - 'name=generator;content="Hexo 4.2.0"'
 manifest:
     # Name of the web application (default to the site title)
     name: Icaurs - Hexo Theme
@@ -34,11 +37,6 @@ manifest:
         -
             src: icon/logo.ico
             sizes: 72x72 96x96 128x128 256x256
-head:
-    meta:
-        - 'name=theme-color;content=#123456'
-        - 'name=generator;content="Hexo 4.2.0"'
-
 navbar:
     # Naviagtion menu items
     menu:
