@@ -1,6 +1,6 @@
 ---
 title: vim
-date: Insert datetime string (⇧⌘I or Ctrl+Shift+I)
+date: 2019/12/12
 tags:
     - Tools
 categories:
