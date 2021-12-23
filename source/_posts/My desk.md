@@ -6,4 +6,4 @@ tags:
 ---
 
 买了一个类纸膜，用IPAD画个草图看看
-![myDesk](/img/MyDesk2.png)
+![myDesk](/img/Mydesk2.PNG)
