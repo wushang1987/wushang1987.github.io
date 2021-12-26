@@ -1,7 +1,7 @@
 version: 4.0.0
 variant: cyberpunk
 logo:
-    text: My Beautiful Site
+    text: 不住斋札记
 head:
     favicon: /img/github-s.png
     meta:
