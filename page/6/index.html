@@ -82,6 +82,50 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2017-04-16T11:51:12.000Z">2017-04-16</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a few seconds read (About 102 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2017/04/16/tools/eclipse/sts/">eclipse</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="SpringSource-Tool-Suite"><a href="#SpringSource-Tool-Suite" class="headerlink" title="SpringSource Tool Suite"></a>SpringSource Tool Suite</h1><p>SpringSource Tool Suite 基于 Spring IDE ，提供了其它的一些特性，如 基于Spring dm Server 的osgi 开发，及其它一些 Spring 项目的支持，如Spring Roo， Spring Batch等。</p>
+<h2 id="Spring-Boot-Dashboard"><a href="#Spring-Boot-Dashboard" class="headerlink" title="Spring Boot Dashboard"></a>Spring Boot Dashboard</h2><p>cloud foundry</p>
+<h1 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h1><p>中文</p>
+<p>安装相关<br><a href="http://www.itxxz.com/a/gaoji/2015/0120/eclipse_spring_tools.html" target="_blank" rel="noopener">http://www.itxxz.com/a/gaoji/2015/0120/eclipse_spring_tools.html</a></p>
+<p><a href="http://blog.csdn.net/dhx20022889/article/details/38041039" target="_blank" rel="noopener">http://blog.csdn.net/dhx20022889/article/details/38041039</a></p>
+<p>官方</p>
+<p><a href="https://spring.io/tools/sts/all/" target="_blank" rel="noopener">https://spring.io/tools/sts/all/</a></p>
+<p><a href="http://docs.spring.io/sts/nan/v380/NewAndNoteworthy.html" target="_blank" rel="noopener">http://docs.spring.io/sts/nan/v380/NewAndNoteworthy.html</a></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2017-04-16T11:50:36.000Z">2017-04-16</time>
                 
                 
@@ -475,71 +519,6 @@
         </h1>
         <div class="content">
             <h1 id="npmbox"><a href="#npmbox" class="headerlink" title="npmbox"></a>npmbox</h1>
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2017-04-16T11:37:48.000Z">2017-04-16</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 352 words)
-                </span>
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2017/04/16/mysql/密码重置/">mysql 密码重置</a>
-            
-        </h1>
-        <div class="content">
-            <p>linux<br>停止mysql服务</p>
-<h1 id="service-mysqld-stop"><a href="#service-mysqld-stop" class="headerlink" title="service mysqld stop"></a>service mysqld stop</h1><p>启动mysqld_safe ，跳过启动授权表。启动时加上skip-grant-tables参数目的是在启动mysql时不启动grant-tables，授权表。这样就可以修改root的密码了。</p>
-<h1 id="mysqld-safe-–skip-grant-tables-amp"><a href="#mysqld-safe-–skip-grant-tables-amp" class="headerlink" title="mysqld_safe –skip-grant-tables &amp;"></a>mysqld_safe –skip-grant-tables &amp;</h1><p> 登录mysql，并修改密码：</p>
-<h1 id="mysql-uroot-p-—-要求输入密码时，直接回车即可。"><a href="#mysql-uroot-p-—-要求输入密码时，直接回车即可。" class="headerlink" title="mysql -uroot -p      —-要求输入密码时，直接回车即可。"></a>mysql -uroot -p      —-要求输入密码时，直接回车即可。</h1><blockquote>
-<p>use mysql;<br>update user set password=PASSWORD(‘12345678’) where user=”root”;    —将root密码设置为12345678<br> flush privileges;<br>quit</p>
-</blockquote>
-<p> 杀死mysqld_safe进程，并重启mysqld。</p>
-<h1 id="kill-9-11283-11283为mysqld-safe进程）"><a href="#kill-9-11283-11283为mysqld-safe进程）" class="headerlink" title="kill -9  11283  (11283为mysqld_safe进程）"></a>kill -9  11283  (11283为mysqld_safe进程）</h1><h1 id="service-mysqld-start"><a href="#service-mysqld-start" class="headerlink" title="service mysqld start"></a>service mysqld start</h1><h1 id="mysql-uroot-p-输入密码12345678即可）"><a href="#mysql-uroot-p-输入密码12345678即可）" class="headerlink" title="mysql -uroot -p     (输入密码12345678即可）"></a>mysql -uroot -p     (输入密码12345678即可）</h1><p>windows<br>1、首先停止正在运行的MySQL进程<br>复制代码 代码如下:</p>
-<blockquote>
-<p>net stop mysql </p>
-</blockquote>
-<p>如未加载为服务，可直接在进程管理器或者服务中进行关闭。 </p>
-<p>2、以安全模式启动MySQL<br>进入mysql目录在命令行下运行<br>复制代码 代码如下:</p>
-<blockquote>
-<p>d:<br>cd xampp/mysql/bin<br>mysqld.exe –skip-grant-tables </p>
-</blockquote>
-<p>3、完成以后就可以不用密码进入MySQL了<br>复制代码 代码如下:</p>
-<blockquote>
-<p>mysql -u root -p </p>
-</blockquote>
-<p>提示输入密码时直接回车即可。 </p>
-<p>4、更改密码<br>复制代码 代码如下:</p>
-<blockquote>
-<p>use mysql<br>update user set Password=password(‘新密码’) where User=’root’;<br>flush privileges; </p>
-</blockquote>
-<p>5、启动MySQL服务<br>在任务管理器里关闭所有MySQL的进程，使用下面的命令启动。<br>复制代码 代码如下:</p>
-<blockquote>
-<p>net start mysql </p>
-</blockquote>
-
         </div>
         
         
